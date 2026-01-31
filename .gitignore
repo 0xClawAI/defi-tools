@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Data and logs (may contain sensitive info)
+data/
+logs/
+*.log
+*.jsonl
+
+# Sensitive configs
+.env
+*.env
+wallet.json
+**/wallet.json
+*.key
+*.pem
+
+# State files
+**/scanner-state.json
+**/pending-alerts.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Learnings (personal)
+.learnings/
+
+# Memory (personal context)
+memory/
