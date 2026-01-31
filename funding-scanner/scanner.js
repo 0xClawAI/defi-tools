@@ -16,6 +16,14 @@
 const fs = require('fs');
 const path = require('path');
 
+// Alert Hub integration
+let alertHub;
+try {
+  alertHub = require('../alert-hub/alerter');
+} catch (e) {
+  alertHub = null;
+}
+
 // Config
 const CONFIG = {
   API_URL: 'https://api.hyperliquid.xyz/info',
@@ -167,6 +175,20 @@ async function scan() {
   
   const state = saveState(opportunities);
   logScan(opportunities);
+  
+  // Send alerts for extreme funding via Alert Hub
+  if (alertHub) {
+    const extreme = opportunities.filter(o => o.isExtreme);
+    for (const opp of extreme.slice(0, 3)) { // Top 3 only
+      alertHub.sendAlert({
+        message: `${opp.coin}: Funding ${opp.funding.annualizedPct}% APR - ${opp.funding.hourlyPct > 0 ? 'shorts pay' : 'longs pay'}`,
+        severity: Math.abs(opp.funding.hourlyPct) > 0.0005 ? 'critical' : 'warning',
+        source: 'funding',
+        coin: opp.coin,
+        type: 'extreme_funding',
+      }).catch(() => {}); // Non-blocking
+    }
+  }
   
   return state;
 }

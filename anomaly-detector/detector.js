@@ -8,6 +8,14 @@
 const fs = require('fs');
 const path = require('path');
 
+// Alert Hub integration
+let alertHub;
+try {
+  alertHub = require('../alert-hub/alerter');
+} catch (e) {
+  alertHub = null;
+}
+
 // Config
 const CONFIG = {
   // Thresholds for alerts
@@ -255,6 +263,19 @@ function logAlert(token, anomaly, snapshots) {
     `  Chain: ${token.chainId} | Pair: ${token.pairAddress}\n` +
     `  Price: $${token.priceUsd} | Liq: $${token.liquidity?.usd || 'N/A'}\n`;
   fs.appendFileSync(logFile, logEntry);
+  
+  // Send to Alert Hub
+  if (alertHub) {
+    const severity = anomaly.type === 'LP_DRAIN_CRITICAL' ? 'critical' :
+                     anomaly.type.includes('DRAIN') ? 'warning' : 'info';
+    alertHub.sendAlert({
+      message: `${token.baseToken?.symbol}: ${anomaly.message}`,
+      severity,
+      source: 'anomaly',
+      coin: token.baseToken?.symbol,
+      type: anomaly.type,
+    }).catch(() => {}); // Non-blocking
+  }
   
   return alert;
 }

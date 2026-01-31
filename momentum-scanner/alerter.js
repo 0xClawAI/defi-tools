@@ -2,12 +2,21 @@
 /**
  * Momentum Alerter
  * Sends alerts to configured channels (Telegram, file, etc.)
+ * Routes through central Alert Hub for deduplication
  * 
  * Can be run standalone or imported as module
  */
 
 const fs = require('fs');
 const path = require('path');
+
+// Alert Hub integration
+let alertHub;
+try {
+  alertHub = require('../alert-hub/alerter');
+} catch (e) {
+  alertHub = null;  // Optional
+}
 
 // Alert destinations
 const ALERT_CONFIG = {
@@ -88,14 +97,28 @@ function formatForTelegram(signal) {
   return msg;
 }
 
-// Send via Telegram (using OpenClaw message action)
+// Send via Telegram (using Alert Hub or fallback to file)
 async function sendTelegram(signal) {
   if (!ALERT_CONFIG.telegram.enabled) return false;
   
   const message = formatForTelegram(signal);
   
-  // Write to a file that OpenClaw can pick up
-  // Or use the message action directly via HTTP
+  // Route through Alert Hub if available (handles dedup + routing)
+  if (alertHub) {
+    const severity = signal.type === 'HIGH_RATIO' ? 'warning' : 
+                     signal.type === 'SUSTAINED_ACCUMULATION' ? 'critical' : 'info';
+    
+    await alertHub.sendAlert({
+      message: `${signal.token}: ${signal.type} (${signal.ratio}x ratio)`,
+      severity,
+      source: 'momentum',
+      coin: signal.token,
+      type: signal.type,
+    });
+    return true;
+  }
+  
+  // Fallback: Write to file for OpenClaw to pick up
   const alertFile = path.join(__dirname, 'data', 'pending-alerts.json');
   let pending = [];
   try {

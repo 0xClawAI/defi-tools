@@ -164,5 +164,336 @@
       "priceChange": -3.7
     },
     "createdAt": "2026-01-31T16:00:02.782Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: CLAWKING\n\nRatio: <code>68.00x</code> (680B/10S) [h1]\nPrice: <code>$0.000195</code>\nVolume: $409,727\nLiquidity: $128,278\nChange: 📈 3825.0%\n\n<a href=\"https://dexscreener.com/base/AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump\">DEXScreener</a> | <a href=\"https://basescan.org/token/AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "68.00",
+      "buys": 680,
+      "sells": 10,
+      "token": "CLAWKING",
+      "address": "AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump",
+      "price": "0.0001950",
+      "volume24h": 409726.97,
+      "liquidity": 128277.5,
+      "priceChange": 3825
+    },
+    "createdAt": "2026-01-31T16:05:03.451Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: CLAWKING\n\nRatio: <code>47.81x</code> (765B/16S) [h1]\nPrice: <code>$0.000177</code>\nVolume: $409,883\nLiquidity: $121,422\nChange: 📈 3453.0%\n\n<a href=\"https://dexscreener.com/base/AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump\">DEXScreener</a> | <a href=\"https://basescan.org/token/AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "47.81",
+      "buys": 765,
+      "sells": 16,
+      "token": "CLAWKING",
+      "address": "AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump",
+      "price": "0.0001765",
+      "volume24h": 409883.11,
+      "liquidity": 121422.32,
+      "priceChange": 3453
+    },
+    "createdAt": "2026-01-31T16:10:03.277Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: CLAWKING\n\nRatio: <code>42.10x</code> (842B/20S) [h1]\nPrice: <code>$0.000162</code>\nVolume: $410,030\nLiquidity: $116,575\nChange: 📈 3087.0%\n\n<a href=\"https://dexscreener.com/base/AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump\">DEXScreener</a> | <a href=\"https://basescan.org/token/AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "42.10",
+      "buys": 842,
+      "sells": 20,
+      "token": "CLAWKING",
+      "address": "AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump",
+      "price": "0.0001616",
+      "volume24h": 410029.91,
+      "liquidity": 116574.6,
+      "priceChange": 3087
+    },
+    "createdAt": "2026-01-31T16:15:02.876Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🎯 <b>SUSTAINED_ACCUMULATION</b>: MOLTNET\n\n\nPrice: <code>$0.000572</code>\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "SUSTAINED_ACCUMULATION",
+      "periods": 3,
+      "avgRatio": "1.72",
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0005716"
+    },
+    "createdAt": "2026-01-31T16:16:26.162Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🎯 <b>SUSTAINED_ACCUMULATION</b>: MOLTNET\n\n\nPrice: <code>$0.000635</code>\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "SUSTAINED_ACCUMULATION",
+      "periods": 3,
+      "avgRatio": "1.74",
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0006349"
+    },
+    "createdAt": "2026-01-31T16:20:02.692Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🎯 <b>SUSTAINED_ACCUMULATION</b>: MOLTNET\n\n\nPrice: <code>$0.000599</code>\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "SUSTAINED_ACCUMULATION",
+      "periods": 3,
+      "avgRatio": "1.74",
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0005988"
+    },
+    "createdAt": "2026-01-31T16:23:09.189Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🎯 <b>SUSTAINED_ACCUMULATION</b>: MOLTNET\n\n\nPrice: <code>$0.000585</code>\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "SUSTAINED_ACCUMULATION",
+      "periods": 3,
+      "avgRatio": "1.74",
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0005854"
+    },
+    "createdAt": "2026-01-31T16:25:03.125Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🎯 <b>SUSTAINED_ACCUMULATION</b>: MOLTNET\n\n\nPrice: <code>$0.000595</code>\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "SUSTAINED_ACCUMULATION",
+      "periods": 3,
+      "avgRatio": "1.74",
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0005954"
+    },
+    "createdAt": "2026-01-31T16:30:02.909Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🎯 <b>SUSTAINED_ACCUMULATION</b>: MOLTNET\n\n\nPrice: <code>$0.000662</code>\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "SUSTAINED_ACCUMULATION",
+      "periods": 3,
+      "avgRatio": "1.73",
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0006621"
+    },
+    "createdAt": "2026-01-31T16:35:02.415Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>2.05x</code> (2574B/1255S) [h1]\nPrice: <code>$0.000737</code>\nVolume: $1,340,711\nLiquidity: $78,691\nChange: 📈 34.9%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "2.05",
+      "buys": 2574,
+      "sells": 1255,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0007372",
+      "volume24h": 1340711.17,
+      "liquidity": 78690.83,
+      "priceChange": 34.94
+    },
+    "createdAt": "2026-01-31T16:40:02.922Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>2.21x</code> (2421B/1097S) [h1]\nPrice: <code>$0.000744</code>\nVolume: $1,343,696\nLiquidity: $79,078\nChange: 📈 31.9%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "2.21",
+      "buys": 2421,
+      "sells": 1097,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0007443",
+      "volume24h": 1343695.59,
+      "liquidity": 79078.06,
+      "priceChange": 31.92
+    },
+    "createdAt": "2026-01-31T16:40:27.710Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>3.29x</code> (2008B/611S) [h1]\nPrice: <code>$0.000707</code>\nVolume: $1,364,969\nLiquidity: $77,011\nChange: 📈 12.3%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "3.29",
+      "buys": 2008,
+      "sells": 611,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0007066",
+      "volume24h": 1364969.47,
+      "liquidity": 77010.53,
+      "priceChange": 12.29
+    },
+    "createdAt": "2026-01-31T16:45:02.741Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>3.19x</code> (2064B/648S) [h1]\nPrice: <code>$0.000587</code>\nVolume: $1,389,432\nLiquidity: $69,767\nChange: 📈 2.2%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "3.19",
+      "buys": 2064,
+      "sells": 648,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0005870",
+      "volume24h": 1389431.63,
+      "liquidity": 69766.8,
+      "priceChange": 2.19
+    },
+    "createdAt": "2026-01-31T16:50:03.180Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>3.23x</code> (2095B/649S) [h1]\nPrice: <code>$0.000582</code>\nVolume: $1,408,304\nLiquidity: $69,489\nChange: 📈 13.7%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "3.23",
+      "buys": 2095,
+      "sells": 649,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0005824",
+      "volume24h": 1408304.08,
+      "liquidity": 69489.33,
+      "priceChange": 13.68
+    },
+    "createdAt": "2026-01-31T16:55:02.739Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>3.18x</code> (2141B/674S) [h1]\nPrice: <code>$0.000651</code>\nVolume: $1,428,836\nLiquidity: $73,573\nChange: 📈 25.6%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "3.18",
+      "buys": 2141,
+      "sells": 674,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0006509",
+      "volume24h": 1428836.27,
+      "liquidity": 73572.78,
+      "priceChange": 25.59
+    },
+    "createdAt": "2026-01-31T17:00:02.339Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>3.05x</code> (2167B/710S) [h1]\nPrice: <code>$0.000735</code>\nVolume: $1,449,280\nLiquidity: $78,285\nChange: 📈 49.9%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "3.05",
+      "buys": 2167,
+      "sells": 710,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0007353",
+      "volume24h": 1449280.09,
+      "liquidity": 78284.6,
+      "priceChange": 49.89
+    },
+    "createdAt": "2026-01-31T17:05:02.456Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>2.97x</code> (2139B/720S) [h1]\nPrice: <code>$0.000708</code>\nVolume: $1,465,876\nLiquidity: $76,571\nChange: 📈 35.1%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "2.97",
+      "buys": 2139,
+      "sells": 720,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0007082",
+      "volume24h": 1465875.72,
+      "liquidity": 76571.38,
+      "priceChange": 35.09
+    },
+    "createdAt": "2026-01-31T17:10:03.131Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>2.87x</code> (2038B/710S) [h1]\nPrice: <code>$0.000777</code>\nVolume: $1,500,423\nLiquidity: $79,554\nChange: 📈 36.8%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "2.87",
+      "buys": 2038,
+      "sells": 710,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0007774",
+      "volume24h": 1500423.44,
+      "liquidity": 79554.4,
+      "priceChange": 36.83
+    },
+    "createdAt": "2026-01-31T17:15:02.808Z"
+  },
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: MOLTNET\n\nRatio: <code>2.73x</code> (2014B/737S) [h1]\nPrice: <code>$0.000675</code>\nVolume: $1,528,131\nLiquidity: $74,410\nChange: 📈 1.7%\n\n<a href=\"https://dexscreener.com/base/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">DEXScreener</a> | <a href=\"https://basescan.org/token/viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "2.73",
+      "buys": 2014,
+      "sells": 737,
+      "token": "MOLTNET",
+      "address": "viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump",
+      "price": "0.0006748",
+      "volume24h": 1528131.47,
+      "liquidity": 74410.42,
+      "priceChange": 1.71
+    },
+    "createdAt": "2026-01-31T17:20:02.855Z"
   }
 ]
