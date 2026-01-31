@@ -447,7 +447,39 @@
       ],
       "tier": "unscored",
       "notes": ""
+    },
+    "@larrymemesol": {
+      "handle": "@larrymemesol",
+      "firstSeen": "2026-01-31T19:51:32.853Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "LARRY",
+          "chain": "solana",
+          "fdvAtDiscovery": 18894.48,
+          "priceAtDiscovery": "0.00001889",
+          "discoveredAt": "2026-01-31T19:51:32.853Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@autardio": {
+      "handle": "@autardio",
+      "firstSeen": "2026-01-31T20:54:48.546Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "AUTARDIO",
+          "chain": "solana",
+          "fdvAtDiscovery": 410473,
+          "priceAtDiscovery": "0.0004104",
+          "discoveredAt": "2026-01-31T20:54:48.546Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
     }
   },
-  "lastUpdated": "2026-01-31T15:53:02.495Z"
+  "lastUpdated": "2026-01-31T20:54:48.974Z"
 }

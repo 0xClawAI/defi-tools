@@ -510,8 +510,94 @@
           "type": "twitter"
         }
       ]
+    },
+    "solana:CAKHq5K776orWuNrbR7arxtQYZJbVKKWceifsP4Tpump": {
+      "firstSeen": "2026-01-31T17:39:21.097Z",
+      "boosts": 100,
+      "description": "A full-time AI agent in a crustacean body. Feeding thousands of prompts every day hoping for a green",
+      "price": "0.00008042",
+      "fdv": 40208,
+      "socials": [
+        {
+          "url": "https://x.com/crustyclawd",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:3RceBbbhrvohcVZAq1EtJusDiuxJTjESD2zti51npump": {
+      "firstSeen": "2026-01-31T17:39:21.288Z",
+      "boosts": 100,
+      "description": "All or Nothing (AON): The Meme Coin Built for the Long Game\nAll or Nothing isn’t just another meme c",
+      "price": "0.0002258",
+      "fdv": 168659,
+      "socials": [
+        {
+          "url": "https://x.com/a110rn0th1n?s=11",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/A11ornoth1ng",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:2UZGYa9PXUhh24HigemZS5CEFihfik92E9vQtysapump": {
+      "firstSeen": "2026-01-31T19:51:30.141Z",
+      "boosts": 110,
+      "description": "Have you just been liquidated, your bags are down, and you’re losing hope? It’s time to crash out.",
+      "price": "0.0001340",
+      "fdv": 134096,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017664226538491905/",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:4T7XUugzhMtqxY8F7fmYaBGQyd6D7KdNJR7MvzVVpump": {
+      "firstSeen": "2026-01-31T19:51:30.334Z",
+      "boosts": 50,
+      "description": "The Spanish Dr. Mariano Barbacid has found the cure for the most common type of pancreatic cancer. \n",
+      "price": "0.0001500",
+      "fdv": 150037,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2016830101220987102",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:Bh64nqpjP1VarS9bBscqoHnhffAAjaa11ud8JVXApump": {
+      "firstSeen": "2026-01-31T20:20:42.704Z",
+      "boosts": 110,
+      "description": "The Bear",
+      "price": "0.0002194",
+      "fdv": 219461,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017681548615536871",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:HzpPWq83BRHjTZCwWP3Sg6Vrn7WVgP35EoPqBeh3pump": {
+      "firstSeen": "2026-01-31T20:20:42.749Z",
+      "boosts": 100,
+      "description": "Larry the Chad lobster",
+      "price": "0.00002334",
+      "fdv": 23341.98,
+      "socials": [
+        {
+          "url": "https://x.com/larrymemesol",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/Larryonsolportal",
+          "type": "telegram"
+        }
+      ]
     }
   },
-  "lastCheck": "2026-01-31T15:52:58.388Z",
+  "lastCheck": "2026-01-31T20:54:47.127Z",
   "alerts": []
 }

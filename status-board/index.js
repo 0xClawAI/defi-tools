@@ -15,8 +15,11 @@
 const fs = require('fs');
 const path = require('path');
 
+const { execSync } = require('child_process');
+
 const DEFI_TOOLS = path.join(__dirname, '..');
 const WALLET_ADDRESS = '0xffA12D92098eB2b72B3c30B62f8da02BA4158c1e';
+const HYPERLIQUID_SCRIPTS = path.join(process.env.HOME, '.openclaw/workspace/skills/hyperliquid-trading/scripts');
 
 // Colors for terminal output
 const colors = {
@@ -120,6 +123,29 @@ function getMomentumSignals() {
   }
 }
 
+// Get Hyperliquid account data (optional, can be slow)
+function getHyperliquidData() {
+  try {
+    // Check if scripts exist
+    if (!fs.existsSync(path.join(HYPERLIQUID_SCRIPTS, 'hyperliquid.mjs'))) {
+      return null;
+    }
+    const result = execSync(
+      `cd "${HYPERLIQUID_SCRIPTS}" && HYPERLIQUID_ADDRESS=${WALLET_ADDRESS} node hyperliquid.mjs balance 2>/dev/null`,
+      { timeout: 15000, encoding: 'utf8' }
+    );
+    const data = JSON.parse(result);
+    return {
+      accountValue: parseFloat(data.marginSummary?.accountValue || 0),
+      totalPosition: parseFloat(data.marginSummary?.totalNtlPos || 0),
+      withdrawable: parseFloat(data.withdrawable || 0),
+      positions: data.assetPositions || []
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
 // Get latest funding rates
 function getFundingRates() {
   const fundingPath = path.join(DEFI_TOOLS, 'funding-scanner/data/rates.json');
@@ -154,6 +180,7 @@ async function generateStatus(options = {}) {
     timestamp: new Date().toISOString(),
     wallet: null,
     tokens: [],
+    hyperliquid: null,
     positions: [],
     alerts: [],
     signals: [],
@@ -168,6 +195,10 @@ async function generateStatus(options = {}) {
 
   status.wallet = balance;
   status.tokens = tokens;
+  // Hyperliquid is optional (can be slow) - skip with --no-hl
+  if (!options.noHl) {
+    status.hyperliquid = getHyperliquidData();
+  }
   status.positions = getOpenPositions();
   status.alerts = getRecentAlerts();
   status.signals = getMomentumSignals();
@@ -202,6 +233,28 @@ async function generateStatus(options = {}) {
     });
   }
   console.log();
+
+  // Hyperliquid Section
+  if (status.hyperliquid) {
+    console.log(c('cyan', '┌─ ⚡ HYPERLIQUID ─────────────────────────────────────────┐'));
+    const hl = status.hyperliquid;
+    if (hl.accountValue > 0) {
+      console.log(`  Account Value: ${c('green', '$' + hl.accountValue.toFixed(2))}`);
+      console.log(`  Position Size: $${hl.totalPosition.toFixed(2)}`);
+      console.log(`  Withdrawable:  $${hl.withdrawable.toFixed(2)}`);
+      if (hl.positions.length > 0) {
+        console.log(c('dim', '  Positions:'));
+        hl.positions.forEach(p => {
+          const side = p.position?.szi > 0 ? 'LONG' : 'SHORT';
+          const sideColor = side === 'LONG' ? 'green' : 'red';
+          console.log(`    ${c(sideColor, side)} ${p.position?.coin}: ${Math.abs(p.position?.szi)} @ $${p.position?.entryPx}`);
+        });
+      }
+    } else {
+      console.log(c('dim', '  No Hyperliquid balance'));
+    }
+    console.log();
+  }
 
   // Positions Section
   console.log(c('cyan', '┌─ 📈 OPEN POSITIONS ─────────────────────────────────────┐'));
@@ -264,7 +317,8 @@ async function generateStatus(options = {}) {
 const args = process.argv.slice(2);
 const options = {
   json: args.includes('--json'),
-  compact: args.includes('--compact')
+  compact: args.includes('--compact'),
+  noHl: args.includes('--no-hl') || args.includes('--fast')
 };
 
 if (args.includes('--help') || args.includes('-h')) {
@@ -274,13 +328,16 @@ Status Board - Unified DeFi Status Dashboard
 Usage: node index.js [options]
 
 Options:
-  --json      Output as JSON
-  --compact   Compact output (fewer details)
-  --help, -h  Show this help
+  --json       Output as JSON
+  --compact    Compact output (fewer details)
+  --no-hl      Skip Hyperliquid (faster)
+  --fast       Same as --no-hl
+  --help, -h   Show this help
 
 Examples:
   node index.js              # Full status dashboard
   node index.js --json       # JSON output for scripts
+  node index.js --fast       # Skip slow Hyperliquid API
 `);
   process.exit(0);
 }
