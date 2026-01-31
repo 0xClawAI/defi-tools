@@ -92,6 +92,23 @@ function getOpenPositions() {
   }
 }
 
+// Get paper trade summary (quick sync check)
+function getPaperTradeSummary() {
+  const paperPath = path.join(DEFI_TOOLS, 'data/paper-trades.json');
+  try {
+    const data = JSON.parse(fs.readFileSync(paperPath, 'utf8'));
+    const open = data.trades?.filter(t => !t.exitTime) || [];
+    const totalCost = open.reduce((sum, t) => sum + (t.costBasis || 0), 0);
+    return {
+      count: open.length,
+      totalCost,
+      symbols: [...new Set(open.map(t => t.symbol || t.id))].slice(0, 5)
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
 // Get recent alerts from alert-hub
 function getRecentAlerts(limit = 5) {
   const alertsPath = path.join(DEFI_TOOLS, 'alert-hub/data/alerts.json');
@@ -182,6 +199,7 @@ async function generateStatus(options = {}) {
     tokens: [],
     hyperliquid: null,
     positions: [],
+    paperTrades: null,
     alerts: [],
     signals: [],
     funding: []
@@ -200,6 +218,7 @@ async function generateStatus(options = {}) {
     status.hyperliquid = getHyperliquidData();
   }
   status.positions = getOpenPositions();
+  status.paperTrades = getPaperTradeSummary();
   status.alerts = getRecentAlerts();
   status.signals = getMomentumSignals();
   status.funding = getFundingRates();
@@ -268,6 +287,16 @@ async function generateStatus(options = {}) {
     });
   }
   console.log();
+
+  // Paper Trades Section
+  if (status.paperTrades && status.paperTrades.count > 0) {
+    console.log(c('cyan', '┌─ 📜 PAPER TRADES ────────────────────────────────────────┐'));
+    console.log(`  ${status.paperTrades.count} open paper positions`);
+    console.log(`  Cost basis: $${status.paperTrades.totalCost.toFixed(2)}`);
+    console.log(`  Tokens: ${status.paperTrades.symbols.join(', ')}`);
+    console.log(c('dim', '  Run: node paper-portfolio.js for P&L'));
+    console.log();
+  }
 
   // Alerts Section
   console.log(c('cyan', '┌─ 🔔 RECENT ALERTS ──────────────────────────────────────┐'));
