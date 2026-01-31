@@ -23,12 +23,14 @@ const AUTO_TRADE = {
   stopLoss: 0.15,          // 15% stop loss
 };
 
-// Config
+// Config (Updated 2026-01-31 after backtest showed -99% avg loss)
 const CONFIG = {
-  ALERT_RATIO: 1.8,        // Alert threshold
-  MIN_VOLUME_24H: 10000,   // Minimum $10k volume
-  MIN_LIQUIDITY: 50000,    // Minimum $50k liquidity
-  MIN_TRANSACTIONS: 5,     // Min transactions in window
+  ALERT_RATIO: 2.0,        // Alert threshold (raised from 1.8)
+  MIN_VOLUME_24H: 50000,   // Minimum $50k volume (raised from 10k)
+  MIN_LIQUIDITY: 100000,   // Minimum $100k liquidity (raised from 50k)
+  MIN_TRANSACTIONS: 20,    // Min transactions (raised from 5 - filter wash trading)
+  MIN_AGE_HOURS: 24,       // Token must be >24h old (NEW)
+  MAX_DROP_24H: -50,       // Reject if already down >50% (NEW)
   SCAN_INTERVAL: 300000,   // 5 minutes
   WATCHLIST: [
     // Known tokens to always check
@@ -112,13 +114,39 @@ function calculateRatio(txns, window = 'h1') {
   return { ratio: buys / sells, buys, sells };
 }
 
-// Check if token passes filters
+// Check if token passes filters (SAFETY CRITICAL)
 function passesFilters(pair) {
   if (!pair) return false;
+  
   const vol24 = pair.volume?.h24 || 0;
   const liq = pair.liquidity?.usd || 0;
+  const priceChange24h = pair.priceChange?.h24 || 0;
+  const pairAge = pair.pairCreatedAt ? Date.now() - pair.pairCreatedAt : 0;
+  const ageHours = pairAge / (1000 * 60 * 60);
   
-  return vol24 >= CONFIG.MIN_VOLUME_24H && liq >= CONFIG.MIN_LIQUIDITY;
+  // Basic volume/liquidity check
+  if (vol24 < CONFIG.MIN_VOLUME_24H) return false;
+  if (liq < CONFIG.MIN_LIQUIDITY) return false;
+  
+  // SAFETY: Token must be at least 24 hours old (rugpull filter)
+  if (ageHours < 24) {
+    // console.log(`  Filtered: ${pair.baseToken?.symbol} too young (${ageHours.toFixed(1)}h)`);
+    return false;
+  }
+  
+  // SAFETY: Reject tokens already down >50% in 24h (likely rugging)
+  if (priceChange24h < -50) {
+    // console.log(`  Filtered: ${pair.baseToken?.symbol} already crashed (${priceChange24h}%)`);
+    return false;
+  }
+  
+  // SAFETY: Require minimum liquidity for safer exit ($100k)
+  if (liq < 100000) {
+    // console.log(`  Filtered: ${pair.baseToken?.symbol} low liquidity ($${liq})`);
+    return false;
+  }
+  
+  return true;
 }
 
 // Analyze token for signals
