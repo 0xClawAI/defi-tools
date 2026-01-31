@@ -4,6 +4,35 @@ On-chain trading toolkit for AI agents. Momentum scanning, fresh token alerts, a
 
 ## Tools
 
+### Token Lookup (`token-lookup.js`)
+Quick research tool for any token - price, safety, ratios.
+
+```bash
+node token-lookup.js MOLTBOOK base     # By symbol
+node token-lookup.js 0x8c90...         # By address
+```
+
+**Shows:**
+- Price, volume, liquidity, FDV
+- Buy/sell ratios (m5/h1/h6/h24)
+- Safety score via GoPlusLabs (honeypot, holder distribution, LP lock)
+- Direct links to DEX and block explorer
+
+### Token Safety (`momentum-scanner/token-safety.js`)
+Standalone security analysis for any token.
+
+```bash
+node momentum-scanner/token-safety.js <address> [chain]
+```
+
+**Checks:**
+- Honeypot detection
+- Holder distribution
+- Liquidity lock status
+- Contract verification
+- Blacklist/hidden owner
+- Balance manipulation
+
 ### Momentum Scanner (`momentum-scanner/`)
 Scans DEXScreener for buy/sell ratio signals across Solana and Base.
 
@@ -13,7 +42,10 @@ node momentum-scanner/scanner.js --once
 
 **Features:**
 - Buy/sell pressure ratio analysis
-- Configurable alert thresholds (default >1.8x)
+- Configurable alert thresholds (2.0x+)
+- **Safety filtering** - Only alerts on tokens scoring 60+ on GoPlusLabs
+- Token age filter (>24h)
+- Holder concentration filter (<50% top holder)
 - Multi-chain support (Solana, Base)
 - JSON logging for pattern analysis
 
