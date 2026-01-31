@@ -39,11 +39,13 @@ function analyzeTrends(data) {
     const avgRatio = prices.reduce((a, p) => a + (p.buys / (p.sells || 1)), 0) / prices.length;
     
     // Simple momentum: price direction + buy/sell pressure
+    // UPDATED: Removed DIP_BUY signal (caused -74% paper losses)
     let signal = 'HOLD';
     if (priceChange > 2 && avgRatio > 1.3) signal = 'BULLISH';
     else if (priceChange < -2 && avgRatio < 0.8) signal = 'BEARISH';
     else if (priceChange > 0 && avgRatio > 1.2) signal = 'ACCUMULATING';
-    else if (priceChange < 0 && avgRatio > 1.2) signal = 'DIP_BUY';
+    // DIP_BUY removed - high ratio during downtrend is exit liquidity, not accumulation
+    // else if (priceChange < 0 && avgRatio > 1.2) signal = 'DIP_BUY';
     
     trends[sym] = {
       priceChange: parseFloat(priceChange),
@@ -62,7 +64,13 @@ function makePredictions(trends) {
   Object.entries(trends).forEach(([symbol, data]) => {
     // Skip disabled tokens
     if (DISABLED_TOKENS.includes(symbol)) return;
+    
+    // CRITICAL FIX: Only predict UP when price is ALREADY rising
+    // Lesson learned: High buy ratio during downtrend = exit liquidity, not accumulation
+    // See: .learnings/LEARNINGS.md "Trading Pattern Failure"
+    
     if (data.signal === 'BULLISH') {
+      // Price AND ratio both positive - safer signal
       predictions.push({
         symbol,
         prediction: 'UP',
@@ -71,16 +79,19 @@ function makePredictions(trends) {
         targetMove: '+5-10%',
         currentPrice: data.currentPrice
       });
-    } else if (data.signal === 'DIP_BUY') {
-      predictions.push({
-        symbol,
-        prediction: 'REVERSAL_UP',
-        confidence: 'low',
-        reason: `Down ${data.priceChange}% but ${data.avgBuySellRatio}x buy pressure`,
-        targetMove: 'bounce to breakeven',
-        currentPrice: data.currentPrice
-      });
-    } else if (data.signal === 'BEARISH') {
+    }
+    
+    // REMOVED: DIP_BUY signal - this was the main cause of -74% paper losses
+    // The "buy the dip" strategy failed 100% of the time during sustained downtrends
+    // Keeping this commented as a reminder:
+    // else if (data.signal === 'DIP_BUY') {
+    //   // DANGER: This predicted REVERSAL_UP during dumps, resulting in:
+    //   // - MOLTBOOK: -82% vs predicted reversal
+    //   // - LEPUS: -81% vs predicted reversal
+    //   // DO NOT UNCOMMENT unless trend validation is added
+    // }
+    
+    else if (data.signal === 'BEARISH') {
       predictions.push({
         symbol,
         prediction: 'DOWN',
