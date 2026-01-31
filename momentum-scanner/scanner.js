@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const { sendAlert } = require('./alerter');
+const { isTokenSafe, analyzeTokenSafety } = require('./token-safety');
 
 // Auto-trade config (small positions)
 const AUTO_TRADE = {
@@ -31,6 +32,9 @@ const CONFIG = {
   MIN_TRANSACTIONS: 20,    // Min transactions (raised from 5 - filter wash trading)
   MIN_AGE_HOURS: 24,       // Token must be >24h old (NEW)
   MAX_DROP_24H: -50,       // Reject if already down >50% (NEW)
+  MIN_SAFETY_SCORE: 60,    // Minimum GoPlusLabs safety score (NEW)
+  REQUIRE_LOCKED_LP: false, // Require locked liquidity (optional)
+  MAX_TOP_HOLDER_PCT: 50,  // Reject if top holder >50% (NEW)
   SCAN_INTERVAL: 300000,   // 5 minutes
   WATCHLIST: [
     // Known tokens to always check
@@ -215,18 +219,24 @@ function analyzeToken(pair, state) {
 
 // Format alert message
 function formatAlert(signal) {
+  const safetyLine = signal.safetyScore 
+    ? `Safety: ${signal.safetyScore}/100 ${signal.liquidityLocked ? '🔒' : '🔓'} | Holders: ${signal.holderCount?.toLocaleString() || '?'}`
+    : '';
+  
   if (signal.type === 'HIGH_RATIO') {
     return `🔥 HIGH RATIO: ${signal.token}
 Ratio: ${signal.ratio}x (${signal.buys}B/${signal.sells}S) [${signal.window}]
 Price: $${parseFloat(signal.price).toFixed(6)}
 Volume: $${Math.round(signal.volume24h).toLocaleString()}
 Liq: $${Math.round(signal.liquidity).toLocaleString()}
-Change: ${signal.priceChange?.toFixed(1)}%`;
+Change: ${signal.priceChange?.toFixed(1)}%
+${safetyLine}`;
   }
   if (signal.type === 'SUSTAINED_ACCUMULATION') {
     return `🎯 SUSTAINED ACCUMULATION: ${signal.token}
 Avg Ratio: ${signal.avgRatio}x over ${signal.periods} periods
-Price: $${parseFloat(signal.price).toFixed(6)}`;
+Price: $${parseFloat(signal.price).toFixed(6)}
+${safetyLine}`;
   }
   return JSON.stringify(signal);
 }
@@ -277,7 +287,48 @@ async function scan(state) {
     scanned.push(pair.baseToken?.symbol);
     const signals = analyzeToken(pair, state);
     
+    // Skip if no signals to check
+    if (signals.length === 0) continue;
+    
+    // === SAFETY CHECK (NEW) ===
+    // Only check tokens that have potential signals (saves API calls)
+    const safety = await analyzeTokenSafety(addr, chainId);
+    
+    // If we couldn't get safety data, be conservative
+    if (!safety || safety.score === undefined) {
+      console.log(`  ⚠️ ${pair.baseToken?.symbol}: No safety data - SKIPPED`);
+      continue;
+    }
+    
+    if (safety.score < CONFIG.MIN_SAFETY_SCORE) {
+      console.log(`  ❌ ${pair.baseToken?.symbol}: Safety score ${safety.score}/100 - REJECTED`);
+      if (safety.risks?.length > 0) {
+        console.log(`     Risks: ${safety.risks.slice(0, 3).join(', ')}`);
+      }
+      continue;
+    }
+    
+    // Check holder concentration
+    if (safety.details?.topHolderPercent > CONFIG.MAX_TOP_HOLDER_PCT) {
+      console.log(`  ❌ ${pair.baseToken?.symbol}: Top holder owns ${safety.details.topHolderPercent.toFixed(1)}% - REJECTED`);
+      continue;
+    }
+    
+    // Optional: require locked liquidity
+    if (CONFIG.REQUIRE_LOCKED_LP && !safety.details?.liquidityLocked) {
+      console.log(`  ❌ ${pair.baseToken?.symbol}: Liquidity not locked - REJECTED`);
+      continue;
+    }
+    
+    console.log(`  ✅ ${pair.baseToken?.symbol}: Safety ${safety.score}/100`);
+    
     for (const sig of signals) {
+      // Add safety info to signal
+      sig.safetyScore = safety.score;
+      sig.liquidityLocked = safety.details.liquidityLocked;
+      sig.holderCount = safety.details.holderCount;
+      sig.topHolderPct = safety.details.topHolderPercent;
+      
       alerts.push(sig);
       logAlert(sig);
       console.log('\n' + formatAlert(sig));

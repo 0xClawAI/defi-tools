@@ -72,3 +72,12 @@
 {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.66","token":"Epstein","address":"EF228ijSZdSampJMvhLUiijJGP5PTH1Z17i71JR5pump","price":"0.0005603","timestamp":"2026-01-31T20:50:02.579Z"}
 {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.70","token":"Epstein","address":"EF228ijSZdSampJMvhLUiijJGP5PTH1Z17i71JR5pump","price":"0.0005455","timestamp":"2026-01-31T20:55:02.275Z"}
 {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.74","token":"Epstein","address":"EF228ijSZdSampJMvhLUiijJGP5PTH1Z17i71JR5pump","price":"0.0006070","timestamp":"2026-01-31T21:00:02.262Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.52","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01263","timestamp":"2026-01-31T21:05:03.342Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.54","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01218","timestamp":"2026-01-31T21:10:02.753Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.56","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01230","timestamp":"2026-01-31T21:15:03.172Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.61","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01213","timestamp":"2026-01-31T21:20:03.613Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.65","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01176","timestamp":"2026-01-31T21:23:15.885Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.69","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01176","timestamp":"2026-01-31T21:23:30.904Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.71","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01178","timestamp":"2026-01-31T21:25:03.692Z"}
+{"type":"HIGH_RATIO","window":"h1","ratio":"3.78","buys":386,"sells":102,"token":"VDR","address":"VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg","price":"0.008862","volume24h":442530.11,"liquidity":308849,"priceChange":-0.4,"timestamp":"2026-01-31T21:30:03.574Z"}
+{"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.74","token":"WAR","address":"8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk","price":"0.01202","timestamp":"2026-01-31T21:35:03.375Z"}

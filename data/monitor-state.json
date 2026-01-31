@@ -596,8 +596,46 @@
           "type": "telegram"
         }
       ]
+    },
+    "solana:5f2KbZjnJEnPpW5JqY53mv2cDH7MLixUUgxCFnLBpump": {
+      "firstSeen": "2026-01-31T21:28:42.247Z",
+      "boosts": 500,
+      "description": "Greenland Silver Bank is a narrative-driven crypto project inspired by Greenland’s silver resources ",
+      "price": "0.0002401",
+      "fdv": 240121,
+      "socials": [
+        {
+          "url": "https://x.com/gsbonsol",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/pumperssquad",
+          "type": "telegram"
+        },
+        {
+          "url": "https://discord.com/invite/T3AsSSvpDP",
+          "type": "discord"
+        }
+      ]
+    },
+    "solana:4MTfiD3zN6myhMYMTMtHedyfiYhesRAXTU3JosLDpump": {
+      "firstSeen": "2026-01-31T21:28:42.290Z",
+      "boosts": 100,
+      "description": "ELEMENTARDIO is the ultimate META evolution on Solana — combining elemental power with the wild, unf",
+      "price": "0.0005078",
+      "fdv": 507865,
+      "socials": [
+        {
+          "url": "https://www.x.com/autardio",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/FSLPFlaunchgroup",
+          "type": "telegram"
+        }
+      ]
     }
   },
-  "lastCheck": "2026-01-31T20:54:47.127Z",
+  "lastCheck": "2026-01-31T21:28:42.336Z",
   "alerts": []
 }

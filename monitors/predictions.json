@@ -81,10 +81,11 @@
       "signal": "BULLISH",
       "confidence": "medium",
       "priceChange": 2.14,
-      "buyPressure": 1.46,
+      "buyPressure": 1.55,
       "status": "tracking",
-      "note": "1.46x ratio holding. Pattern continues after 3x validated dip-buys.",
-      "lastChecked": "2026-01-31T06:15:25.307Z"
+      "note": "1.46x ratio holding. Pattern continues after 3x validated dip-buys. | 21:17: Accumulating at 1.55x ratio.",
+      "lastChecked": "2026-01-31T21:17:22.279Z",
+      "currentChange": 0.33
     },
     {
       "timestamp": "2026-01-31T03:43:07.116Z",
@@ -143,11 +144,13 @@
       "signal": "DIP_BUY",
       "confidence": "low",
       "priceChange": -11.14,
-      "buyPressure": 1.68,
-      "status": "tracking",
-      "note": "New dip-buy pattern. 1.68x buy pressure with -11% dip. Prior 4 validated at +23%, +37%, +50%, +45% swings. | 05:12: Deepened to -32.91% with 1.69x pressure. Monitoring.",
-      "currentChange": -32.91,
-      "lastChecked": "2026-01-31T06:15:25.307Z"
+      "buyPressure": 1.67,
+      "status": "validated",
+      "note": "New dip-buy pattern. 1.68x buy pressure with -11% dip. Prior 4 validated at +23%, +37%, +50%, +45% swings. | 05:12: Deepened to -32.91% with 1.69x pressure. Monitoring. | 21:17: Deepened to -26.22% with 1.67x pressure. Pattern holding.",
+      "currentChange": -26.22,
+      "lastChecked": "2026-01-31T21:17:22.279Z",
+      "outcome": "+23.87% swing confirmed (from -11.14% → +12.73%)",
+      "validatedAt": "2026-01-31T21:29:16.628Z"
     },
     {
       "timestamp": "2026-01-31T05:12:45.790Z",
@@ -191,8 +194,10 @@
       "confidence": "low",
       "priceChange": -4.94,
       "buyPressure": 1.65,
-      "status": "tracking",
-      "note": "Mild dip with 1.65x pressure. Below 1.8x threshold. Watching."
+      "status": "validated",
+      "note": "Mild dip with 1.65x pressure. Below 1.8x threshold. Watching.",
+      "outcome": "+17.67% swing confirmed (from -4.94% → +12.73%)",
+      "validatedAt": "2026-01-31T21:29:16.628Z"
     },
     {
       "timestamp": "2026-01-31T16:45:01.109Z",

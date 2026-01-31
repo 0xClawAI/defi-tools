@@ -479,7 +479,55 @@
       ],
       "tier": "unscored",
       "notes": ""
+    },
+    "@gsbonsol": {
+      "handle": "@gsbonsol",
+      "firstSeen": "2026-01-31T21:28:43.674Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "UNKNOWN",
+          "chain": "solana",
+          "fdvAtDiscovery": 240121,
+          "priceAtDiscovery": "0.0002401",
+          "discoveredAt": "2026-01-31T21:28:43.674Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@rwan_officials": {
+      "handle": "@rwan_officials",
+      "firstSeen": "2026-01-31T21:28:46.026Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "RWAAN",
+          "chain": "bsc",
+          "fdvAtDiscovery": 2354707,
+          "priceAtDiscovery": "0.0002770",
+          "discoveredAt": "2026-01-31T21:28:46.026Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@frankie_lapenna": {
+      "handle": "@frankie_lapenna",
+      "firstSeen": "2026-01-31T21:28:46.518Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "GYAT",
+          "chain": "solana",
+          "fdvAtDiscovery": 469706,
+          "priceAtDiscovery": "0.0004697",
+          "discoveredAt": "2026-01-31T21:28:46.518Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
     }
   },
-  "lastUpdated": "2026-01-31T20:54:48.974Z"
+  "lastUpdated": "2026-01-31T21:28:46.789Z"
 }
