@@ -519,3 +519,10 @@
 [2026-01-31T20:55:05.394Z] {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.79","token":"BLUECHIP","address":"676k7xHRPBxEQ1NsjEKHBtGqRHr3gPev3JBje3VApump","price":"0.0007039"}
 [2026-01-31T20:55:07.630Z] {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.75","token":"AUTARDIO","address":"4MTfiD3zN6myhMYMTMtHedyfiYhesRAXTU3JosLDpump","price":"0.0004163"}
 [2026-01-31T20:55:08.372Z] {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.82","token":"Mountain","address":"GASfLqDbE8c9w8mjKknxaHeDMmdy9usGwM1GwzVJpump","price":"0.0002202"}
+[2026-01-31T21:00:02.261Z] {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.74","token":"Epstein","address":"EF228ijSZdSampJMvhLUiijJGP5PTH1Z17i71JR5pump","price":"0.0006070"}
+[2026-01-31T21:00:03.537Z] {"type":"HIGH_RATIO","window":"h1","ratio":"3.71","buys":312,"sells":84,"token":"VDR","address":"VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg","price":"0.008910","volume24h":436254.82,"liquidity":308996.51}
+[2026-01-31T21:00:03.564Z] {"type":"HIGH_RATIO","window":"h6","ratio":"4.54","buys":2644,"sells":583,"token":"VDR","address":"VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg","price":"0.008910","volume24h":436254.82,"liquidity":308996.51}
+[2026-01-31T21:00:03.564Z] {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"3.78","token":"VDR","address":"VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg","price":"0.008910"}
+[2026-01-31T21:00:05.202Z] {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.63","token":"BLUECHIP","address":"676k7xHRPBxEQ1NsjEKHBtGqRHr3gPev3JBje3VApump","price":"0.0007047"}
+[2026-01-31T21:00:07.776Z] {"type":"HIGH_RATIO","window":"h6","ratio":"1.82","buys":258,"sells":142,"token":"AUTARDIO","address":"4MTfiD3zN6myhMYMTMtHedyfiYhesRAXTU3JosLDpump","price":"0.0004246","volume24h":172074.97,"liquidity":55597.78,"priceChange":-5.88}
+[2026-01-31T21:00:07.777Z] {"type":"SUSTAINED_ACCUMULATION","periods":3,"avgRatio":"1.71","token":"AUTARDIO","address":"4MTfiD3zN6myhMYMTMtHedyfiYhesRAXTU3JosLDpump","price":"0.0004246"}

@@ -13,7 +13,12 @@ if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
 function loadTrades() {
   try {
-    return JSON.parse(fs.readFileSync(TRADES_FILE, 'utf8'));
+    const data = JSON.parse(fs.readFileSync(TRADES_FILE, 'utf8'));
+    // Ensure stats object exists (migrate old format)
+    if (!data.stats) {
+      data.stats = { totalPnL: 0, wins: 0, losses: 0 };
+    }
+    return data;
   } catch {
     return { trades: [], stats: { totalPnL: 0, wins: 0, losses: 0 } };
   }

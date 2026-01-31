@@ -3640,3 +3640,54 @@ Price: $0.000220
 ⏸️  Rate limited: Mountain
 
 ✅ Scanned 9 tokens, found 7 signals
+
+🔍 Momentum Scan - 2026-01-31T21:00:01.737Z
+Found 30 trending tokens on base, solana
+Scanning 31 unique tokens...
+
+🎯 SUSTAINED ACCUMULATION: Epstein
+Avg Ratio: 1.74x over 3 periods
+Price: $0.000607
+[SEND] 🚨 📈 Epstein: SUSTAINED_ACCUMULATION (undefinedx ratio)
+📨 Alert sent: SUSTAINED_ACCUMULATION - Epstein
+
+🔥 HIGH RATIO: VDR
+Ratio: 3.71x (312B/84S) [h1]
+Price: $0.008910
+Volume: $436,255
+Liq: $308,997
+Change: undefined%
+⏸️  Rate limited: VDR
+
+🔥 HIGH RATIO: VDR
+Ratio: 4.54x (2644B/583S) [h6]
+Price: $0.008910
+Volume: $436,255
+Liq: $308,997
+Change: undefined%
+⏸️  Rate limited: VDR
+
+🎯 SUSTAINED ACCUMULATION: VDR
+Avg Ratio: 3.78x over 3 periods
+Price: $0.008910
+⏸️  Rate limited: VDR
+
+🎯 SUSTAINED ACCUMULATION: BLUECHIP
+Avg Ratio: 1.63x over 3 periods
+Price: $0.000705
+⏸️  Rate limited: BLUECHIP
+
+🔥 HIGH RATIO: AUTARDIO
+Ratio: 1.82x (258B/142S) [h6]
+Price: $0.000425
+Volume: $172,075
+Liq: $55,598
+Change: -5.9%
+⏸️  Rate limited: AUTARDIO
+
+🎯 SUSTAINED ACCUMULATION: AUTARDIO
+Avg Ratio: 1.71x over 3 periods
+Price: $0.000425
+⏸️  Rate limited: AUTARDIO
+
+✅ Scanned 9 tokens, found 7 signals
