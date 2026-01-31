@@ -1,0 +1,288 @@
+#!/usr/bin/env node
+
+/**
+ * Status Board - Unified DeFi Status Dashboard
+ * 
+ * Aggregates:
+ * - Wallet balances (ETH + Base)
+ * - Open positions from trade journal
+ * - Recent alerts
+ * - Current market signals
+ * 
+ * Usage: node index.js [--json] [--compact]
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const DEFI_TOOLS = path.join(__dirname, '..');
+const WALLET_ADDRESS = '0xffA12D92098eB2b72B3c30B62f8da02BA4158c1e';
+
+// Colors for terminal output
+const colors = {
+  reset: '\x1b[0m',
+  bright: '\x1b[1m',
+  dim: '\x1b[2m',
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  blue: '\x1b[34m',
+  cyan: '\x1b[36m',
+  white: '\x1b[37m'
+};
+
+function c(color, text) {
+  return `${colors[color]}${text}${colors.reset}`;
+}
+
+// Get wallet balance from Base
+async function getWalletBalance() {
+  try {
+    const response = await fetch(
+      `https://base.blockscout.com/api/v2/addresses/${WALLET_ADDRESS}`
+    );
+    if (!response.ok) return null;
+    const data = await response.json();
+    const ethBalance = parseFloat(data.coin_balance) / 1e18;
+    return {
+      eth: ethBalance,
+      usd: ethBalance * 3200 // Rough ETH price estimate
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
+// Get token balances
+async function getTokenBalances() {
+  try {
+    const response = await fetch(
+      `https://base.blockscout.com/api/v2/addresses/${WALLET_ADDRESS}/tokens?type=ERC-20`
+    );
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data.items?.slice(0, 5).map(t => ({
+      symbol: t.token?.symbol || 'Unknown',
+      balance: parseFloat(t.value) / Math.pow(10, t.token?.decimals || 18),
+      name: t.token?.name || 'Unknown'
+    })) || [];
+  } catch (e) {
+    return [];
+  }
+}
+
+// Get open positions from trade journal
+function getOpenPositions() {
+  const journalPath = path.join(DEFI_TOOLS, 'trade-journal/data/trades.json');
+  try {
+    const data = JSON.parse(fs.readFileSync(journalPath, 'utf8'));
+    return data.filter(t => t.status === 'open').map(t => ({
+      symbol: t.symbol,
+      type: t.type,
+      entry: t.entryPrice,
+      size: t.size,
+      timestamp: t.timestamp,
+      pnl: t.unrealizedPnL || 0
+    }));
+  } catch (e) {
+    return [];
+  }
+}
+
+// Get recent alerts from alert-hub
+function getRecentAlerts(limit = 5) {
+  const alertsPath = path.join(DEFI_TOOLS, 'alert-hub/data/alerts.json');
+  try {
+    const data = JSON.parse(fs.readFileSync(alertsPath, 'utf8'));
+    return data.slice(-limit).reverse().map(a => ({
+      message: a.message,
+      source: a.source,
+      priority: a.priority,
+      timestamp: a.timestamp
+    }));
+  } catch (e) {
+    return [];
+  }
+}
+
+// Get latest momentum signals
+function getMomentumSignals() {
+  const signalsPath = path.join(DEFI_TOOLS, 'momentum-scanner/data/signals.json');
+  try {
+    const data = JSON.parse(fs.readFileSync(signalsPath, 'utf8'));
+    // Get signals from last hour
+    const oneHourAgo = Date.now() - 60 * 60 * 1000;
+    return data.filter(s => new Date(s.timestamp).getTime() > oneHourAgo)
+      .slice(-5)
+      .reverse();
+  } catch (e) {
+    return [];
+  }
+}
+
+// Get latest funding rates
+function getFundingRates() {
+  const fundingPath = path.join(DEFI_TOOLS, 'funding-scanner/data/rates.json');
+  try {
+    const data = JSON.parse(fs.readFileSync(fundingPath, 'utf8'));
+    // Return top 3 extreme funding rates
+    const rates = Object.entries(data)
+      .map(([symbol, rate]) => ({ symbol, rate: rate.annualized || rate }))
+      .filter(r => Math.abs(r.rate) > 20)
+      .sort((a, b) => Math.abs(b.rate) - Math.abs(a.rate))
+      .slice(0, 3);
+    return rates;
+  } catch (e) {
+    return [];
+  }
+}
+
+// Format time ago
+function timeAgo(timestamp) {
+  const diff = Date.now() - new Date(timestamp).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  return `${Math.floor(hours / 24)}d ago`;
+}
+
+// Main status report
+async function generateStatus(options = {}) {
+  const status = {
+    timestamp: new Date().toISOString(),
+    wallet: null,
+    tokens: [],
+    positions: [],
+    alerts: [],
+    signals: [],
+    funding: []
+  };
+
+  // Fetch all data in parallel
+  const [balance, tokens] = await Promise.all([
+    getWalletBalance(),
+    getTokenBalances()
+  ]);
+
+  status.wallet = balance;
+  status.tokens = tokens;
+  status.positions = getOpenPositions();
+  status.alerts = getRecentAlerts();
+  status.signals = getMomentumSignals();
+  status.funding = getFundingRates();
+
+  if (options.json) {
+    console.log(JSON.stringify(status, null, 2));
+    return status;
+  }
+
+  // Pretty print
+  console.log();
+  console.log(c('bright', '═══════════════════════════════════════════════════════════'));
+  console.log(c('bright', '                    📊 DEFI STATUS BOARD'));
+  console.log(c('bright', '═══════════════════════════════════════════════════════════'));
+  console.log(c('dim', `  ${new Date().toLocaleString()}`));
+  console.log();
+
+  // Wallet Section
+  console.log(c('cyan', '┌─ 💰 WALLET ─────────────────────────────────────────────┐'));
+  if (status.wallet) {
+    console.log(`  ETH Balance: ${c('green', status.wallet.eth.toFixed(6))} ETH (~$${status.wallet.usd.toFixed(2)})`);
+  } else {
+    console.log(c('yellow', '  Unable to fetch wallet balance'));
+  }
+  
+  if (status.tokens.length > 0) {
+    console.log(c('dim', '  Tokens:'));
+    status.tokens.forEach(t => {
+      const balanceStr = t.balance > 1000 ? t.balance.toFixed(0) : t.balance.toFixed(4);
+      console.log(`    ${t.symbol}: ${balanceStr}`);
+    });
+  }
+  console.log();
+
+  // Positions Section
+  console.log(c('cyan', '┌─ 📈 OPEN POSITIONS ─────────────────────────────────────┐'));
+  if (status.positions.length === 0) {
+    console.log(c('dim', '  No open positions'));
+  } else {
+    status.positions.forEach(p => {
+      const typeColor = p.type === 'long' ? 'green' : 'red';
+      const pnlColor = p.pnl >= 0 ? 'green' : 'red';
+      console.log(`  ${c(typeColor, p.type.toUpperCase())} ${p.symbol} @ ${p.entry} | P&L: ${c(pnlColor, p.pnl.toFixed(2) + '%')}`);
+    });
+  }
+  console.log();
+
+  // Alerts Section
+  console.log(c('cyan', '┌─ 🔔 RECENT ALERTS ──────────────────────────────────────┐'));
+  if (status.alerts.length === 0) {
+    console.log(c('dim', '  No recent alerts'));
+  } else {
+    status.alerts.forEach(a => {
+      const priorityIcon = a.priority === 'high' ? '🔴' : a.priority === 'medium' ? '🟡' : '🟢';
+      const msg = a.message.length > 50 ? a.message.substring(0, 47) + '...' : a.message;
+      console.log(`  ${priorityIcon} ${msg}`);
+      console.log(c('dim', `     ${a.source} • ${timeAgo(a.timestamp)}`));
+    });
+  }
+  console.log();
+
+  // Signals Section
+  console.log(c('cyan', '┌─ 📡 ACTIVE SIGNALS ─────────────────────────────────────┐'));
+  if (status.signals.length === 0) {
+    console.log(c('dim', '  No active signals in last hour'));
+  } else {
+    status.signals.forEach(s => {
+      const direction = s.direction || s.signal;
+      const dirColor = direction === 'bullish' || direction === 'buy' ? 'green' : 'red';
+      console.log(`  ${c(dirColor, '●')} ${s.symbol}: ${s.reason || direction} | Confidence: ${s.confidence || 'N/A'}`);
+    });
+  }
+  console.log();
+
+  // Funding Section
+  if (status.funding.length > 0) {
+    console.log(c('cyan', '┌─ 💸 EXTREME FUNDING ────────────────────────────────────┐'));
+    status.funding.forEach(f => {
+      const rateColor = f.rate > 0 ? 'red' : 'green';
+      const direction = f.rate > 0 ? 'longs pay' : 'shorts pay';
+      console.log(`  ${f.symbol}: ${c(rateColor, f.rate.toFixed(1) + '%')} APR (${direction})`);
+    });
+    console.log();
+  }
+
+  console.log(c('bright', '═══════════════════════════════════════════════════════════'));
+  console.log();
+
+  return status;
+}
+
+// CLI
+const args = process.argv.slice(2);
+const options = {
+  json: args.includes('--json'),
+  compact: args.includes('--compact')
+};
+
+if (args.includes('--help') || args.includes('-h')) {
+  console.log(`
+Status Board - Unified DeFi Status Dashboard
+
+Usage: node index.js [options]
+
+Options:
+  --json      Output as JSON
+  --compact   Compact output (fewer details)
+  --help, -h  Show this help
+
+Examples:
+  node index.js              # Full status dashboard
+  node index.js --json       # JSON output for scripts
+`);
+  process.exit(0);
+}
+
+generateStatus(options);
