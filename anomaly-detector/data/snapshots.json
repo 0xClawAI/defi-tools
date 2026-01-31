@@ -1,0 +1,162 @@
+{
+  "base:0x1B5E07d4d2f753fA2f7f1940A00e2273C19ecB07": {
+    "chainId": "base",
+    "dexId": "uniswap",
+    "url": "https://dexscreener.com/base/0xb1bdb8d056a753d39aa35bbf7d250f512ff88c4b9098265f8ba3013ea1feda82",
+    "pairAddress": "0xb1bdb8d056a753d39aa35bbf7d250f512ff88c4b9098265f8ba3013ea1feda82",
+    "labels": [
+      "v4"
+    ],
+    "baseToken": {
+      "address": "0x1B5E07d4d2f753fA2f7f1940A00e2273C19ecB07",
+      "name": "Molt Road",
+      "symbol": "MoltRoad"
+    },
+    "quoteToken": {
+      "address": "0x4200000000000000000000000000000000000006",
+      "name": "Wrapped Ether",
+      "symbol": "WETH"
+    },
+    "priceNative": "0.0000000006004",
+    "priceUsd": "0.000001521",
+    "txns": {
+      "m5": {
+        "buys": 9,
+        "sells": 11
+      },
+      "h1": {
+        "buys": 124,
+        "sells": 274
+      },
+      "h6": {
+        "buys": 1919,
+        "sells": 4296
+      },
+      "h24": {
+        "buys": 1919,
+        "sells": 4296
+      }
+    },
+    "volume": {
+      "h24": 926004.7,
+      "h6": 926004.7,
+      "h1": 58274.9,
+      "m5": 4461.4
+    },
+    "priceChange": {
+      "m5": 6.28,
+      "h1": 87.4,
+      "h6": 451,
+      "h24": 451
+    },
+    "liquidity": {
+      "usd": 107164.18,
+      "base": 43639349551,
+      "quote": 16.08205
+    },
+    "fdv": 152177,
+    "marketCap": 152177,
+    "pairCreatedAt": 1769854789000,
+    "info": {
+      "imageUrl": "https://cdn.dexscreener.com/cms/images/83877aa7950408a3e5d7d792b6ff97c9d414d07b8248cf6b6694feb40e21148b?width=800&height=800&quality=90",
+      "header": "https://cdn.dexscreener.com/cms/images/376c5a847af52ed3c940984c97104adcf4b2d6c5a9583cc5701c9b2566ba8215?width=1500&height=500&quality=90",
+      "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x1b5e07d4d2f753fa2f7f1940a00e2273c19ecb07?timestamp=1769875200000",
+      "websites": [
+        {
+          "url": "https://moltroad.com/",
+          "label": "Website"
+        }
+      ],
+      "socials": [
+        {
+          "url": "https://x.com/moltroad/status/2017455844489576710",
+          "type": "twitter"
+        }
+      ]
+    },
+    "boosts": {
+      "active": 100
+    },
+    "lastChecked": "2026-01-31T16:01:04.348Z"
+  },
+  "base:0xb25404cF350408CbaaDed7bace21FB93a7e9aB07": {
+    "chainId": "base",
+    "dexId": "uniswap",
+    "url": "https://dexscreener.com/base/0x588813c5c43cc08bb1091c4763143d2d6c543349dbcd2a50c535f0798e048b2b",
+    "pairAddress": "0x588813c5c43cc08bb1091c4763143d2d6c543349dbcd2a50c535f0798e048b2b",
+    "labels": [
+      "v4"
+    ],
+    "baseToken": {
+      "address": "0xb25404cF350408CbaaDed7bace21FB93a7e9aB07",
+      "name": "CLAWK",
+      "symbol": "CLAWK"
+    },
+    "quoteToken": {
+      "address": "0x4200000000000000000000000000000000000006",
+      "name": "Wrapped Ether",
+      "symbol": "WETH"
+    },
+    "priceNative": "0.000000001759",
+    "priceUsd": "0.000004459",
+    "txns": {
+      "m5": {
+        "buys": 14,
+        "sells": 16
+      },
+      "h1": {
+        "buys": 108,
+        "sells": 308
+      },
+      "h6": {
+        "buys": 1453,
+        "sells": 3403
+      },
+      "h24": {
+        "buys": 6129,
+        "sells": 13853
+      }
+    },
+    "volume": {
+      "h24": 4596200.61,
+      "h6": 1035301.24,
+      "h1": 69247.47,
+      "m5": 8660.39
+    },
+    "priceChange": {
+      "m5": 9.54,
+      "h1": -5.04,
+      "h6": -65,
+      "h24": 1319
+    },
+    "liquidity": {
+      "usd": 229087.59,
+      "base": 28175130368,
+      "quote": 40.8199
+    },
+    "fdv": 445931,
+    "marketCap": 445931,
+    "pairCreatedAt": 1769835381000,
+    "info": {
+      "imageUrl": "https://cdn.dexscreener.com/cms/images/61b610df182644e80bc8ad5e7853126ef43a29d88476c5165e740482b357bbe8?width=800&height=800&quality=90",
+      "header": "https://cdn.dexscreener.com/cms/images/00d94ca90f7f15ba2efa5c9695d26f11eb52fb4eec9d771b51c39b384166a055?width=1500&height=500&quality=90",
+      "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0xb25404cf350408cbaaded7bace21fb93a7e9ab07?timestamp=1769875200000",
+      "websites": [
+        {
+          "url": "https://www.clawk.ai/",
+          "label": "Website"
+        }
+      ],
+      "socials": [
+        {
+          "url": "https://x.com/clawk_ai",
+          "type": "twitter"
+        }
+      ]
+    },
+    "boosts": {
+      "active": 50
+    },
+    "lastChecked": "2026-01-31T16:01:04.815Z"
+  }
+}
