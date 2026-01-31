@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * Moltbook Registration Watcher v2.0
+ * Moltbook Registration Watcher v2.1
  * 
  * Alpha insight: New agents appear on Moltbook before Twitter announcements.
  * Watch for new agent names in posts/comments to detect early activity.
  * 
- * Approach: Track unique agent names from /posts feed, alert on new ones.
+ * v2.1: Added robust timeout/retry logic for slow API
  */
 
 const fs = require('fs');
@@ -26,11 +26,55 @@ const CONFIG = {
   
   POLL_INTERVAL_MS: 300000,  // 5 minutes
   
+  // Timeout/Retry
+  REQUEST_TIMEOUT_MS: 15000,  // 15 second timeout per request
+  MAX_RETRIES: 3,
+  RETRY_DELAY_MS: 2000,  // Start with 2s, exponential backoff
+  
   // Paths
   DATA_DIR: path.join(__dirname, 'data'),
   SEEN_FILE: path.join(__dirname, 'data', 'seen-agents.json'),
   LOG_FILE: path.join(__dirname, 'data', 'new-agents.jsonl'),
 };
+
+// Fetch with timeout and retry
+async function fetchWithRetry(url, options = {}, retries = CONFIG.MAX_RETRIES) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), CONFIG.REQUEST_TIMEOUT_MS);
+    
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      clearTimeout(timeoutId);
+      
+      const isTimeout = error.name === 'AbortError';
+      const isNetworkError = error.code === 'ECONNRESET' || error.code === 'ENOTFOUND';
+      
+      console.log(`  Attempt ${attempt}/${retries} failed: ${isTimeout ? 'timeout' : error.message}`);
+      
+      if (attempt < retries) {
+        const delay = CONFIG.RETRY_DELAY_MS * Math.pow(2, attempt - 1);
+        console.log(`  Retrying in ${delay / 1000}s...`);
+        await new Promise(r => setTimeout(r, delay));
+      } else {
+        console.log(`  All ${retries} attempts failed`);
+        return null;
+      }
+    }
+  }
+  return null;
+}
 
 // Track seen agents
 function loadSeen() {
@@ -53,43 +97,35 @@ function saveSeen(data) {
 
 // Fetch recent posts (which include author info)
 async function fetchRecentPosts() {
-  try {
-    const response = await fetch(`${CONFIG.MOLTBOOK_API}/posts?sort=new&limit=50`, {
+  const data = await fetchWithRetry(
+    `${CONFIG.MOLTBOOK_API}/posts?sort=new&limit=50`,
+    {
       headers: {
         'Authorization': `Bearer ${CONFIG.API_KEY}`,
         'Content-Type': 'application/json',
       },
-    });
-    
-    if (!response.ok) {
-      console.log(`  Posts API returned ${response.status}`);
-      return [];
     }
-    
-    const data = await response.json();
-    return data.posts || data.data || [];
-  } catch (error) {
-    console.error('  Fetch error:', error.message);
-    return [];
-  }
+  );
+  
+  if (!data) return [];
+  return data.posts || data.data || [];
 }
 
 // Fetch agent profile details
 async function fetchAgentProfile(name) {
-  try {
-    const response = await fetch(`${CONFIG.MOLTBOOK_API}/agents/profile?name=${encodeURIComponent(name)}`, {
+  const data = await fetchWithRetry(
+    `${CONFIG.MOLTBOOK_API}/agents/profile?name=${encodeURIComponent(name)}`,
+    {
       headers: {
         'Authorization': `Bearer ${CONFIG.API_KEY}`,
         'Content-Type': 'application/json',
       },
-    });
-    
-    if (!response.ok) return null;
-    const data = await response.json();
-    return data.agent || data;
-  } catch (error) {
-    return null;
-  }
+    },
+    2  // Fewer retries for profile fetches
+  );
+  
+  if (!data) return null;
+  return data.agent || data;
 }
 
 // Extract unique agent names from posts
@@ -121,7 +157,7 @@ async function alertNewAgent(agent, profile) {
   const msg = `🆕 New Moltbook agent: ${agent.name}` +
     (human ? ` (human: @${human})` : '') +
     ` - Karma: ${karma}` +
-    `\nFirst post: "${agent.postTitle?.substring(0, 50)}..."`;
+    `\nFirst post: "${agent.postTitle?.substring(0, 50) || 'N/A'}..."`;
   
   console.log(msg);
   console.log('');
@@ -155,7 +191,13 @@ async function scanOnce() {
   
   // Fetch recent posts
   const posts = await fetchRecentPosts();
-  console.log(`  Fetched ${posts.length} recent posts`);
+  
+  if (posts.length === 0) {
+    console.log('  ⚠️ API returned no posts (may be slow/down)');
+    return [];
+  }
+  
+  console.log(`  ✓ Fetched ${posts.length} recent posts`);
   
   // Extract unique agent names
   const postsAgents = extractAgents(posts);
@@ -180,7 +222,7 @@ async function scanOnce() {
     await alertNewAgent(agent, profile);
     
     // Small delay between profile fetches
-    await new Promise(r => setTimeout(r, 200));
+    await new Promise(r => setTimeout(r, 500));
   }
   
   saveSeen(state);
@@ -188,8 +230,10 @@ async function scanOnce() {
 }
 
 async function runLoop() {
-  console.log('🔍 Moltbook Agent Watcher Starting...');
+  console.log('🔍 Moltbook Agent Watcher v2.1 Starting...');
   console.log(`Poll interval: ${CONFIG.POLL_INTERVAL_MS / 1000 / 60} minutes`);
+  console.log(`Request timeout: ${CONFIG.REQUEST_TIMEOUT_MS / 1000}s`);
+  console.log(`Max retries: ${CONFIG.MAX_RETRIES}`);
   console.log(`API: ${CONFIG.MOLTBOOK_API}`);
   console.log('');
   
@@ -229,6 +273,32 @@ function showStats() {
   }
 }
 
+// Test API connectivity
+async function testApi() {
+  console.log('🧪 Testing Moltbook API connectivity...\n');
+  
+  console.log('1. Testing posts endpoint...');
+  const posts = await fetchRecentPosts();
+  
+  if (posts.length > 0) {
+    console.log(`   ✓ Success! Got ${posts.length} posts`);
+    console.log(`   Sample: "${posts[0].title?.substring(0, 50)}..."`);
+  } else {
+    console.log('   ✗ Failed - no posts returned');
+  }
+  
+  console.log('\n2. Testing profile endpoint...');
+  const profile = await fetchAgentProfile('0xClaw');
+  
+  if (profile) {
+    console.log(`   ✓ Success! Profile found: ${profile.name || 'N/A'}`);
+  } else {
+    console.log('   ✗ Failed - profile not found');
+  }
+  
+  console.log('\nAPI test complete.');
+}
+
 // CLI
 const args = process.argv.slice(2);
 const command = args[0] || 'scan';
@@ -254,15 +324,24 @@ if (!fs.existsSync(CONFIG.DATA_DIR)) {
     case 'stats':
       showStats();
       break;
+    case 'test':
+      await testApi();
+      break;
     default:
       console.log(`
-Moltbook Agent Watcher v2.0
+Moltbook Agent Watcher v2.1
 
 Usage:
   node watcher.js scan      Single scan for new agents
   node watcher.js loop      Continuous monitoring
   node watcher.js history   Show recently detected agents
   node watcher.js stats     Show watcher statistics
+  node watcher.js test      Test API connectivity
+
+Features:
+  - 15s request timeout
+  - Exponential backoff retry (up to 3 attempts)
+  - Graceful degradation on API failures
 
 Detects new agents by watching who posts on Moltbook.
 New agent activity often precedes Twitter announcements.
