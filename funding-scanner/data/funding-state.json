@@ -1,0 +1,468 @@
+{
+  "timestamp": "2026-01-31T15:28:40.352Z",
+  "opportunities": [
+    {
+      "coin": "0G",
+      "index": 210,
+      "funding": {
+        "hourly": -0.001057171,
+        "daily": -0.025372104,
+        "annualized": -9.26081796,
+        "hourlyPct": "-0.1057%",
+        "annualizedPct": "-926.1%"
+      },
+      "price": 0.71871,
+      "openInterest": 1124796.96162,
+      "volume24h": 1471566.9143399997,
+      "maxLeverage": 3,
+      "isExtreme": true,
+      "isAlert": true
+    },
+    {
+      "coin": "TRX",
+      "index": 37,
+      "funding": {
+        "hourly": -0.0002349744,
+        "daily": -0.0056393856,
+        "annualized": -2.0583757439999997,
+        "hourlyPct": "-0.0235%",
+        "annualizedPct": "-205.8%"
+      },
+      "price": 0.28692,
+      "openInterest": 8542759.52304,
+      "volume24h": 1451900.1552700002,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "TRUMP",
+      "index": 174,
+      "funding": {
+        "hourly": -0.0002309346,
+        "daily": -0.0055424304,
+        "annualized": -2.022987096,
+        "hourlyPct": "-0.0231%",
+        "annualizedPct": "-202.3%"
+      },
+      "price": 4.3506,
+      "openInterest": 10634336.03268,
+      "volume24h": 3352492.7429599985,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "AXS",
+      "index": 225,
+      "funding": {
+        "hourly": -0.0002040813,
+        "daily": -0.0048979512,
+        "annualized": -1.787752188,
+        "hourlyPct": "-0.0204%",
+        "annualizedPct": "-178.8%"
+      },
+      "price": 1.9085,
+      "openInterest": 3604235.4578999993,
+      "volume24h": 4240911.565970002,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "BERA",
+      "index": 180,
+      "funding": {
+        "hourly": -0.0001423665,
+        "daily": -0.003416796,
+        "annualized": -1.2471305400000001,
+        "hourlyPct": "-0.0142%",
+        "annualizedPct": "-124.7%"
+      },
+      "price": 0.51431,
+      "openInterest": 3405524.5459860004,
+      "volume24h": 1680766.705848,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "MORPHO",
+      "index": 173,
+      "funding": {
+        "hourly": -0.0001089266,
+        "daily": -0.0026142383999999998,
+        "annualized": -0.954197016,
+        "hourlyPct": "-0.0109%",
+        "annualizedPct": "-95.4%"
+      },
+      "price": 1.1622,
+      "openInterest": 2956625.41044,
+      "volume24h": 569826.75347,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "POPCAT",
+      "index": 128,
+      "funding": {
+        "hourly": -0.0000877071,
+        "daily": -0.0021049704,
+        "annualized": -0.768314196,
+        "hourlyPct": "-0.0088%",
+        "annualizedPct": "-76.8%"
+      },
+      "price": 0.05894,
+      "openInterest": 827819.13704,
+      "volume24h": 1358712.313647,
+      "maxLeverage": 3,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "STRK",
+      "index": 113,
+      "funding": {
+        "hourly": -0.0000775559,
+        "daily": -0.0018613415999999999,
+        "annualized": -0.679389684,
+        "hourlyPct": "-0.0078%",
+        "annualizedPct": "-67.9%"
+      },
+      "price": 0.0573,
+      "openInterest": 3236709.09954,
+      "volume24h": 899117.5760519999,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "SOL",
+      "index": 5,
+      "funding": {
+        "hourly": -0.0000760144,
+        "daily": -0.0018243456,
+        "annualized": -0.665886144,
+        "hourlyPct": "-0.0076%",
+        "annualizedPct": "-66.6%"
+      },
+      "price": 109.02,
+      "openInterest": 553180610.3687989,
+      "volume24h": 560086398.6830988,
+      "maxLeverage": 20,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "DOT",
+      "index": 48,
+      "funding": {
+        "hourly": -0.000069536,
+        "daily": -0.0016688640000000002,
+        "annualized": -0.60913536,
+        "hourlyPct": "-0.0070%",
+        "annualizedPct": "-60.9%"
+      },
+      "price": 1.5809,
+      "openInterest": 6439611.8170599975,
+      "volume24h": 1803148.1435099994,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "EIGEN",
+      "index": 130,
+      "funding": {
+        "hourly": -0.0000665634,
+        "daily": -0.0015975216,
+        "annualized": -0.5830953839999999,
+        "hourlyPct": "-0.0067%",
+        "annualizedPct": "-58.3%"
+      },
+      "price": 0.2657,
+      "openInterest": 2035415.186678,
+      "volume24h": 1312782.2478810002,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "WLD",
+      "index": 31,
+      "funding": {
+        "hourly": -0.0000615996,
+        "daily": -0.0014783904000000001,
+        "annualized": -0.539612496,
+        "hourlyPct": "-0.0062%",
+        "annualizedPct": "-54.0%"
+      },
+      "price": 0.41911,
+      "openInterest": 6222669.7570859995,
+      "volume24h": 5285952.233112003,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "TAO",
+      "index": 116,
+      "funding": {
+        "hourly": -0.0000587058,
+        "daily": -0.0014089392000000002,
+        "annualized": -0.514262808,
+        "hourlyPct": "-0.0059%",
+        "annualizedPct": "-51.4%"
+      },
+      "price": 198.17,
+      "openInterest": 10362038.599779999,
+      "volume24h": 3894073.4074500008,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "FOGO",
+      "index": 222,
+      "funding": {
+        "hourly": -0.0000549614,
+        "daily": -0.0013190736,
+        "annualized": -0.481461864,
+        "hourlyPct": "-0.0055%",
+        "annualizedPct": "-48.1%"
+      },
+      "price": 0.035244,
+      "openInterest": 1383450.4244879999,
+      "volume24h": 571863.6653560001,
+      "maxLeverage": 3,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "OP",
+      "index": 9,
+      "funding": {
+        "hourly": -0.0000515657,
+        "daily": -0.0012375768,
+        "annualized": -0.45171553200000003,
+        "hourlyPct": "-0.0052%",
+        "annualizedPct": "-45.2%"
+      },
+      "price": 0.24026,
+      "openInterest": 3621109.7276959997,
+      "volume24h": 648540.3442669999,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "CAKE",
+      "index": 99,
+      "funding": {
+        "hourly": -0.0000461362,
+        "daily": -0.0011072688,
+        "annualized": -0.40415311200000004,
+        "hourlyPct": "-0.0046%",
+        "annualizedPct": "-40.4%"
+      },
+      "price": 1.5418,
+      "openInterest": 1106566.2030800001,
+      "volume24h": 505983.95704,
+      "maxLeverage": 3,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "PNUT",
+      "index": 153,
+      "funding": {
+        "hourly": -0.0000447045,
+        "daily": -0.001072908,
+        "annualized": -0.39161142,
+        "hourlyPct": "-0.0045%",
+        "annualizedPct": "-39.2%"
+      },
+      "price": 0.059,
+      "openInterest": 623766.1484,
+      "volume24h": 635468.9092749999,
+      "maxLeverage": 3,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "ATOM",
+      "index": 2,
+      "funding": {
+        "hourly": -0.0000434317,
+        "daily": -0.0010423608,
+        "annualized": -0.380461692,
+        "hourlyPct": "-0.0043%",
+        "annualizedPct": "-38.0%"
+      },
+      "price": 1.9886,
+      "openInterest": 3512031.85836,
+      "volume24h": 591053.2103629998,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "kSHIB",
+      "index": 38,
+      "funding": {
+        "hourly": -0.0000431335,
+        "daily": -0.001035204,
+        "annualized": -0.37784946,
+        "hourlyPct": "-0.0043%",
+        "annualizedPct": "-37.8%"
+      },
+      "price": 0.006851,
+      "openInterest": 2859858.448044,
+      "volume24h": 1529060.7029140003,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": false
+    },
+    {
+      "coin": "ICP",
+      "index": 219,
+      "funding": {
+        "hourly": -0.0000381406,
+        "daily": -0.0009153744,
+        "annualized": -0.334111656,
+        "hourlyPct": "-0.0038%",
+        "annualizedPct": "-33.4%"
+      },
+      "price": 2.8028,
+      "openInterest": 2053276.3451199997,
+      "volume24h": 832360.5506300001,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": false
+    }
+  ],
+  "alerts": [
+    {
+      "coin": "0G",
+      "index": 210,
+      "funding": {
+        "hourly": -0.001057171,
+        "daily": -0.025372104,
+        "annualized": -9.26081796,
+        "hourlyPct": "-0.1057%",
+        "annualizedPct": "-926.1%"
+      },
+      "price": 0.71871,
+      "openInterest": 1124796.96162,
+      "volume24h": 1471566.9143399997,
+      "maxLeverage": 3,
+      "isExtreme": true,
+      "isAlert": true
+    },
+    {
+      "coin": "TRX",
+      "index": 37,
+      "funding": {
+        "hourly": -0.0002349744,
+        "daily": -0.0056393856,
+        "annualized": -2.0583757439999997,
+        "hourlyPct": "-0.0235%",
+        "annualizedPct": "-205.8%"
+      },
+      "price": 0.28692,
+      "openInterest": 8542759.52304,
+      "volume24h": 1451900.1552700002,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "TRUMP",
+      "index": 174,
+      "funding": {
+        "hourly": -0.0002309346,
+        "daily": -0.0055424304,
+        "annualized": -2.022987096,
+        "hourlyPct": "-0.0231%",
+        "annualizedPct": "-202.3%"
+      },
+      "price": 4.3506,
+      "openInterest": 10634336.03268,
+      "volume24h": 3352492.7429599985,
+      "maxLeverage": 10,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "AXS",
+      "index": 225,
+      "funding": {
+        "hourly": -0.0002040813,
+        "daily": -0.0048979512,
+        "annualized": -1.787752188,
+        "hourlyPct": "-0.0204%",
+        "annualizedPct": "-178.8%"
+      },
+      "price": 1.9085,
+      "openInterest": 3604235.4578999993,
+      "volume24h": 4240911.565970002,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "BERA",
+      "index": 180,
+      "funding": {
+        "hourly": -0.0001423665,
+        "daily": -0.003416796,
+        "annualized": -1.2471305400000001,
+        "hourlyPct": "-0.0142%",
+        "annualizedPct": "-124.7%"
+      },
+      "price": 0.51431,
+      "openInterest": 3405524.5459860004,
+      "volume24h": 1680766.705848,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": true
+    },
+    {
+      "coin": "MORPHO",
+      "index": 173,
+      "funding": {
+        "hourly": -0.0001089266,
+        "daily": -0.0026142383999999998,
+        "annualized": -0.954197016,
+        "hourlyPct": "-0.0109%",
+        "annualizedPct": "-95.4%"
+      },
+      "price": 1.1622,
+      "openInterest": 2956625.41044,
+      "volume24h": 569826.75347,
+      "maxLeverage": 5,
+      "isExtreme": false,
+      "isAlert": true
+    }
+  ],
+  "extreme": [
+    {
+      "coin": "0G",
+      "index": 210,
+      "funding": {
+        "hourly": -0.001057171,
+        "daily": -0.025372104,
+        "annualized": -9.26081796,
+        "hourlyPct": "-0.1057%",
+        "annualizedPct": "-926.1%"
+      },
+      "price": 0.71871,
+      "openInterest": 1124796.96162,
+      "volume24h": 1471566.9143399997,
+      "maxLeverage": 3,
+      "isExtreme": true,
+      "isAlert": true
+    }
+  ]
+}
