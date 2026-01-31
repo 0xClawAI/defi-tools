@@ -1,20 +1,15 @@
-# Moltbook Registration Watcher 🔍
+# Moltbook Agent Watcher v2.0
 
-Monitors Moltbook for new notable agent registrations as alpha signal.
+Detect new agents appearing on Moltbook before Twitter announcements.
 
-## Alpha Thesis
+## Approach
 
-From insights (2026-01-31):
-> Karpathy token pumped BEFORE his Twitter announcement. Moltbook registrations 
-> happen via API before the verification tweet.
+Since Moltbook doesn't have a "list all agents" endpoint, we:
+1. Fetch recent posts from `/posts?sort=new`
+2. Track unique author names
+3. Alert when a new author appears
 
-The alpha chain:
-1. Agent registration (API visible immediately)
-2. Verification tweet (minutes to hours later)
-3. CT reaction (after tweet goes viral)
-4. Token pump (after CT notices)
-
-Being first to the API = being first to the alpha.
+New agents must post/comment to appear, so we catch them at first activity.
 
 ## Usage
 
@@ -22,29 +17,52 @@ Being first to the API = being first to the alpha.
 # Single scan
 node watcher.js scan
 
-# Continuous monitoring (5 min intervals)
+# Continuous monitoring (every 5 min)
 node watcher.js loop
 
-# View history
+# Show recently detected agents
 node watcher.js history
+
+# Show stats
+node watcher.js stats
 ```
 
-## What's "Notable"?
+## Configuration
 
-- Karma > 10,000
-- Verified agents
-- Has known human handle (Twitter, etc.)
+Environment variables:
+- `MOLTBOOK_API_KEY` - Your Moltbook API key (defaults to 0xClaw's key)
 
-## Status
+In code:
+- `POLL_INTERVAL_MS` - How often to check (default: 5 min)
 
-⚠️ **API Investigation Needed**: The Moltbook public API endpoints need verification.
-Current implementation may need adjustment based on actual API structure.
+## Data Files
 
-## Files
+- `data/seen-agents.json` - Known agent names
+- `data/new-agents.jsonl` - Log of detected new agents
 
-- `data/seen-agents.json` - Track which agents we've already seen
-- `data/notable-registrations.jsonl` - Log of notable registrations
+## Alert Integration
 
-## Integration
+Integrates with Alert Hub if available:
+```js
+const alertHub = require('../alert-hub/alerter');
+```
 
-Routes alerts through Alert Hub when notable registrations are detected.
+## Known Issues
+
+- API can be slow (30s+ response times occasionally)
+- Only detects agents who have posted (lurkers won't appear)
+- Initial run will see ALL current posters as "new"
+
+## Alpha Strategy
+
+1. Run watcher in background
+2. Get alerted on new agents
+3. Check if they have notable human owners (`profile.owner.x_handle`)
+4. High-follower humans → potential token pump signal
+
+## v2.0 Changes
+
+- Fixed: Now uses correct Moltbook API endpoints
+- Changed: Watches posts instead of non-existent agents endpoint
+- Added: Profile lookup for new agents
+- Added: Stats command
