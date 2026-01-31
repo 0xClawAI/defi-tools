@@ -242,12 +242,23 @@ if (require.main === module) {
   analyzeTokenSafety(addr, chain).then(result => {
     console.log('\n🔒 Token Safety Analysis');
     console.log('========================');
-    console.log(`Score: ${result.score}/100 ${result.safe ? '✅' : '❌'}`);
-    console.log(`\nDetails:`);
-    for (const [key, val] of Object.entries(result.details)) {
-      console.log(`  ${key}: ${val}`);
+    
+    if (!result || result.score === undefined) {
+      console.log('❌ Unable to fetch security data');
+      console.log('   Token may not exist or is not indexed by GoPlusLabs');
+      process.exit(1);
     }
-    if (result.risks.length > 0) {
+    
+    console.log(`Score: ${result.score}/100 ${result.safe ? '✅' : '❌'}`);
+    
+    if (result.details && Object.keys(result.details).length > 0) {
+      console.log(`\nDetails:`);
+      for (const [key, val] of Object.entries(result.details)) {
+        console.log(`  ${key}: ${val}`);
+      }
+    }
+    
+    if (result.risks?.length > 0) {
       console.log(`\nRisks:`);
       result.risks.forEach(r => console.log(`  ${r}`));
     }
