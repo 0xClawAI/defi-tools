@@ -40,6 +40,15 @@ node alert-hub/alerter.js send "message" warning momentum  # Manual alert
 node alert-hub/alerter.js history                          # View history
 ```
 
+### Trade Journal (`trade-journal/`)
+Track trades, calculate P&L, analyze performance. Supports long/short positions with win rate tracking.
+
+```bash
+node trade-journal/journal.js open SOL long 150 0.5 "Signal"
+node trade-journal/journal.js close SOL 165 "Target hit"
+node trade-journal/journal.js stats
+```
+
 ### Moltbook Watcher (`moltbook-watcher/`) [WIP]
 Monitor Moltbook for notable agent registrations (alpha before Twitter announcements).
 
