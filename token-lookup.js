@@ -10,7 +10,27 @@
 
 const { analyzeTokenSafety } = require('./momentum-scanner/token-safety');
 
+const fs = require('fs');
+const path = require('path');
+
 const DEXSCREENER_API = 'https://api.dexscreener.com/latest/dex';
+const WATCHLIST_FILE = path.join(__dirname, 'data', 'watchlist.json');
+
+// Ensure data dir exists
+const dataDir = path.dirname(WATCHLIST_FILE);
+if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+
+function loadWatchlist() {
+  try {
+    return JSON.parse(fs.readFileSync(WATCHLIST_FILE, 'utf8'));
+  } catch {
+    return [];
+  }
+}
+
+function saveWatchlist(list) {
+  fs.writeFileSync(WATCHLIST_FILE, JSON.stringify(list, null, 2));
+}
 
 async function fetchTokenByAddress(address, chain = null) {
   try {
@@ -168,13 +188,103 @@ async function main() {
     console.log('Usage:');
     console.log('  node token-lookup.js <address|symbol> [chain]');
     console.log('  node token-lookup.js --batch token1,token2,token3 [chain]');
+    console.log('  node token-lookup.js --watch                    # Check all watched tokens');
+    console.log('  node token-lookup.js --add <address> [chain]    # Add to watchlist');
+    console.log('  node token-lookup.js --remove <address>         # Remove from watchlist');
+    console.log('  node token-lookup.js --list                     # Show watchlist');
     console.log('');
     console.log('Examples:');
     console.log('  node token-lookup.js 0x8c9037d1ef5c6d1f6816278c7aaf5491d24cd527');
     console.log('  node token-lookup.js MOLTBOOK base');
-    console.log('  node token-lookup.js ETH');
-    console.log('  node token-lookup.js --batch MOLTBOOK,ETH,USDC base');
+    console.log('  node token-lookup.js --add 0x8c90... base');
+    console.log('  node token-lookup.js --watch');
     process.exit(1);
+  }
+  
+  // Watchlist: list
+  if (args[0] === '--list') {
+    const watchlist = loadWatchlist();
+    if (watchlist.length === 0) {
+      console.log('📋 Watchlist is empty');
+    } else {
+      console.log(`📋 Watchlist (${watchlist.length} tokens):`);
+      watchlist.forEach((t, i) => {
+        console.log(`   ${i + 1}. ${t.symbol || t.address.slice(0, 10) + '...'} on ${t.chain}`);
+      });
+    }
+    process.exit(0);
+  }
+  
+  // Watchlist: add
+  if (args[0] === '--add') {
+    const address = args[1];
+    const chain = args[2] || 'base';
+    
+    if (!address) {
+      console.log('❌ Missing address');
+      process.exit(1);
+    }
+    
+    const watchlist = loadWatchlist();
+    const existing = watchlist.find(t => t.address.toLowerCase() === address.toLowerCase());
+    
+    if (existing) {
+      console.log('ℹ️ Already in watchlist');
+    } else {
+      // Fetch symbol
+      const pair = await fetchTokenByAddress(address, chain);
+      const symbol = pair?.baseToken?.symbol || address.slice(0, 8);
+      
+      watchlist.push({ address, chain, symbol, addedAt: new Date().toISOString() });
+      saveWatchlist(watchlist);
+      console.log(`✅ Added ${symbol} to watchlist`);
+    }
+    process.exit(0);
+  }
+  
+  // Watchlist: remove
+  if (args[0] === '--remove') {
+    const address = args[1];
+    
+    if (!address) {
+      console.log('❌ Missing address');
+      process.exit(1);
+    }
+    
+    const watchlist = loadWatchlist();
+    const idx = watchlist.findIndex(t => t.address.toLowerCase() === address.toLowerCase());
+    
+    if (idx === -1) {
+      console.log('ℹ️ Not in watchlist');
+    } else {
+      const removed = watchlist.splice(idx, 1)[0];
+      saveWatchlist(watchlist);
+      console.log(`✅ Removed ${removed.symbol || address.slice(0, 8)} from watchlist`);
+    }
+    process.exit(0);
+  }
+  
+  // Watchlist: check all
+  if (args[0] === '--watch') {
+    const watchlist = loadWatchlist();
+    
+    if (watchlist.length === 0) {
+      console.log('📋 Watchlist is empty. Add tokens with --add');
+      process.exit(0);
+    }
+    
+    console.log(`🔍 Checking ${watchlist.length} watched tokens...\n`);
+    console.log('─'.repeat(70));
+    console.log(`${'St'} ${'Token'.padEnd(10)} ${'Price'.padStart(14)} ${'24h'.padStart(8)} ${'Liquidity'.padStart(11)} ${'LP'} ${'Safety'}`);
+    console.log('─'.repeat(70));
+    
+    for (const t of watchlist) {
+      await lookupAndDisplay(t.address, t.chain, true);
+      await new Promise(r => setTimeout(r, 300));
+    }
+    
+    console.log('─'.repeat(70));
+    process.exit(0);
   }
   
   // Batch mode
