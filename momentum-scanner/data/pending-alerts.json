@@ -1,0 +1,21 @@
+[
+  {
+    "channel": "telegram",
+    "target": "1543261040",
+    "message": "🔥 <b>HIGH_RATIO</b>: VDR\n\nRatio: <code>4.77x</code> (663B/139S) [h1]\nPrice: <code>$0.008915</code>\nVolume: $404,572\nLiquidity: $319,644\nChange: 📈 0.3%\n\n<a href=\"https://dexscreener.com/base/VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg\">DEXScreener</a> | <a href=\"https://basescan.org/token/VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg\">BaseScan</a>",
+    "signal": {
+      "type": "HIGH_RATIO",
+      "window": "h1",
+      "ratio": "4.77",
+      "buys": 663,
+      "sells": 139,
+      "token": "VDR",
+      "address": "VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg",
+      "price": "0.008915",
+      "volume24h": 404571.56,
+      "liquidity": 319643.97,
+      "priceChange": 0.27
+    },
+    "createdAt": "2026-01-31T15:26:29.255Z"
+  }
+]
