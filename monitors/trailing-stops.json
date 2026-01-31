@@ -1,0 +1,23 @@
+{
+  "stops": [
+    {
+      "token": "LEPUS",
+      "type": "trailing",
+      "highWaterMark": 0.004163,
+      "trailingPercent": 33,
+      "action": "SELL_REMAINING"
+    },
+    {
+      "token": "MOLTBOOK",
+      "type": "hard",
+      "stopPrice": 0.0008,
+      "action": "SELL_ALL"
+    },
+    {
+      "token": "OBEY",
+      "type": "none",
+      "note": "Test position - let it ride"
+    }
+  ],
+  "updated": "2026-01-31T03:05:00Z"
+}

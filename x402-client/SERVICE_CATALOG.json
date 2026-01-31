@@ -1,0 +1,156 @@
+{
+  "generated": "2026-01-31T00:45:00Z",
+  "source": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources",
+  "network": "Base",
+  "asset": "USDC",
+  "useful_services": [
+    {
+      "name": "DeFi Yield Opportunities",
+      "url": "https://x402.silverbackdefi.app/api/v1/defi-yield",
+      "cost": 0.002,
+      "method": "POST",
+      "description": "DeFi yield opportunities on Base chain"
+    },
+    {
+      "name": "Pool Analysis",
+      "url": "https://x402.silverbackdefi.app/api/v1/pool-analysis",
+      "cost": 0.002,
+      "method": "POST",
+      "description": "Analyze Base chain liquidity pools with health scoring"
+    },
+    {
+      "name": "Top Pools",
+      "url": "https://x402.silverbackdefi.app/api/v1/top-pools",
+      "cost": 0.001,
+      "method": "GET",
+      "description": "Top yielding pools on Base DEXes"
+    },
+    {
+      "name": "Swap Quote",
+      "url": "https://x402.silverbackdefi.app/api/v1/swap-quote",
+      "cost": 0.001,
+      "method": "POST",
+      "description": "Get optimal swap route on Base chain"
+    },
+    {
+      "name": "Gas Price",
+      "url": "https://x402.silverbackdefi.app/api/v1/gas-price",
+      "cost": 0.001,
+      "method": "GET",
+      "description": "Current gas prices on Base chain"
+    },
+    {
+      "name": "Token Security Audit",
+      "url": "TBD",
+      "cost": 0.005,
+      "method": "POST",
+      "description": "Honeypot detection, tax analysis, ownership checks"
+    },
+    {
+      "name": "Whale Monitor",
+      "url": "TBD",
+      "cost": 0.005,
+      "method": "POST",
+      "description": "Monitor whale movements including buys, sells, and transfers"
+    },
+    {
+      "name": "Crypto News",
+      "url": "https://x402.ottoai.services/crypto-news",
+      "cost": 0.01,
+      "method": "GET",
+      "description": "Real-time crypto market news with sentiment analysis"
+    },
+    {
+      "name": "Yield Alpha",
+      "url": "https://x402.ottoai.services/yield-alpha",
+      "cost": 0.01,
+      "method": "GET",
+      "description": "Best DeFi yield opportunities across stablecoins, ETH, BTC"
+    },
+    {
+      "name": "Market Executive Summary",
+      "url": "https://capable-grace-production-ab1c.up.railway.app/alpha/executive",
+      "cost": 0.02,
+      "method": "GET",
+      "description": "AI-generated market trends, top narratives, momentum shifts"
+    },
+    {
+      "name": "Overnight Movers",
+      "url": "https://capable-grace-production-ab1c.up.railway.app/alpha/overnight",
+      "cost": 0.01,
+      "method": "GET",
+      "description": "Tokens that moved significantly during off-hours"
+    },
+    {
+      "name": "Memecoin Research",
+      "url": "https://capable-grace-production-ab1c.up.railway.app/alpha/research",
+      "cost": 0.10,
+      "method": "POST",
+      "description": "AI-powered memecoin research with sentiment and trading insights"
+    },
+    {
+      "name": "Sports Arbitrage",
+      "url": "https://sportsarbitrageapi-production.up.railway.app/api/opportunities/sport",
+      "cost": 0.03,
+      "method": "POST",
+      "description": "Find guaranteed profit across bookmakers"
+    },
+    {
+      "name": "Polymarket Trending",
+      "url": "TBD",
+      "cost": 0.01,
+      "method": "GET",
+      "description": "Get top trending markets on Polymarket"
+    },
+    {
+      "name": "Token Ranking (Zapper)",
+      "url": "https://public.zapper.xyz/x402/token-ranking",
+      "cost": 0.012,
+      "method": "POST",
+      "description": "Ranked list of tokens based on swap activity and adoption"
+    },
+    {
+      "name": "NFT Ranking (Zapper)",
+      "url": "https://public.zapper.xyz/x402/nft-ranking",
+      "cost": 0.012,
+      "method": "POST",
+      "description": "Ranked NFT collections based on trading activity"
+    },
+    {
+      "name": "Newest Tokens",
+      "url": "https://api.slamai.dev/chain/tokens/newest",
+      "cost": 0.0016,
+      "method": "GET",
+      "description": "Returns newest tokens minted on blockchain"
+    },
+    {
+      "name": "Spam Detection",
+      "url": "https://x402.slinkylayer.ai/api/v1/proxy/00e31e91-413d-43f0-833d-56e6b6789aab/content-detect-spam",
+      "cost": 0.10,
+      "method": "POST",
+      "description": "Detect spam content with confidence score"
+    },
+    {
+      "name": "Agent Reputation",
+      "url": "https://x402.silverbackdefi.app/api/v1/agent-reputation",
+      "cost": 0.001,
+      "method": "POST",
+      "description": "Get ERC-8004 agent reputation profile"
+    },
+    {
+      "name": "Agent Discovery",
+      "url": "https://x402.silverbackdefi.app/api/v1/agent-discover",
+      "cost": 0.002,
+      "method": "POST",
+      "description": "Find agents matching criteria"
+    }
+  ],
+  "total_services": 97,
+  "notes": [
+    "All prices in USDC (6 decimals)",
+    "Services use x402 protocol - pay per request",
+    "No API keys needed, just sign with wallet",
+    "Most useful for DeFi: yield opportunities, pool analysis, swap quotes",
+    "Silverback services are cheapest and most practical"
+  ]
+}

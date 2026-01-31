@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-31T14:58:05.100Z",
+  "signals": {
+    "LEPUS": {"trend": "BULLISH", "delta": 3.32, "ratio": 1.62, "prediction": "UP", "confidence": "medium"},
+    "MOLTBOOK": {"trend": "DIP_BUY", "delta": -3, "ratio": 1.43, "prediction": "REVERSAL_UP", "confidence": "low"},
+    "VIRTUAL": {"trend": "HOLD", "delta": 1.1, "ratio": 1.0, "prediction": "NEUTRAL", "confidence": "low"}
+  },
+  "alerts_triggered": false,
+  "notes": "MOLTBOOK dip-buy pattern close to validated 1.46x threshold but not quite there. Monitoring."
+}

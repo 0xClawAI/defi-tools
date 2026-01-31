@@ -1,0 +1,28 @@
+{
+  "wallets": [
+    {
+      "address": "RESEARCH_NEEDED",
+      "chain": "base",
+      "source": "Need to find via on-chain analysis",
+      "tier": "unknown"
+    }
+  ],
+  "research_tasks": [
+    "Query Basescan for top traders on trending tokens",
+    "Use x402 whale monitor service",
+    "Scrape Polymarket leaderboard for addresses",
+    "Find CT alpha callers who share wallets"
+  ],
+  "x402_services_to_try": [
+    {
+      "name": "whale_monitor",
+      "cost": "varies",
+      "action": "Monitor whale movements for trending tokens"
+    },
+    {
+      "name": "otto_yield_alpha",
+      "endpoint": "https://x402.ottoai.services/yield-alpha",
+      "cost": "$0.01"
+    }
+  ]
+}

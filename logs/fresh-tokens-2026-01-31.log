@@ -1,0 +1,11 @@
+=== Scan 2026-01-31 01:15 UTC ===
+Criteria: <6h old | B/S >1.3x | Vol >$20k
+
+MATCHES:
+1. UPLIFT - $253,649 vol | 1.38x B/S | 0h old | PRISM: No warnings
+2. Consciousness - $105,032 vol | 1.54x B/S | 0h old
+3. CRABMAN - $67,542 vol | 6.04x B/S | 0h old | PRISM: No warnings (⚠️ extreme ratio)
+4. GENGHIS - $57,178 vol | 1.4x B/S | 0h old
+
+FILTERED OUT:
+- MJ: Vol $13k (below $20k threshold)

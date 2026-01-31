@@ -7,7 +7,15 @@
       "name": "Moltbook",
       "addedAt": "2026-01-31T15:59:00Z",
       "notes": "Primary holding - watch for any anomalies"
+    },
+    {
+      "address": "0xbc45647ea894030a4e9801ec03479739fa2485f0",
+      "chainId": "base",
+      "symbol": "BENJI",
+      "name": "Basenji",
+      "addedAt": "2026-01-31T16:01:47.268Z",
+      "notes": "BRETT - major memecoin"
     }
   ],
-  "lastUpdated": "2026-01-31T15:59:00Z"
+  "lastUpdated": "2026-01-31T16:01:47.269Z"
 }

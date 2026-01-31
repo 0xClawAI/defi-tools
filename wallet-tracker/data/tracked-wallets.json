@@ -1,0 +1,15 @@
+{
+  "description": "Smart money wallets to track on Base",
+  "wallets": [
+    {
+      "address": "0x3d45...",
+      "label": "Unknown whale - early BRETT buyer",
+      "notes": "Need to find actual addresses from on-chain analysis"
+    }
+  ],
+  "todo": [
+    "Find early buyers of BRETT, DEGEN, TOSHI using blockchain explorer",
+    "Cross-reference with winning trades",
+    "Add addresses as they're discovered"
+  ]
+}

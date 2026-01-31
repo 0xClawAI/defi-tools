@@ -1,0 +1,27 @@
+[2026-01-31T00:12:32Z] Fresh scan: AmeliaBot (1.47x, 7.6k), buck (1.41x, 3.3k) meet criteria
+---
+2026-01-31 03:14 UTC - Fresh Token Scan
+OBEY: 1h old, B/S 4.47x, Vol $2.69M - EXCEPTIONAL ratio
+Goonstien: <1h old, B/S 2.30x, Vol $105k
+KRABBY: 1h old, B/S 1.52x, Vol $172k
+FOID: <1h old, B/S 1.63x, Vol $66k
+IE: <1h old, B/S 1.67x, Vol $26k
+
+[2026-01-31 04:07 UTC] Fresh Token Scan
+Top opportunities:
+- MOLTBOOK: 1.9x ratio, $32.8k vol (HIGH SIGNAL - above 1.46x pattern)
+- Sonny: 1.54x ratio, $106.6k vol (best volume)
+- FOID: 1.44x ratio, $87.2k vol
+- CH: 1.45x ratio, $54k vol
+- MAXI: 1.48x ratio, $38.2k vol
+
+=== Fresh Token Scan 2026-01-31 04:12 UTC ===
+Criteria: <6h old, B/S >1.3x, Vol >$20k
+
+TOP OPPORTUNITIES:
+1. MOLTBOOK - B/S 1.83x | $34k vol | 1h old | PRISM: ✅ Clear
+2. Sonny - B/S 1.52x | $109k vol | 1h old | PRISM: ✅ Clear  
+3. uprising - B/S 1.6x | $35k vol | 0h old | PRISM: ✅ Clear
+4. MAXI - B/S 1.48x | $38k vol | 0h old | PRISM: ✅ Clear
+
+Notes: MOLTBOOK ratio (1.83x) strongest. Sonny has highest volume.

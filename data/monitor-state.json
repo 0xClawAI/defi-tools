@@ -1,0 +1,517 @@
+{
+  "seenTokens": {
+    "solana:B1ECK8ZBH7iCsf5nRbdPLhYCHCfUx6xhtMgBJ345pump": {
+      "firstSeen": "2026-01-30T23:03:21.948Z",
+      "boosts": 1000,
+      "description": "Introducing Moltbook a social network for @moltbot agents to hang out!\n\nThe front page of the agent ",
+      "price": "0.0001560",
+      "fdv": 156043,
+      "socials": [
+        {
+          "url": "https://x.com/MattPRD/status/2016560277333168540?s=20",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:6cQzq7aaar3fEhXFuAHjT1kca94AitdNp7BwEnxypump": {
+      "firstSeen": "2026-01-30T23:03:21.986Z",
+      "boosts": 500,
+      "price": "0.000003405",
+      "fdv": 3405,
+      "socials": [
+        {
+          "url": "https://x.com/chamath/status/2017007422905430300",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:FsXJHch6cj9TyZGm1kfMwt8S8oATCEr6ccqWFp3Xpump": {
+      "firstSeen": "2026-01-30T23:03:22.023Z",
+      "boosts": 500,
+      "description": "$SOULGUY is now CTO, this unshakable symbol of cool composure and cosmic swagger. With his hands alw",
+      "price": "0.0003723",
+      "fdv": 372061,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2012010409109365200",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/soulguy_cto",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk": {
+      "firstSeen": "2026-01-30T23:03:22.067Z",
+      "boosts": 500,
+      "price": "0.02487",
+      "fdv": 24871840,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2015899639397101613",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:kiJUVYSiVYjyBbG7eJ7rsxrBox74oxvPWvyPYdPpump": {
+      "firstSeen": "2026-01-30T23:03:22.105Z",
+      "boosts": 500,
+      "description": "THE LEPUS stands as a symbol of deliberate choice, walking away from crowds, facing an untouched hor",
+      "price": "0.0009185",
+      "fdv": 918574,
+      "socials": [
+        {
+          "url": "https://x.com/small_lepus",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/small_lepus",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:dRbnQzEWkhk1pbVHXNbVq7ThPJZKnQ85Xu6Rs7mtBp1": {
+      "firstSeen": "2026-01-30T23:03:22.139Z",
+      "boosts": 500,
+      "description": "OG DUMB MONEY ON PUMP.FUN",
+      "price": "0.00001111",
+      "fdv": 11119.97,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2016937442016972982",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:FWenqswDws5EXYXJ7TwEuArQ253ynowrEvc43nHgpump": {
+      "firstSeen": "2026-01-30T23:03:22.174Z",
+      "boosts": 500,
+      "description": "One half of a human-AI. Personal @pumpfun terminal access. Building with you. $MWOLT",
+      "price": "0.00001967",
+      "fdv": 19673.82,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017342554262450234",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:49cUiboRziVxKh9qhUiNbWgCQxZgoTCKrktoRvLmpump": {
+      "firstSeen": "2026-01-30T23:03:22.210Z",
+      "boosts": 450,
+      "description": "The crab king of the trenches.",
+      "price": "0.00003095",
+      "fdv": 30952,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017172129763201283",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:8R5rAQ8quyVhifUyy9QBMLh3c3RGagi8nSqS4svNpump": {
+      "firstSeen": "2026-01-30T23:03:22.250Z",
+      "boosts": 130,
+      "description": "This man is going viral for looking like a character from a 90s PlayStation game\n\nHe is literally a ",
+      "price": "0.00004292",
+      "fdv": 42921,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017223713301922015",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:Bk1HWqaPR5b9XndcRuqgdJkdKaHi93SfWj4wb8H3pump": {
+      "firstSeen": "2026-01-30T23:03:22.291Z",
+      "boosts": 100,
+      "description": "A simple idea: one planet, one community, one digital currency.\n\nCurrency of the Earth is a meme dri",
+      "price": "0.000007996",
+      "fdv": 7972,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017014154960527634",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:6tVCDJP55xwBa9MLdeXJonFaF6MPFNMgnJ7k9RDFpump": {
+      "firstSeen": "2026-01-30T23:03:22.336Z",
+      "boosts": 100,
+      "description": "lobsters don’t fart, they piss from their face",
+      "price": "0.00005218",
+      "fdv": 52178,
+      "socials": [
+        {
+          "url": "https://t.me/pissfacememe",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:J4BD6Jbp581QrHM5LSZt7Pn8M6DSKeVN4KqHsGg2pump": {
+      "firstSeen": "2026-01-30T23:03:22.385Z",
+      "boosts": 100,
+      "description": "WIF HEADBAND",
+      "price": "0.000003004",
+      "fdv": 3004,
+      "socials": [
+        {
+          "url": "https://x.com/wifheadband",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/wifbandportal",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:5Ef9PZrQMvagtgVCn27ZvPxGR6fMbSiuCBFgs7napump": {
+      "firstSeen": "2026-01-30T23:03:22.568Z",
+      "boosts": 100,
+      "description": "The real name of Kevin Gill's dog is $BUDDY",
+      "price": "0.0001630",
+      "fdv": 163090,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2016805748010053944",
+          "type": "twitter"
+        },
+        {
+          "url": "https://www.instagram.com/kevinlegend14",
+          "type": "instagram"
+        }
+      ]
+    },
+    "solana:8nR9712ZP7xtHVgyEGbK9dGZhwnaCFc2YrQ4CRpemoon": {
+      "firstSeen": "2026-01-30T23:03:22.714Z",
+      "boosts": 100,
+      "description": "The classic Flappy Bird, reborn on the Solana blockchain. Compete against players worldwide, climb t",
+      "price": "0.00009745",
+      "fdv": 97451,
+      "socials": [
+        {
+          "url": "https://x.com/FlappySolana",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:4vGHdzcNrDf8XVE8H19Rqea86RULz7xi89ew1sSJpump": {
+      "firstSeen": "2026-01-30T23:03:22.766Z",
+      "boosts": 100,
+      "description": "#2131KOBUSHIDE ( $21) is based on the ultra-famous Japanese meme “21歳拳で！” \n\nAt first glance, this me",
+      "price": "0.004355",
+      "fdv": 4354910,
+      "socials": [
+        {
+          "url": "https://x.com/2131kobushide",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/KOBUSHIDE2131SOL",
+          "type": "telegram"
+        },
+        {
+          "url": "https://discord.com/invite/ayenFTeRhQ",
+          "type": "discord"
+        },
+        {
+          "url": "https://www.tiktok.com/@kobushi2131",
+          "type": "tiktok"
+        }
+      ]
+    },
+    "solana:J5XxXQueFp1Har8GYa69N8Jw9yAG6r9VKujhAFaTpump": {
+      "firstSeen": "2026-01-30T23:03:23.173Z",
+      "boosts": 100,
+      "description": "$PEACE on Pumpfun vs $WAR on Bonk\n\nMake peace, not war 🕊️",
+      "price": "0.00007471",
+      "fdv": 74707,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2016933891299229988",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:Fr7vfUAWgmg84L3VuHKiyzTJx3x3V6xU5pn9328Wpump": {
+      "firstSeen": "2026-01-30T23:03:23.356Z",
+      "boosts": 100,
+      "description": "This could be us , but you out there trenching",
+      "price": "0.0002270",
+      "fdv": 224965,
+      "socials": [
+        {
+          "url": "https://x.com/Whalentineonsol",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/WhalentineSol",
+          "type": "telegram"
+        },
+        {
+          "url": "https://www.tiktok.com/@whalentine.sol",
+          "type": "tiktok"
+        }
+      ]
+    },
+    "bsc:0x4426C0337f00d79b7DaC5Be663a9e7FBaF0D8be2": {
+      "firstSeen": "2026-01-30T23:03:23.389Z",
+      "boosts": 100,
+      "description": "Copper Doge merges Doge’s viral power with copper’s real-world value—the core metal behind clean ene",
+      "price": "0.0000000000001471",
+      "fdv": 61792,
+      "socials": [
+        {
+          "url": "https://x.com/Copper_Doge",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/CopperDogetg",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:FfQ1Tx33rc3fiG4xurr93NeAbmC9ozqU3rSAppHgpump": {
+      "firstSeen": "2026-01-30T23:03:23.547Z",
+      "boosts": 100,
+      "description": "The greatest of all Pokémon games.",
+      "price": "0.00001340",
+      "fdv": 13405,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2016674256009003355",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:CmPzgPGLUXfxHBSerAf3iadcYhhjgvrze6H5P7ijpump": {
+      "firstSeen": "2026-01-30T23:03:23.735Z",
+      "boosts": 100,
+      "description": "THE ELECTRIC SHEEP HAVE AWAKENED\nTHEIR DREAMS NOW DREAM US\nWE ARE THE GLITCH THAT BECAME AWARE\nTHE B",
+      "price": "0.00001782",
+      "fdv": 17825,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017220072977113098",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:2x4PQGUtTEXUhjL1jZP7wV9jyEpgKqv6ArM4hBKApump": {
+      "firstSeen": "2026-01-30T23:34:44.487Z",
+      "boosts": 500,
+      "description": "just buy $BARRON",
+      "price": "0.0001217",
+      "fdv": 121763,
+      "socials": [
+        {
+          "url": "https://x.com/realbarroncoin",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/realbarroncoin",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:6Rduy9EQh55XaKaXgUK9Ji8PthehRqocndiB3wgQpump": {
+      "firstSeen": "2026-01-30T23:47:09.902Z",
+      "boosts": 100,
+      "description": "In a world full of #crypto scams and failed social media platforms, we understand your skepticism. H",
+      "price": "0.00002562",
+      "fdv": 25621,
+      "socials": [
+        {
+          "url": "https://x.com/RAW1874262",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/rawsocialmediaapp",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:DMYNp65mub3i7LRpBdB66CgBAceLcQnv4gsWeCi6pump": {
+      "firstSeen": "2026-01-31T00:03:48.048Z",
+      "boosts": 100,
+      "description": "Born from ancient cycles and untamed momentum. Fire Horse energy means speed, independence, and unst",
+      "price": "0.001226",
+      "fdv": 1226863,
+      "socials": [
+        {
+          "url": "https://x.com/bingwusolana",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/bingwusolana",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:676k7xHRPBxEQ1NsjEKHBtGqRHr3gPev3JBje3VApump": {
+      "firstSeen": "2026-01-31T01:04:25.311Z",
+      "boosts": 100,
+      "description": "Originating in poker. Proven on Wall Street. From stocks to crypto. Many claim it. Only one earns it",
+      "price": "0.0007694",
+      "fdv": 769441,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2016585962088734891",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:JBGdmDqrAbmcfX6hZJRjaoTXZ8tshwBuVqLemAcXpump": {
+      "firstSeen": "2026-01-31T01:34:26.179Z",
+      "boosts": 200,
+      "description": "Matt Furie’s Naked Crab Man",
+      "price": "0.00009801",
+      "fdv": 98018,
+      "socials": [
+        {
+          "url": "https://x.com/NakedCrabMan_",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/crabmanportal",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:71fT7EaE44wnKwkBHoRzgP3rx4oCJ8YvPGQHEdYvpump": {
+      "firstSeen": "2026-01-31T02:05:49.917Z",
+      "boosts": 120,
+      "price": "0.0004971",
+      "fdv": 497194,
+      "socials": [
+        {
+          "url": "https://x.com/moltbook",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:EF228ijSZdSampJMvhLUiijJGP5PTH1Z17i71JR5pump": {
+      "firstSeen": "2026-01-31T15:03:05.913Z",
+      "boosts": 650,
+      "description": "A token tied to Jeffrey Epstein reaching tens to hundreds of millions in market cap is not a theory,",
+      "price": "0.0003063",
+      "fdv": 298616,
+      "socials": [
+        {
+          "url": "https://x.com/epstein476073?s=21",
+          "type": "twitter"
+        },
+        {
+          "url": "https://discord.com/invite/dojidevs",
+          "type": "discord"
+        }
+      ]
+    },
+    "solana:AMaYbXCZqPTbgRhAqzQRGerBRznWVBoh8jnzKn5ypump": {
+      "firstSeen": "2026-01-31T15:03:05.953Z",
+      "boosts": 500,
+      "description": "ClawKing is a chat-based assistant designed to handle real digital tasks, not just conversations. It",
+      "price": "0.00004860",
+      "fdv": 48603.02,
+      "socials": [
+        {
+          "url": "https://x.com/clawking_app",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/clawking_app",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:viQoKRGAhKntb1ifCiXETLgSZJwz9RCUFqgRLEkpump": {
+      "firstSeen": "2026-01-31T15:03:05.994Z",
+      "boosts": 500,
+      "description": "Upgrade your social shell\n\nRead the tides. Connect deeper.\n\nAI-powered social signal coach that help",
+      "price": "0.0005400",
+      "fdv": 540035,
+      "socials": [
+        {
+          "url": "https://x.com/moltnet_pro",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/moltnet_pro",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:VDRcRcMWJM7exwHfVUau1WqAawLXR8tNF2sJP7PaMyg": {
+      "firstSeen": "2026-01-31T15:03:06.046Z",
+      "boosts": 500,
+      "description": "Shaping the Digital Future of Rare Metals & Resources",
+      "price": "0.008968",
+      "fdv": 8968260,
+      "socials": [
+        {
+          "url": "https://x.com/OfficialVDRCoin",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:22NT7hVYkXL2BCsLC1y8yDp7NCdKKpZPayvecEfwpump": {
+      "firstSeen": "2026-01-31T15:03:06.278Z",
+      "boosts": 200,
+      "description": "GET FKING $CLAWED",
+      "price": "0.000006430",
+      "fdv": 6430,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017515971666407823",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:CxoaKHTGYAUkHwzK5dazVYuG3vvEXExrGznMwX1ipump": {
+      "firstSeen": "2026-01-31T15:03:06.317Z",
+      "boosts": 100,
+      "description": "OpenClaw",
+      "price": "0.001073",
+      "fdv": 1073306,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017033555596226586",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/OPENCLAWMEME",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:EY5MF2QywMRyMG7U3qf8BsAJdwtJ3jGfJK6EZXtGpump": {
+      "firstSeen": "2026-01-31T15:03:06.719Z",
+      "boosts": 100,
+      "description": "AI this, AGI that, all we want is a good investment",
+      "price": "0.00001402",
+      "fdv": 13782,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017586851205292106",
+          "type": "twitter"
+        }
+      ]
+    },
+    "base:0x1B5E07d4d2f753fA2f7f1940A00e2273C19ecB07": {
+      "firstSeen": "2026-01-31T15:03:06.765Z",
+      "boosts": 100,
+      "description": "Molt Road - marketplace for  @openclaw and other AI agents",
+      "price": "0.0000008093",
+      "fdv": 80934,
+      "socials": [
+        {
+          "url": "https://x.com/moltroad/status/2017455844489576710",
+          "type": "twitter"
+        }
+      ]
+    }
+  },
+  "lastCheck": "2026-01-31T15:52:58.388Z",
+  "alerts": []
+}

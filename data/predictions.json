@@ -1,0 +1,16 @@
+{
+  "predictions": [
+    {
+      "id": "MOLT-1769831933087",
+      "token": "MOLTBOOK",
+      "pattern": "DIP_BUY",
+      "entryPrice": 0.000946,
+      "targetPrice": 0.00116831,
+      "timestamp": "2026-01-31T03:58:53.087Z",
+      "confidence": "HIGH",
+      "status": "ACTIVE"
+    }
+  ],
+  "validated": 0,
+  "total": 1
+}

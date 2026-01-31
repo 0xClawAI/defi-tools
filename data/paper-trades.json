@@ -1,0 +1,126 @@
+{
+  "startingBalance": 10000,
+  "currentCash": 9305,
+  "trades": [
+    {
+      "id": "LEPUS1",
+      "chain": "solana",
+      "token": "kiJUVYSiVYjyBbG7eJ7rsxrBox74oxvPWvyPYdPpump",
+      "symbol": "LEPUS",
+      "entryPrice": 0.0007993,
+      "amount": 500437.8831477543,
+      "costBasis": 400,
+      "reason": "Buy/sell ratio 1.85x (accumulation). Down 14% so not chasing. $102k liquidity. Testing: enter when buys > sells on pullback.",
+      "entryTime": "2026-01-30T23:52:00Z",
+      "fdvAtEntry": 799338
+    },
+    {
+      "id": "AURA1",
+      "chain": "solana",
+      "token": "BcFjQa82PsFVnJQ17WS5dsqc9h2UnGDcHMaqkSeNH1s1",
+      "symbol": "AURA",
+      "entryPrice": 0.00002654,
+      "amount": 7535795.026375283,
+      "costBasis": 200,
+      "reason": "Fresh (<1h), $143k vol, 1.33x buy ratio. Testing volume + buy pressure on new launch.",
+      "entryTime": "2026-01-31T00:07:00Z"
+    },
+    {
+      "id": 1769828377045,
+      "token": "MOLTBOOK",
+      "signal": "dip-buy",
+      "confidence": "high",
+      "entryPrice": 0.000983,
+      "entryTime": "2026-01-31T02:59:37.046Z",
+      "status": "OPEN",
+      "size": 1
+    },
+    {
+      "id": 1769828377569,
+      "token": "OBEY",
+      "signal": "extreme-ratio",
+      "confidence": "medium",
+      "entryPrice": 0.00599,
+      "entryTime": "2026-01-31T02:59:37.569Z",
+      "status": "OPEN",
+      "size": 1
+    },
+    {
+      "id": 1769828540395,
+      "token": "MOLTBOOK",
+      "signal": "dip-buy-5",
+      "confidence": "high",
+      "entryPrice": 0.0009426,
+      "entryTime": "2026-01-31T03:02:20.395Z",
+      "status": "OPEN",
+      "size": 1
+    },
+    {
+      "id": 1769828836113,
+      "token": "MOLTBOOK",
+      "signal": "dip-buy",
+      "conviction": "HIGH",
+      "entryPrice": 0.0009001,
+      "entryTime": "2026-01-31T03:07:16.113Z",
+      "status": "OPEN",
+      "size": 5
+    },
+    {
+      "id": 1769830974116,
+      "token": "MOLTBOOK",
+      "signal": "dip-buy",
+      "conviction": "HIGH",
+      "entryPrice": 0.001025,
+      "entryTime": "2026-01-31T03:42:54.116Z",
+      "status": "OPEN",
+      "size": 5
+    },
+    {
+      "id": 1769831651537,
+      "token": "MOLTBOOK",
+      "signal": "dip-buy-4",
+      "conviction": "LOW",
+      "entryPrice": 0.0009755,
+      "entryTime": "2026-01-31T03:54:11.537Z",
+      "status": "OPEN",
+      "size": 0.5
+    },
+    {
+      "id": 1769831652077,
+      "token": "LEPUS",
+      "signal": "dip-buy-deep",
+      "conviction": "LOW",
+      "entryPrice": 0.003553,
+      "entryTime": "2026-01-31T03:54:12.077Z",
+      "status": "OPEN",
+      "size": 0.5
+    }
+  ],
+  "closedTrades": [
+    {
+      "id": "CLAWD1",
+      "symbol": "CLAWD",
+      "entryPrice": 0.00008484,
+      "exitPrice": 0.00006916,
+      "costBasis": 500,
+      "pnlPercent": -19,
+      "pnlUsd": -95,
+      "reason": "Cut loss. Sell pressure 2.4x buys. Lesson: check buy/sell ratio before contrarian plays.",
+      "exitTime": "2026-01-30T23:51:00Z"
+    }
+  ],
+  "created": "2026-01-30T22:29:43.078Z",
+  "partialExits": [
+    {
+      "id": "LEPUS-PARTIAL",
+      "symbol": "LEPUS",
+      "action": "PARTIAL_SELL",
+      "entryPrice": 0.0007993,
+      "exitPrice": 0.002005,
+      "portion": 0.5,
+      "pnlPercent": "150.8",
+      "reason": "Taking 50% profit at +150%",
+      "exitTime": "2026-01-31T03:03:26.578Z"
+    }
+  ]
+}

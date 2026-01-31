@@ -1,0 +1,453 @@
+{
+  "accounts": {
+    "@MattPRD": {
+      "handle": "@MattPRD",
+      "firstSeen": "2026-01-30T23:03:28.740Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "MOLTBOOK",
+          "chain": "solana",
+          "fdvAtDiscovery": 156043,
+          "priceAtDiscovery": "0.0001560",
+          "discoveredAt": "2026-01-30T23:03:28.740Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@chamath": {
+      "handle": "@chamath",
+      "firstSeen": "2026-01-30T23:03:28.808Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "ELON",
+          "chain": "solana",
+          "fdvAtDiscovery": 3405,
+          "priceAtDiscovery": "0.000003405",
+          "discoveredAt": "2026-01-30T23:03:28.808Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@small_lepus": {
+      "handle": "@small_lepus",
+      "firstSeen": "2026-01-30T23:03:28.932Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "LEPUS",
+          "chain": "solana",
+          "fdvAtDiscovery": 918574,
+          "priceAtDiscovery": "0.0009185",
+          "discoveredAt": "2026-01-30T23:03:28.932Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@wifheadband": {
+      "handle": "@wifheadband",
+      "firstSeen": "2026-01-30T23:03:29.387Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "WIFBAND",
+          "chain": "solana",
+          "fdvAtDiscovery": 3004,
+          "priceAtDiscovery": "0.000003004",
+          "discoveredAt": "2026-01-30T23:03:29.387Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@FlappySolana": {
+      "handle": "@FlappySolana",
+      "firstSeen": "2026-01-30T23:03:29.614Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "FlappySol",
+          "chain": "solana",
+          "fdvAtDiscovery": 97451,
+          "priceAtDiscovery": "0.00009745",
+          "discoveredAt": "2026-01-30T23:03:29.614Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@2131kobushide": {
+      "handle": "@2131kobushide",
+      "firstSeen": "2026-01-30T23:03:29.650Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "21",
+          "chain": "solana",
+          "fdvAtDiscovery": 4354910,
+          "priceAtDiscovery": "0.004355",
+          "discoveredAt": "2026-01-30T23:03:29.650Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@Whalentineonsol": {
+      "handle": "@Whalentineonsol",
+      "firstSeen": "2026-01-30T23:03:29.732Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "Whalentine",
+          "chain": "solana",
+          "fdvAtDiscovery": 224965,
+          "priceAtDiscovery": "0.0002270",
+          "discoveredAt": "2026-01-30T23:03:29.732Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@Copper_Doge": {
+      "handle": "@Copper_Doge",
+      "firstSeen": "2026-01-30T23:03:29.768Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "COGE",
+          "chain": "bsc",
+          "fdvAtDiscovery": 61792,
+          "priceAtDiscovery": "0.0000000000001471",
+          "discoveredAt": "2026-01-30T23:03:29.768Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@RAW1874262": {
+      "handle": "@RAW1874262",
+      "firstSeen": "2026-01-30T23:03:30.067Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "RAW",
+          "chain": "solana",
+          "fdvAtDiscovery": 26904,
+          "priceAtDiscovery": "0.00002690",
+          "discoveredAt": "2026-01-30T23:03:30.067Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@limedotfun": {
+      "handle": "@limedotfun",
+      "firstSeen": "2026-01-30T23:03:30.411Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "LIME",
+          "chain": "solana",
+          "fdvAtDiscovery": 13815,
+          "priceAtDiscovery": "0.00001381",
+          "discoveredAt": "2026-01-30T23:03:30.411Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@zoofwallet": {
+      "handle": "@zoofwallet",
+      "firstSeen": "2026-01-30T23:03:30.448Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "ZOOF",
+          "chain": "base",
+          "fdvAtDiscovery": 752029,
+          "priceAtDiscovery": "0.0007536",
+          "discoveredAt": "2026-01-30T23:03:30.448Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@realbarroncoin": {
+      "handle": "@realbarroncoin",
+      "firstSeen": "2026-01-30T23:50:15.976Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "BARRON",
+          "chain": "solana",
+          "fdvAtDiscovery": 245258,
+          "priceAtDiscovery": "0.0002452",
+          "discoveredAt": "2026-01-30T23:50:15.976Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@thechromecock1": {
+      "handle": "@thechromecock1",
+      "firstSeen": "2026-01-30T23:50:17.062Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "COCK",
+          "chain": "solana",
+          "fdvAtDiscovery": 171710,
+          "priceAtDiscovery": "0.0001721",
+          "discoveredAt": "2026-01-30T23:50:17.062Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@bingwusolana": {
+      "handle": "@bingwusolana",
+      "firstSeen": "2026-01-31T00:03:48.890Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "丙午",
+          "chain": "solana",
+          "fdvAtDiscovery": 1226863,
+          "priceAtDiscovery": "0.001226",
+          "discoveredAt": "2026-01-31T00:03:48.891Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@a110rn0th1n": {
+      "handle": "@a110rn0th1n",
+      "firstSeen": "2026-01-31T00:03:50.526Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "AON",
+          "chain": "solana",
+          "fdvAtDiscovery": 185738,
+          "priceAtDiscovery": "0.0002235",
+          "discoveredAt": "2026-01-31T00:03:50.526Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@NakedCrabMan_": {
+      "handle": "@NakedCrabMan_",
+      "firstSeen": "2026-01-31T01:34:26.987Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "CRABMAN",
+          "chain": "solana",
+          "fdvAtDiscovery": 98018,
+          "priceAtDiscovery": "0.00009801",
+          "discoveredAt": "2026-01-31T01:34:26.987Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@fbi_coin01": {
+      "handle": "@fbi_coin01",
+      "firstSeen": "2026-01-31T01:34:28.046Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "FBI",
+          "chain": "solana",
+          "fdvAtDiscovery": 9894.87,
+          "priceAtDiscovery": "0.000009894",
+          "discoveredAt": "2026-01-31T01:34:28.046Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@moltbook": {
+      "handle": "@moltbook",
+      "firstSeen": "2026-01-31T02:05:50.644Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "MOLT",
+          "chain": "solana",
+          "fdvAtDiscovery": 497194,
+          "priceAtDiscovery": "0.0004971",
+          "discoveredAt": "2026-01-31T02:05:50.644Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@TheLepus_": {
+      "handle": "@TheLepus_",
+      "firstSeen": "2026-01-31T06:19:50.205Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "LEPUS",
+          "chain": "solana",
+          "fdvAtDiscovery": 706533,
+          "priceAtDiscovery": "0.0007065",
+          "discoveredAt": "2026-01-31T06:19:50.205Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@epstein476073": {
+      "handle": "@epstein476073",
+      "firstSeen": "2026-01-31T15:03:07.498Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "Epstein",
+          "chain": "solana",
+          "fdvAtDiscovery": 306896,
+          "priceAtDiscovery": "0.0003148",
+          "discoveredAt": "2026-01-31T15:03:07.498Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@clawking_app": {
+      "handle": "@clawking_app",
+      "firstSeen": "2026-01-31T15:03:07.579Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "CLAWKING",
+          "chain": "solana",
+          "fdvAtDiscovery": 48603.02,
+          "priceAtDiscovery": "0.00004860",
+          "discoveredAt": "2026-01-31T15:03:07.579Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@moltnet_pro": {
+      "handle": "@moltnet_pro",
+      "firstSeen": "2026-01-31T15:03:07.646Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "MOLTNET",
+          "chain": "solana",
+          "fdvAtDiscovery": 540035,
+          "priceAtDiscovery": "0.0005400",
+          "discoveredAt": "2026-01-31T15:03:07.646Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@OfficialVDRCoin": {
+      "handle": "@OfficialVDRCoin",
+      "firstSeen": "2026-01-31T15:03:07.876Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "VDR",
+          "chain": "solana",
+          "fdvAtDiscovery": 8968260,
+          "priceAtDiscovery": "0.008968",
+          "discoveredAt": "2026-01-31T15:03:07.876Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@moltroad": {
+      "handle": "@moltroad",
+      "firstSeen": "2026-01-31T15:03:08.473Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "MoltRoad",
+          "chain": "base",
+          "fdvAtDiscovery": 80934,
+          "priceAtDiscovery": "0.0000008093",
+          "discoveredAt": "2026-01-31T15:03:08.473Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@crustyclawd": {
+      "handle": "@crustyclawd",
+      "firstSeen": "2026-01-31T15:03:08.552Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "CRUSTY",
+          "chain": "solana",
+          "fdvAtDiscovery": 65581,
+          "priceAtDiscovery": "0.0001311",
+          "discoveredAt": "2026-01-31T15:03:08.552Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@clawk_ai": {
+      "handle": "@clawk_ai",
+      "firstSeen": "2026-01-31T15:03:09.122Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "CLAWK",
+          "chain": "base",
+          "fdvAtDiscovery": 464778,
+          "priceAtDiscovery": "0.000004647",
+          "discoveredAt": "2026-01-31T15:03:09.122Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@dcpin17": {
+      "handle": "@dcpin17",
+      "firstSeen": "2026-01-31T15:03:09.644Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "DCPIN",
+          "chain": "solana",
+          "fdvAtDiscovery": 30573,
+          "priceAtDiscovery": "0.00003057",
+          "discoveredAt": "2026-01-31T15:03:09.644Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@ramonsol_": {
+      "handle": "@ramonsol_",
+      "firstSeen": "2026-01-31T15:36:03.847Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "Ram",
+          "chain": "solana",
+          "fdvAtDiscovery": 19389,
+          "priceAtDiscovery": "0.00001961",
+          "discoveredAt": "2026-01-31T15:36:03.847Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    }
+  },
+  "lastUpdated": "2026-01-31T15:53:02.495Z"
+}

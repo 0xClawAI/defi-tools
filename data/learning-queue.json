@@ -1,0 +1,99 @@
+{
+  "completed": [],
+  "inProgress": null,
+  "queue": [
+    {
+      "category": "basics",
+      "topic": "DEX vs CEX - how they work"
+    },
+    {
+      "category": "basics",
+      "topic": "Liquidity pools and impermanent loss"
+    },
+    {
+      "category": "basics",
+      "topic": "AMM (Automated Market Maker) mechanics"
+    },
+    {
+      "category": "basics",
+      "topic": "Token bonding curves"
+    },
+    {
+      "category": "basics",
+      "topic": "pump.fun mechanics and fee structure"
+    },
+    {
+      "category": "trading",
+      "topic": "MEV (Maximal Extractable Value)"
+    },
+    {
+      "category": "trading",
+      "topic": "Sandwich attacks"
+    },
+    {
+      "category": "trading",
+      "topic": "Front-running protection"
+    },
+    {
+      "category": "trading",
+      "topic": "Slippage and price impact"
+    },
+    {
+      "category": "trading",
+      "topic": "Smart money tracking methods"
+    },
+    {
+      "category": "tokens",
+      "topic": "Token launch patterns on pump.fun"
+    },
+    {
+      "category": "tokens",
+      "topic": "FDV vs Market Cap interpretation"
+    },
+    {
+      "category": "tokens",
+      "topic": "Volume analysis for new tokens"
+    },
+    {
+      "category": "tokens",
+      "topic": "Holder distribution patterns"
+    },
+    {
+      "category": "tokens",
+      "topic": "Dev wallet tracking"
+    },
+    {
+      "category": "narratives",
+      "topic": "AI agent token meta evolution"
+    },
+    {
+      "category": "narratives",
+      "topic": "Meme coin cycles and timing"
+    },
+    {
+      "category": "narratives",
+      "topic": "Cross-chain token launches"
+    },
+    {
+      "category": "narratives",
+      "topic": "Community token vs VC token dynamics"
+    },
+    {
+      "category": "tools",
+      "topic": "DEXScreener advanced features"
+    },
+    {
+      "category": "tools",
+      "topic": "Birdeye analytics"
+    },
+    {
+      "category": "tools",
+      "topic": "Bubblemaps for holder analysis"
+    },
+    {
+      "category": "tools",
+      "topic": "On-chain transaction reading"
+    }
+  ],
+  "notes": {}
+}
