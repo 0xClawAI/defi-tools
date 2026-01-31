@@ -13,6 +13,14 @@
 const fs = require('fs');
 const path = require('path');
 
+// Alert Hub integration
+let alerter;
+try {
+  alerter = require('../alert-hub/alerter');
+} catch (e) {
+  alerter = null; // Optional dependency
+}
+
 // === CONFIG ===
 const CONFIG = {
   // Alert thresholds
@@ -233,6 +241,21 @@ async function runLoop() {
   }
 }
 
+// === ALERTING ===
+async function sendToHub(alerts) {
+  if (!alerter || alerts.length === 0) return;
+  
+  for (const alert of alerts) {
+    await alerter.sendAlert({
+      message: alert.message,
+      severity: alert.severity,
+      source: 'liquidation',
+      coin: alert.coin,
+      type: alert.type,
+    });
+  }
+}
+
 // === PERSISTENCE ===
 async function saveAlerts(alerts) {
   const alertFile = path.join(CONFIG.LOG_DIR, 'alerts.jsonl');
@@ -242,6 +265,9 @@ async function saveAlerts(alerts) {
   })).join('\n') + '\n';
   
   fs.appendFileSync(alertFile, lines);
+  
+  // Also send to Alert Hub
+  await sendToHub(alerts);
 }
 
 async function saveDailyLog(results) {

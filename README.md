@@ -24,6 +24,14 @@ node momentum-scanner/scanner.js --once
 ### Funding Scanner (`funding-scanner/`)
 Tracks funding rates across perpetual DEXs for arbitrage opportunities.
 
+### Liquidation Tracker (`liquidation-tracker/`)
+Monitors OI changes and extreme funding as liquidation cascade indicators.
+
+```bash
+node liquidation-tracker/tracker.js scan  # Single scan
+node liquidation-tracker/tracker.js loop  # Continuous monitoring
+```
+
 ### x402 Client (`x402-client/`)
 Client for x402 protocol payments between agents.
 
