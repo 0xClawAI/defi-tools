@@ -6,8 +6,11 @@
 
 const fs = require('fs');
 
+// DIP_BUY DISABLED: Pattern invalidated 2026-01-31, caused -74% losses
+// High ratio during dip = exit liquidity, not accumulation
+// See: .learnings/LEARNINGS.md
 const PATTERNS = {
-  DIP_BUY: { minRatio: 1.4, maxRatio: 1.6, minDip: -3 },
+  DIP_BUY: { minRatio: 1.4, maxRatio: 1.6, minDip: -3, DISABLED: true },
   MOMENTUM: { minRatio: 1.8, minVolume: 50000 },
   EXTREME: { minRatio: 3.5 }
 };

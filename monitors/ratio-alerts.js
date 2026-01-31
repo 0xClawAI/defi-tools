@@ -4,17 +4,23 @@
  * Triggers alerts when validated patterns appear
  * 
  * Patterns:
- * - DIP_BUY: Price down + ratio 1.4-1.5x sustained = accumulation
- * - MOMENTUM: Ratio >1.8x + volume spike = breakout imminent
+ * - DIP_BUY: DISABLED (pattern invalidated 2026-01-31, caused -74% losses)
+ * - MOMENTUM: Ratio >1.8x + volume spike + UPTREND = potential breakout
  */
+
+// DIP_BUY DISABLED: Pattern that worked for initial MOLTBOOK run failed
+// catastrophically during sustained downtrends. High ratio during dip =
+// exit liquidity, not accumulation. See: .learnings/LEARNINGS.md
+const DIP_BUY_DISABLED = true;
 
 const THRESHOLDS = {
   DIP_BUY: {
     minRatio: 1.4,
     maxRatio: 1.6,
     priceChange: -3, // at least 3% down
-    confidence: 'high',
-    avgSwing: 23.5
+    confidence: 'DISABLED', // Was 'high' - invalidated
+    avgSwing: 23.5,
+    DISABLED: true // Pattern no longer valid
   },
   MOMENTUM: {
     minRatio: 1.8,
@@ -27,18 +33,21 @@ const THRESHOLDS = {
 function analyzeToken(token) {
   const alerts = [];
   
-  // DIP_BUY pattern
-  if (token.priceChange < THRESHOLDS.DIP_BUY.priceChange &&
+  // DIP_BUY pattern - DISABLED (pattern invalidated 2026-01-31)
+  // This pattern caused -74% paper portfolio losses
+  if (!DIP_BUY_DISABLED &&
+      token.priceChange < THRESHOLDS.DIP_BUY.priceChange &&
       token.buyRatio >= THRESHOLDS.DIP_BUY.minRatio &&
       token.buyRatio <= THRESHOLDS.DIP_BUY.maxRatio) {
+    // DO NOT ENABLE - High ratio during dip = exit liquidity
     alerts.push({
       type: 'DIP_BUY',
       token: token.symbol,
       ratio: token.buyRatio,
       priceChange: token.priceChange,
-      confidence: 'HIGH',
-      expectedSwing: '+23.5%',
-      action: 'BUY on confirmation'
+      confidence: 'DISABLED',
+      expectedSwing: 'PATTERN INVALIDATED',
+      action: 'DO NOT TRADE'
     });
   }
   

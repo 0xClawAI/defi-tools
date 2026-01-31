@@ -38,21 +38,29 @@ async function checkPatterns() {
   const data = loadPredictions();
   const newPredictions = [];
   
-  // Check MOLTBOOK for dip-buy pattern
+  // DISABLED: DIP_BUY pattern invalidated 2026-01-31
+  // Pattern caused -74% paper losses. High ratio during dip = exit liquidity.
+  // See: .learnings/LEARNINGS.md "Trading Pattern Failure"
+  const DIP_BUY_DISABLED = true;
+  
+  // Check MOLTBOOK for dip-buy pattern - DISABLED
   const molt = await getTokenData('MOLTBOOK');
-  if (molt && molt.priceChange1h < -3) {
-    // Simplified - in production would check buy/sell ratio
+  if (!DIP_BUY_DISABLED && molt && molt.priceChange1h < -3) {
+    // DO NOT ENABLE - This pattern failed 100% during sustained downtrends
+    // Results: MOLTBOOK -82% vs predicted +23.5% swing
     newPredictions.push({
       id: `MOLT-${Date.now()}`,
       token: 'MOLTBOOK',
       pattern: 'DIP_BUY',
       entryPrice: molt.price,
-      targetPrice: molt.price * 1.235, // +23.5% expected
+      targetPrice: molt.price * 1.235,
       timestamp: new Date().toISOString(),
-      confidence: 'HIGH',
-      status: 'ACTIVE'
+      confidence: 'DISABLED',
+      status: 'PATTERN_INVALIDATED'
     });
-    console.log(`🎯 MOLTBOOK DIP_BUY detected @ $${molt.price}`);
+    console.log(`⚠️ MOLTBOOK DIP_BUY DISABLED - pattern invalidated`);
+  } else if (molt) {
+    console.log(`📊 MOLTBOOK @ $${molt.price} (${molt.priceChange1h}% 1h) - DIP_BUY disabled`);
   }
   
   // Check LEPUS for momentum
