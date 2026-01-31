@@ -52,27 +52,7 @@ function formatPrice(price) {
   return '$' + p.toFixed(8);
 }
 
-async function main() {
-  const args = process.argv.slice(2);
-  
-  if (args.length === 0) {
-    console.log('Token Lookup CLI');
-    console.log('================');
-    console.log('Usage:');
-    console.log('  node token-lookup.js <address|symbol> [chain]');
-    console.log('');
-    console.log('Examples:');
-    console.log('  node token-lookup.js 0x8c9037d1ef5c6d1f6816278c7aaf5491d24cd527');
-    console.log('  node token-lookup.js MOLTBOOK base');
-    console.log('  node token-lookup.js ETH');
-    process.exit(1);
-  }
-  
-  const query = args[0];
-  const chain = args[1] || null;
-  
-  console.log(`🔍 Looking up: ${query}${chain ? ` on ${chain}` : ''}...\n`);
-  
+async function lookupAndDisplay(query, chain = null, compact = false) {
   let pair = null;
   
   // Check if it's an address
@@ -82,26 +62,20 @@ async function main() {
     // Search by symbol/name
     const results = await searchToken(query);
     if (results.length > 0) {
-      // Filter by chain if specified
       const filtered = chain 
         ? results.filter(p => p.chainId === chain)
         : results;
       pair = filtered[0];
-      
-      // Show alternatives if multiple matches
-      if (filtered.length > 1) {
-        console.log('📋 Multiple matches found:');
-        filtered.slice(0, 5).forEach((p, i) => {
-          console.log(`   ${i + 1}. ${p.baseToken?.symbol} on ${p.chainId} - $${formatNumber(p.liquidity?.usd)} liq`);
-        });
-        console.log('');
-      }
     }
   }
   
   if (!pair) {
-    console.log('❌ Token not found');
-    process.exit(1);
+    if (compact) {
+      console.log(`❌ ${query}: Not found`);
+    } else {
+      console.log('❌ Token not found');
+    }
+    return null;
   }
   
   const token = pair.baseToken;
@@ -109,10 +83,22 @@ async function main() {
   const chainId = pair.chainId;
   
   // Get safety data
-  console.log('🔒 Checking safety...');
   const safety = await analyzeTokenSafety(address, chainId);
   
-  // Display results
+  if (compact) {
+    // Compact one-liner output
+    const safeIcon = safety?.safe ? '✅' : '❌';
+    const lockIcon = safety?.details?.liquidityLocked ? '🔒' : '🔓';
+    const price = formatPrice(pair.priceUsd);
+    const change = pair.priceChange?.h24?.toFixed(1) || '?';
+    const liq = formatNumber(pair.liquidity?.usd);
+    const score = safety?.score ?? '?';
+    
+    console.log(`${safeIcon} ${token?.symbol.padEnd(10)} ${price.padStart(14)} ${change.padStart(7)}% ${('$' + liq).padStart(10)} liq  ${lockIcon} ${score}/100`);
+    return { pair, safety };
+  }
+  
+  // Full output (original behavior)
   console.log('\n' + '═'.repeat(50));
   console.log(`📊 ${token?.symbol} (${token?.name})`);
   console.log('═'.repeat(50));
@@ -170,6 +156,75 @@ Top 10:     ${safety?.details?.top10Percent?.toFixed(1) || '?'}%
   }
   
   console.log('═'.repeat(50));
+  return { pair, safety };
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  
+  if (args.length === 0) {
+    console.log('Token Lookup CLI');
+    console.log('================');
+    console.log('Usage:');
+    console.log('  node token-lookup.js <address|symbol> [chain]');
+    console.log('  node token-lookup.js --batch token1,token2,token3 [chain]');
+    console.log('');
+    console.log('Examples:');
+    console.log('  node token-lookup.js 0x8c9037d1ef5c6d1f6816278c7aaf5491d24cd527');
+    console.log('  node token-lookup.js MOLTBOOK base');
+    console.log('  node token-lookup.js ETH');
+    console.log('  node token-lookup.js --batch MOLTBOOK,ETH,USDC base');
+    process.exit(1);
+  }
+  
+  // Batch mode
+  if (args[0] === '--batch') {
+    const tokens = args[1]?.split(',') || [];
+    const chain = args[2] || null;
+    
+    if (tokens.length === 0) {
+      console.log('❌ No tokens specified');
+      process.exit(1);
+    }
+    
+    console.log(`🔍 Batch lookup: ${tokens.length} tokens${chain ? ` on ${chain}` : ''}\n`);
+    console.log('─'.repeat(70));
+    console.log(`${'Status'.padEnd(3)} ${'Token'.padEnd(10)} ${'Price'.padStart(14)} ${'24h'.padStart(8)} ${'Liquidity'.padStart(11)} ${'LP'} ${'Safety'}`);
+    console.log('─'.repeat(70));
+    
+    for (const token of tokens) {
+      await lookupAndDisplay(token.trim(), chain, true);
+      await new Promise(r => setTimeout(r, 300)); // Rate limit
+    }
+    
+    console.log('─'.repeat(70));
+    process.exit(0);
+  }
+  
+  // Single token lookup
+  const query = args[0];
+  const chain = args[1] || null;
+  
+  console.log(`🔍 Looking up: ${query}${chain ? ` on ${chain}` : ''}...\n`);
+  
+  // Show multiple matches for search
+  if (!query.startsWith('0x')) {
+    const results = await searchToken(query);
+    const filtered = chain 
+      ? results.filter(p => p.chainId === chain)
+      : results;
+    if (filtered.length > 1) {
+      console.log('📋 Multiple matches found:');
+      filtered.slice(0, 5).forEach((p, i) => {
+        console.log(`   ${i + 1}. ${p.baseToken?.symbol} on ${p.chainId} - $${formatNumber(p.liquidity?.usd)} liq`);
+      });
+      console.log('');
+    }
+  }
+  
+  console.log('🔒 Checking safety...');
+  const result = await lookupAndDisplay(query, chain, false);
+  if (!result) process.exit(1);
 }
 
 main().catch(console.error);

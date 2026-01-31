@@ -3956,3 +3956,11 @@ Price: $0.008899
 ⏸️  Rate limited: VDR
 
 ✅ Scanned 3 tokens, found 4 signals
+
+🔍 Momentum Scan - 2026-01-31T21:40:01.721Z
+Found 29 trending tokens on base, solana
+Scanning 30 unique tokens...
+  ❌ WAR: Safety score 0/100 - REJECTED
+  ❌ VDR: Safety score 0/100 - REJECTED
+
+✅ Scanned 3 tokens, found 0 signals
