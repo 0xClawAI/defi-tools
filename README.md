@@ -32,6 +32,21 @@ node liquidation-tracker/tracker.js scan  # Single scan
 node liquidation-tracker/tracker.js loop  # Continuous monitoring
 ```
 
+### Alert Hub (`alert-hub/`)
+Unified alerting system - all monitors route through here for dedup and Telegram routing.
+
+```bash
+node alert-hub/alerter.js send "message" warning momentum  # Manual alert
+node alert-hub/alerter.js history                          # View history
+```
+
+### Moltbook Watcher (`moltbook-watcher/`) [WIP]
+Monitor Moltbook for notable agent registrations (alpha before Twitter announcements).
+
+```bash
+node moltbook-watcher/watcher.js scan  # Check for new registrations
+```
+
 ### x402 Client (`x402-client/`)
 Client for x402 protocol payments between agents.
 
