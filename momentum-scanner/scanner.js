@@ -14,6 +14,7 @@ const fs = require('fs');
 const path = require('path');
 const { sendAlert } = require('./alerter');
 const { isTokenSafe, analyzeTokenSafety } = require('./token-safety');
+const { validateSignalWithTrend, getTrendEmoji, calculateTrendScore } = require('./trend-filter');
 
 // Auto-trade config (small positions)
 const AUTO_TRADE = {
@@ -223,6 +224,10 @@ function formatAlert(signal) {
     ? `Safety: ${signal.safetyScore}/100 ${signal.liquidityLocked ? '🔒' : '🔓'} | Holders: ${signal.holderCount?.toLocaleString() || '?'}`
     : '';
   
+  const trendLine = signal.trendScore !== undefined
+    ? `Trend: ${signal.trendEmoji || '?'} ${signal.trend} (${signal.trendScore}/100)`
+    : '';
+  
   if (signal.type === 'HIGH_RATIO') {
     return `🔥 HIGH RATIO: ${signal.token}
 Ratio: ${signal.ratio}x (${signal.buys}B/${signal.sells}S) [${signal.window}]
@@ -230,12 +235,14 @@ Price: $${parseFloat(signal.price).toFixed(6)}
 Volume: $${Math.round(signal.volume24h).toLocaleString()}
 Liq: $${Math.round(signal.liquidity).toLocaleString()}
 Change: ${signal.priceChange?.toFixed(1)}%
+${trendLine}
 ${safetyLine}`;
   }
   if (signal.type === 'SUSTAINED_ACCUMULATION') {
     return `🎯 SUSTAINED ACCUMULATION: ${signal.token}
 Avg Ratio: ${signal.avgRatio}x over ${signal.periods} periods
 Price: $${parseFloat(signal.price).toFixed(6)}
+${trendLine}
 ${safetyLine}`;
   }
   return JSON.stringify(signal);
@@ -322,7 +329,48 @@ async function scan(state) {
     
     console.log(`  ✅ ${pair.baseToken?.symbol}: Safety ${safety.score}/100`);
     
+    // === TREND FILTER (NEW - addresses 0% win rate issue) ===
+    // Validate signals against price trend to prevent "catching falling knives"
+    const trendCheck = calculateTrendScore(pair.priceChange || {});
+    const trendEmoji = getTrendEmoji(trendCheck.score);
+    
+    // Filter signals through trend validation
+    const validatedSignals = [];
     for (const sig of signals) {
+      const ratio = parseFloat(sig.ratio) || 0;
+      const validation = validateSignalWithTrend(pair, ratio);
+      
+      if (!validation.valid) {
+        console.log(`  ⚠️ ${pair.baseToken?.symbol}: Signal BLOCKED by trend filter`);
+        console.log(`     ${trendEmoji} Trend: ${validation.trend} (score: ${validation.trendScore})`);
+        console.log(`     Reason: ${validation.reason}`);
+        // Log blocked signal for analysis
+        const blockedFile = path.join(DATA_DIR, 'blocked-signals.json');
+        let blocked = [];
+        try { blocked = JSON.parse(fs.readFileSync(blockedFile, 'utf8')); } catch {}
+        blocked.push({
+          ...sig,
+          blockedReason: validation.reason,
+          trendScore: validation.trendScore,
+          trend: validation.trend,
+          trendDetails: validation.details,
+          timestamp: new Date().toISOString(),
+        });
+        // Keep last 100 blocked signals
+        if (blocked.length > 100) blocked = blocked.slice(-100);
+        fs.writeFileSync(blockedFile, JSON.stringify(blocked, null, 2));
+        continue;
+      }
+      
+      // Add trend info to valid signal
+      sig.trendScore = trendCheck.score;
+      sig.trend = trendCheck.trend;
+      sig.trendEmoji = trendEmoji;
+      validatedSignals.push(sig);
+    }
+    
+    // Process only validated signals
+    for (const sig of validatedSignals) {
       // Add safety info to signal
       sig.safetyScore = safety.score;
       sig.liquidityLocked = safety.details.liquidityLocked;
@@ -364,9 +412,77 @@ async function scan(state) {
 }
 
 // Main
+// Show blocked signals (for analysis)
+function showBlockedSignals(limit = 10) {
+  const blockedFile = path.join(DATA_DIR, 'blocked-signals.json');
+  let blocked = [];
+  try { blocked = JSON.parse(fs.readFileSync(blockedFile, 'utf8')); } catch {}
+  
+  if (blocked.length === 0) {
+    console.log('No blocked signals recorded yet.');
+    return;
+  }
+  
+  console.log(`\n📊 BLOCKED SIGNALS (last ${Math.min(limit, blocked.length)} of ${blocked.length})\n`);
+  console.log('These signals were filtered out by the trend filter.\n');
+  
+  const recent = blocked.slice(-limit).reverse();
+  for (const sig of recent) {
+    console.log(`❌ ${sig.token} @ ${sig.timestamp?.split('T')[0] || '?'}`);
+    console.log(`   Ratio: ${sig.ratio}x | Trend: ${sig.trend} (${sig.trendScore}/100)`);
+    console.log(`   Reason: ${sig.blockedReason}`);
+    if (sig.trendDetails) {
+      const d = sig.trendDetails;
+      console.log(`   Price changes: m5:${d.m5?.toFixed(1)}% h1:${d.h1?.toFixed(1)}% h6:${d.h6?.toFixed(1)}% h24:${d.h24?.toFixed(1)}%`);
+    }
+    console.log('');
+  }
+  
+  // Stats
+  const trends = {};
+  blocked.forEach(b => {
+    trends[b.trend] = (trends[b.trend] || 0) + 1;
+  });
+  console.log('Blocked by trend type:');
+  Object.entries(trends).sort((a, b) => b[1] - a[1]).forEach(([t, c]) => {
+    console.log(`  ${t}: ${c}`);
+  });
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const state = loadState();
+  
+  // Help
+  if (args.includes('--help') || args.includes('-h')) {
+    console.log(`
+Momentum Ratio Scanner v2.1 (with Trend Filter)
+
+Usage:
+  node scanner.js             Single scan
+  node scanner.js --loop      Continuous monitoring
+  node scanner.js --watch 0x... Add addresses to watchlist
+  node scanner.js --blocked   View blocked signals (trend filtered)
+  node scanner.js --auto-trade Enable auto-trade candidate logging
+
+Filters:
+  - Safety score >= ${CONFIG.MIN_SAFETY_SCORE}/100 (GoPlusLabs)
+  - Trend score >= 60/100 (prevents downtrend false positives)
+  - Volume >= $${CONFIG.MIN_VOLUME_24H.toLocaleString()}
+  - Liquidity >= $${CONFIG.MIN_LIQUIDITY.toLocaleString()}
+  - Token age >= ${CONFIG.MIN_AGE_HOURS}h
+  - Max 24h drop: ${CONFIG.MAX_DROP_24H}%
+`);
+    process.exit(0);
+  }
+  
+  // View blocked signals
+  if (args.includes('--blocked')) {
+    const limitIdx = args.indexOf('--blocked');
+    const limit = parseInt(args[limitIdx + 1]) || 10;
+    showBlockedSignals(limit);
+    process.exit(0);
+  }
   
   if (args.includes('--watch')) {
     // Add tokens from args to watchlist

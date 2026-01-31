@@ -491,6 +491,13 @@
           "fdvAtDiscovery": 240121,
           "priceAtDiscovery": "0.0002401",
           "discoveredAt": "2026-01-31T21:28:43.674Z"
+        },
+        {
+          "symbol": "GSBANK",
+          "chain": "solana",
+          "fdvAtDiscovery": 259550,
+          "priceAtDiscovery": "0.0002595",
+          "discoveredAt": "2026-01-31T22:16:47.624Z"
         }
       ],
       "tier": "unscored",
@@ -529,5 +536,5 @@
       "notes": ""
     }
   },
-  "lastUpdated": "2026-01-31T21:28:46.789Z"
+  "lastUpdated": "2026-01-31T22:16:50.169Z"
 }

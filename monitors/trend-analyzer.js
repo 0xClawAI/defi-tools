@@ -4,6 +4,10 @@ const path = require('path');
 const LOG_DIR = '/home/clawdbot/projects/defi-tools/data/price-logs';
 const PREDICTIONS_FILE = '/home/clawdbot/projects/defi-tools/data/predictions.jsonl';
 const today = new Date().toISOString().split('T')[0];
+
+// DISABLED: Tokens with invalidated patterns or unreliable data
+// MOLTBOOK: 0% accuracy, -77% avg vs predicted, pattern invalidated 2026-01-31
+const DISABLED_TOKENS = ['MOLTBOOK'];
 const logFile = path.join(LOG_DIR, `${today}.jsonl`);
 
 function loadRecentData(minutes = 15) {
@@ -56,6 +60,8 @@ function analyzeTrends(data) {
 function makePredictions(trends) {
   const predictions = [];
   Object.entries(trends).forEach(([symbol, data]) => {
+    // Skip disabled tokens
+    if (DISABLED_TOKENS.includes(symbol)) return;
     if (data.signal === 'BULLISH') {
       predictions.push({
         symbol,
@@ -101,9 +107,11 @@ async function run() {
   
   const trends = analyzeTrends(data);
   console.log('\n  Trends:');
-  Object.entries(trends).forEach(([sym, t]) => {
-    console.log(`  ${sym}: ${t.signal} | Δ${t.priceChange}% | B/S:${t.avgBuySellRatio}`);
-  });
+  Object.entries(trends)
+    .filter(([sym]) => !DISABLED_TOKENS.includes(sym))
+    .forEach(([sym, t]) => {
+      console.log(`  ${sym}: ${t.signal} | Δ${t.priceChange}% | B/S:${t.avgBuySellRatio}`);
+    });
   
   const predictions = makePredictions(trends);
   if (predictions.length > 0) {

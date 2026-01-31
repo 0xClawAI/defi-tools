@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-01-31T22:11:35.729Z",
+  "signals": {
+    "LEPUS": {"trend": "BULLISH", "delta": 4.89, "ratio": 1.68, "prediction": "UP", "confidence": "medium"},
+    "MOLTBOOK": {"trend": "DIP_BUY", "delta": -13.29, "ratio": 1.45, "prediction": "REVERSAL_UP", "confidence": "high"},
+    "VIRTUAL": {"trend": "HOLD", "delta": 0.02, "ratio": 1.07, "prediction": "NEUTRAL", "confidence": "low"}
+  },
+  "alerts_triggered": true,
+  "notes": "MOLTBOOK dip-buy at 1.45x matches validated pattern. Deeper dip (-13.29%) but ratio holding. High confidence reversal signal.",
+  "previous_validation": {
+    "LEPUS": "CORRECT - continued bullish",
+    "MOLTBOOK": "PENDING - dip deepened, ratio held",
+    "VIRTUAL": "CORRECT - stayed neutral"
+  }
+}
