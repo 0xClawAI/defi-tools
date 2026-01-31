@@ -264,6 +264,32 @@ async function main() {
     process.exit(0);
   }
   
+  // Trending tokens
+  if (args[0] === '--trending') {
+    const chain = args[1] || null;
+    console.log(`🔥 Trending tokens${chain ? ` on ${chain}` : ''}...\n`);
+    
+    try {
+      const res = await fetch('https://api.dexscreener.com/token-boosts/top/v1');
+      const trending = await res.json();
+      const filtered = chain ? trending.filter(t => t.chainId === chain) : trending;
+      
+      console.log('─'.repeat(70));
+      console.log(`${'#'.padStart(3)} ${'Token'.padEnd(15)} ${'Chain'.padEnd(10)} ${'Total Boost'}`);
+      console.log('─'.repeat(70));
+      
+      filtered.slice(0, 20).forEach((t, i) => {
+        console.log(`${String(i + 1).padStart(3)} ${(t.tokenAddress?.slice(0, 12) + '...').padEnd(15)} ${t.chainId?.padEnd(10)} ${t.amount || '?'}`);
+      });
+      
+      console.log('─'.repeat(70));
+      console.log(`\n💡 Use: node token-lookup.js <address> to check any token`);
+    } catch (e) {
+      console.log('❌ Failed to fetch trending:', e.message);
+    }
+    process.exit(0);
+  }
+  
   // Watchlist: check all
   if (args[0] === '--watch') {
     const watchlist = loadWatchlist();
