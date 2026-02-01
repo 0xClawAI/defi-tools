@@ -790,7 +790,23 @@
       ],
       "tier": "unscored",
       "notes": ""
+    },
+    "@tulsabws": {
+      "handle": "@tulsabws",
+      "firstSeen": "2026-02-01T18:21:34.515Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "TULSA",
+          "chain": "solana",
+          "fdvAtDiscovery": 970673,
+          "priceAtDiscovery": "0.0009708",
+          "discoveredAt": "2026-02-01T18:21:34.515Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
     }
   },
-  "lastUpdated": "2026-02-01T16:19:53.078Z"
+  "lastUpdated": "2026-02-01T18:21:38.142Z"
 }

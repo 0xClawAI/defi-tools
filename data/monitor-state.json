@@ -826,8 +826,42 @@
           "type": "twitter"
         }
       ]
+    },
+    "solana:Ffgi3bK3Vc1jhvYcH3QZzvydwHx52TFaYFX7r1Zhpump": {
+      "firstSeen": "2026-02-01T16:49:48.916Z",
+      "boosts": 100,
+      "description": "Everything is \"WTF?\" The world is on fire and everyone is busy firing ze missiles at each other. 🚀 ",
+      "price": "0.0001272",
+      "fdv": 118501,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2016115762625204530",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:8TVr3U85V3Uazkxd5DJbmzdUWaxhQdEGNNGJ7eNTpump": {
+      "firstSeen": "2026-02-01T18:21:33.879Z",
+      "boosts": 510,
+      "description": "The Black WallStreet Coin is a groundbreaking cryptocurrency that pays tribute to the historical Bla",
+      "price": "0.0009708",
+      "fdv": 970673,
+      "socials": [
+        {
+          "url": "https://x.com/tulsabws?s=21&t=O1kPMRtIBO1KZa0XZZiSsg",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/Blackwallstreetsol",
+          "type": "telegram"
+        },
+        {
+          "url": "https://www.tiktok.com/@blackwallstreetonsol?_r=1&_t=ZT-93CoT4lRb6k",
+          "type": "tiktok"
+        }
+      ]
     }
   },
-  "lastCheck": "2026-02-01T16:19:47.561Z",
+  "lastCheck": "2026-02-01T18:21:33.954Z",
   "alerts": []
 }
