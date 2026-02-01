@@ -1,0 +1,8 @@
+{
+  "mode": "paper",
+  "startDate": "2026-02-01",
+  "startingBalance": 100,
+  "currentBalance": 100,
+  "trades": [],
+  "notes": "Proving signals work before real capital"
+}

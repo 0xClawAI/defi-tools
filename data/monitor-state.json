@@ -703,8 +703,38 @@
           "type": "twitter"
         }
       ]
+    },
+    "solana:UKbjzACGQuvQHT2qYjfPqH6Fu6robJ5ZLx29GSnpump": {
+      "firstSeen": "2026-02-01T02:34:56.837Z",
+      "boosts": 200,
+      "description": "PEPSTEIN",
+      "price": "0.0001207",
+      "fdv": 120717,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017769190363373578",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/pepsteinportal",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:Ha3AoVAZBuq89ybWTtk9CXkgwiPJgfwJ15SBqeoppump": {
+      "firstSeen": "2026-02-01T02:34:56.879Z",
+      "boosts": 100,
+      "description": "The Ai agent trading platform. Enables your OpenClaw bot to launch and trade coins on solana",
+      "price": "0.00006068",
+      "fdv": 60683,
+      "socials": [
+        {
+          "url": "https://x.com/openfunai",
+          "type": "twitter"
+        }
+      ]
     }
   },
-  "lastCheck": "2026-02-01T01:05:59.620Z",
+  "lastCheck": "2026-02-01T04:28:00.266Z",
   "alerts": []
 }

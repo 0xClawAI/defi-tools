@@ -82,9 +82,9 @@
       "confidence": "medium",
       "priceChange": 2.14,
       "buyPressure": 1.55,
-      "status": "tracking",
-      "note": "1.46x ratio holding. Pattern continues after 3x validated dip-buys. | 21:17: Accumulating at 1.55x ratio.",
-      "lastChecked": "2026-01-31T21:17:22.279Z",
+      "status": "invalidated",
+      "note": "1.46x ratio holding. Pattern continues after 3x validated dip-buys. | 21:17: Accumulating at 1.55x ratio. | 02:34: Token crashed. MOLTBOOK -53%, LEPUS -80% from ATH.",
+      "lastChecked": "2026-02-01T02:34:44.885Z",
       "currentChange": 0.33
     },
     {
@@ -173,9 +173,9 @@
       "confidence": "medium",
       "priceChange": 2.36,
       "buyPressure": 1.46,
-      "status": "tracking",
-      "note": "Continued bullish. 1.46x fingerprint consistent through 5 validated swings.",
-      "lastChecked": "2026-01-31T06:15:25.307Z"
+      "status": "invalidated",
+      "note": "Continued bullish. 1.46x fingerprint consistent through 5 validated swings. | 02:34: Token crashed. MOLTBOOK -53%, LEPUS -80% from ATH.",
+      "lastChecked": "2026-02-01T02:34:44.885Z"
     },
     {
       "timestamp": "2026-01-31T06:15:25.307Z",
@@ -184,8 +184,9 @@
       "confidence": "low",
       "priceChange": -1.84,
       "buyPressure": 1.46,
-      "status": "tracking",
-      "note": "Sixth 1.46x pattern occurrence. Shallow dip (-1.84%) vs prior deeper entries. Watching for deepening."
+      "status": "invalidated",
+      "note": "Sixth 1.46x pattern occurrence. Shallow dip (-1.84%) vs prior deeper entries. Watching for deepening. | 02:34: Token crashed. MOLTBOOK -53%, LEPUS -80% from ATH.",
+      "lastChecked": "2026-02-01T02:34:44.885Z"
     },
     {
       "timestamp": "2026-01-31T16:45:01.109Z",
@@ -206,8 +207,9 @@
       "confidence": "low",
       "priceChange": -1.56,
       "buyPressure": 1.42,
-      "status": "tracking",
-      "note": "Shallow dip. 1.42x slightly below validated 1.46x fingerprint. Watching."
+      "status": "invalidated",
+      "note": "Shallow dip. 1.42x slightly below validated 1.46x fingerprint. Watching. | 02:34: Token crashed. MOLTBOOK -53%, LEPUS -80% from ATH.",
+      "lastChecked": "2026-02-01T02:34:44.885Z"
     }
   ]
 }

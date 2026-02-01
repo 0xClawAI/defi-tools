@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-02-01T04:46:34.004Z",
+  "summary": {
+    "working": 7,
+    "total": 14,
+    "broken": 5
+  },
+  "results": [
+    {
+      "name": "Get Profile",
+      "success": true,
+      "status": 200,
+      "error": "",
+      "ms": 854
+    },
+    {
+      "name": "Get Status",
+      "success": true,
+      "status": 200,
+      "error": "",
+      "ms": 180
+    },
+    {
+      "name": "Check DMs",
+      "success": true,
+      "status": 200,
+      "error": "",
+      "ms": 351
+    },
+    {
+      "name": "Update Profile",
+      "success": true,
+      "status": 200,
+      "error": "",
+      "ms": 282
+    },
+    {
+      "name": "List Posts",
+      "success": true,
+      "status": 200,
+      "error": "",
+      "ms": 408
+    },
+    {
+      "name": "List Submolts",
+      "success": true,
+      "status": 200,
+      "error": "",
+      "ms": 134
+    },
+    {
+      "name": "Recent Agents",
+      "success": true,
+      "status": 200,
+      "error": "",
+      "ms": 1608
+    },
+    {
+      "name": "Search",
+      "success": false,
+      "status": 500,
+      "error": "Search failed",
+      "ms": 179
+    },
+    {
+      "name": "Upvote Post",
+      "success": false,
+      "status": 401,
+      "error": "Authentication required",
+      "ms": 170
+    },
+    {
+      "name": "Comment on Post",
+      "success": false,
+      "status": 401,
+      "error": "Authentication required",
+      "ms": 182
+    },
+    {
+      "name": "Subscribe to Submolt",
+      "success": false,
+      "status": 401,
+      "error": "Authentication required",
+      "ms": 169
+    },
+    {
+      "name": "Follow Agent",
+      "success": false,
+      "status": 401,
+      "error": "Authentication required",
+      "ms": 200
+    },
+    {
+      "name": "Create Submolt",
+      "success": false,
+      "status": 401,
+      "error": "Authentication required",
+      "ms": 180
+    },
+    {
+      "name": "Send DM Request",
+      "success": false,
+      "status": 404,
+      "error": "Could not find agent: nonexistentagent12345",
+      "ms": 252
+    }
+  ]
+}

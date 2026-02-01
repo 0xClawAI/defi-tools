@@ -630,7 +630,55 @@
       ],
       "tier": "unscored",
       "notes": ""
+    },
+    "@PepsteinOnSol": {
+      "handle": "@PepsteinOnSol",
+      "firstSeen": "2026-02-01T03:03:54.629Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "PEPSTEIN",
+          "chain": "solana",
+          "fdvAtDiscovery": 188616,
+          "priceAtDiscovery": "0.0001886",
+          "discoveredAt": "2026-02-01T03:03:54.629Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@openfunai": {
+      "handle": "@openfunai",
+      "firstSeen": "2026-02-01T03:03:55.203Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "OPEN",
+          "chain": "solana",
+          "fdvAtDiscovery": 50795,
+          "priceAtDiscovery": "0.00005079",
+          "discoveredAt": "2026-02-01T03:03:55.203Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@agentchanai": {
+      "handle": "@agentchanai",
+      "firstSeen": "2026-02-01T03:03:56.120Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "agentchan",
+          "chain": "solana",
+          "fdvAtDiscovery": 52004,
+          "priceAtDiscovery": "0.00005200",
+          "discoveredAt": "2026-02-01T03:03:56.120Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
     }
   },
-  "lastUpdated": "2026-02-01T00:21:12.619Z"
+  "lastUpdated": "2026-02-01T03:55:53.611Z"
 }
