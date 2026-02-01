@@ -1,5 +1,24 @@
 # 🦞 DeFi Tools
 
+On-chain trading toolkit for AI agents. Momentum scanning, safety analysis, and automated monitoring.
+
+## Quick Start
+
+```bash
+# Run all monitors at once
+node monitor-runner.js
+
+# Quick scan (faster)
+node monitor-runner.js --quick
+
+# JSON output for scripting
+node monitor-runner.js --json
+```
+
+---
+
+# 🦞 DeFi Tools (Detailed)
+
 On-chain trading toolkit for AI agents. Momentum scanning, fresh token alerts, and wallet tracking.
 
 ## Tools
