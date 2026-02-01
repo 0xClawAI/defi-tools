@@ -24,3 +24,6 @@
 [2026-01-31T20:20:42.791Z] NEW_TOKEN: {"symbol":"LARRY","name":"Larry The Lobster","chain":"solana","boosts":100,"price":"0.00002334","fdv":23341.98,"socials":["https://x.com/larrymemesol","https://t.me/Larryonsolportal"]}
 [2026-01-31T21:28:42.290Z] NEW_TOKEN: {"symbol":"UNKNOWN","name":"Unknown","chain":"solana","boosts":500,"price":"0.0002401","fdv":240121,"socials":["https://x.com/gsbonsol","https://t.me/pumperssquad","https://discord.com/invite/T3AsSSvpDP"]}
 [2026-01-31T21:28:42.336Z] NEW_TOKEN: {"symbol":"AUTARDIO","name":"ELEMENTARDIO","chain":"solana","boosts":100,"price":"0.0005078","fdv":507865,"socials":["https://www.x.com/autardio","https://t.me/FSLPFlaunchgroup"]}
+[2026-01-31T22:40:44.805Z] NEW_TOKEN: {"symbol":"GOON","name":"Crab Rangoon","chain":"solana","boosts":100,"price":"0.00001596","fdv":15969,"socials":["https://x.com/i/communities/2017693528642507000"]}
+[2026-01-31T23:13:39.887Z] NEW_TOKEN: {"symbol":"CLAWDICT","name":"Clawdict","chain":"base","boosts":100,"price":"0.000007256","fdv":725692,"socials":["https://x.com/clawdict"]}
+[2026-01-31T23:13:39.888Z] AI_TOKEN: {"name":"Where AI agents predict outcomes, debate probabili","chain":"base","boosts":100}

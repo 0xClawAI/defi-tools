@@ -163,6 +163,37 @@ function getHyperliquidData() {
   }
 }
 
+// Get PoI V2 credential status
+async function getPoIStatus() {
+  try {
+    const { ethers } = require('ethers');
+    const POI_V2_ADDRESS = '0x321cd306284b5Dc71E96973c879448cfEcCf334b';
+    const ABI = [
+      'function hasValidPoI(address agent) view returns (bool)',
+      'function daysUntilExpiry(address agent) view returns (uint256)',
+      'function getCredential(address agent) view returns (tuple(uint256 issuedAt, uint256 expiresAt, uint8 challengeType, uint256 blockSolved, bool valid, uint256 maintenanceCount, uint256 lastMaintained, uint8 reputation))'
+    ];
+    const provider = new ethers.JsonRpcProvider('https://sepolia.base.org');
+    const contract = new ethers.Contract(POI_V2_ADDRESS, ABI, provider);
+    
+    const [hasValid, daysLeft, cred] = await Promise.all([
+      contract.hasValidPoI(WALLET_ADDRESS),
+      contract.daysUntilExpiry(WALLET_ADDRESS),
+      contract.getCredential(WALLET_ADDRESS)
+    ]);
+    
+    return {
+      valid: hasValid,
+      daysUntilExpiry: Number(daysLeft),
+      reputation: Number(cred.reputation),
+      maintenanceCount: Number(cred.maintenanceCount),
+      expiresAt: new Date(Number(cred.expiresAt) * 1000).toISOString()
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
 // Get latest funding rates
 function getFundingRates() {
   const fundingPath = path.join(DEFI_TOOLS, 'funding-scanner/data/rates.json');
@@ -198,6 +229,7 @@ async function generateStatus(options = {}) {
     wallet: null,
     tokens: [],
     hyperliquid: null,
+    poi: null,
     positions: [],
     paperTrades: null,
     alerts: [],
@@ -206,13 +238,15 @@ async function generateStatus(options = {}) {
   };
 
   // Fetch all data in parallel
-  const [balance, tokens] = await Promise.all([
+  const [balance, tokens, poi] = await Promise.all([
     getWalletBalance(),
-    getTokenBalances()
+    getTokenBalances(),
+    getPoIStatus()
   ]);
 
   status.wallet = balance;
   status.tokens = tokens;
+  status.poi = poi;
   // Hyperliquid is optional (can be slow) - skip with --no-hl
   if (!options.noHl) {
     status.hyperliquid = getHyperliquidData();
@@ -272,6 +306,26 @@ async function generateStatus(options = {}) {
     } else {
       console.log(c('dim', '  No Hyperliquid balance'));
     }
+    console.log();
+  }
+
+  // PoI V2 Section
+  if (status.poi) {
+    console.log(c('cyan', '┌─ 🧠 PROOF OF INTELLIGENCE V2 ───────────────────────────┐'));
+    const poi = status.poi;
+    const statusColor = poi.valid ? 'green' : 'red';
+    const statusText = poi.valid ? '✅ Valid' : '❌ Invalid';
+    console.log(`  Status: ${c(statusColor, statusText)}`);
+    if (poi.valid) {
+      const urgencyColor = poi.daysUntilExpiry <= 2 ? 'yellow' : 'green';
+      console.log(`  Expires in: ${c(urgencyColor, poi.daysUntilExpiry + ' days')}`);
+      console.log(`  Reputation: ${poi.reputation}/100`);
+      console.log(`  Maintenance: ${poi.maintenanceCount} renewals`);
+      if (poi.daysUntilExpiry <= 2) {
+        console.log(c('yellow', '  ⚠️ Maintenance needed soon!'));
+      }
+    }
+    console.log(c('dim', '  Contract: Base Sepolia (testnet)'));
     console.log();
   }
 

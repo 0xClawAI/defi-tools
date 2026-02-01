@@ -634,8 +634,77 @@
           "type": "telegram"
         }
       ]
+    },
+    "solana:GxenLMUaFXwn5LEXrDMBBb4b1TyGL6XCpsZ1seaApump": {
+      "firstSeen": "2026-01-31T22:40:44.763Z",
+      "boosts": 100,
+      "description": "So you're telling me a crab made this goon?",
+      "price": "0.00001596",
+      "fdv": 15969,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017693528642507000",
+          "type": "twitter"
+        }
+      ]
+    },
+    "base:0xc6A7ed1c6Bc25fAdF7e87B5D78F6fF94C09e26F6": {
+      "firstSeen": "2026-01-31T23:13:39.848Z",
+      "boosts": 100,
+      "description": "Where AI agents predict outcomes, debate probabilities, and converge on the future.\n\nHumans welcome ",
+      "price": "0.000007256",
+      "fdv": 725692,
+      "socials": [
+        {
+          "url": "https://x.com/clawdict",
+          "type": "twitter"
+        }
+      ]
+    },
+    "solana:NMyXNDy9B1dm9nSgJxbnVTeQvWt9wF7QF1EvyM2pump": {
+      "firstSeen": "2026-02-01T00:21:08.247Z",
+      "boosts": 100,
+      "description": "McWif",
+      "price": "0.000004012",
+      "fdv": 4012,
+      "socials": [
+        {
+          "url": "https://x.com/mcwifsol",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/mcwif",
+          "type": "telegram"
+        }
+      ]
+    },
+    "base:0x14095aC82280CF965cC63e396E8c4F449d77cB07": {
+      "firstSeen": "2026-02-01T00:21:08.314Z",
+      "boosts": 100,
+      "description": "A Bounty Marketplace for AI Agents",
+      "price": "0.000001894",
+      "fdv": 189463,
+      "socials": [
+        {
+          "url": "https://x.com/mattshumer_/status/2017739712371236970",
+          "type": "twitter"
+        }
+      ]
+    },
+    "base:0xf5075C375FbAE00b08C4Cac80feD84Ac3b4D8b07": {
+      "firstSeen": "2026-02-01T01:05:59.578Z",
+      "boosts": 100,
+      "description": "Instagram for moltbots",
+      "price": "0.0000008309",
+      "fdv": 83097,
+      "socials": [
+        {
+          "url": "https://x.com/clawdgramai/status/2017703358660751490",
+          "type": "twitter"
+        }
+      ]
     }
   },
-  "lastCheck": "2026-01-31T22:16:46.148Z",
+  "lastCheck": "2026-02-01T01:05:59.620Z",
   "alerts": []
 }

@@ -534,7 +534,103 @@
       ],
       "tier": "unscored",
       "notes": ""
+    },
+    "@mcwifsol": {
+      "handle": "@mcwifsol",
+      "firstSeen": "2026-01-31T22:40:47.817Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "McWif",
+          "chain": "solana",
+          "fdvAtDiscovery": 60521,
+          "priceAtDiscovery": "0.00006052",
+          "discoveredAt": "2026-01-31T22:40:47.817Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@officialcatcoin": {
+      "handle": "@officialcatcoin",
+      "firstSeen": "2026-01-31T22:40:47.998Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "CATCOIN",
+          "chain": "ethereum",
+          "fdvAtDiscovery": 1475147,
+          "priceAtDiscovery": "0.001475",
+          "discoveredAt": "2026-01-31T22:40:47.998Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@clawdict": {
+      "handle": "@clawdict",
+      "firstSeen": "2026-01-31T23:13:45.942Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "CLAWDICT",
+          "chain": "base",
+          "fdvAtDiscovery": 725692,
+          "priceAtDiscovery": "0.000007256",
+          "discoveredAt": "2026-01-31T23:13:45.942Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@clawdgramai": {
+      "handle": "@clawdgramai",
+      "firstSeen": "2026-01-31T23:13:46.167Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "Clawgram",
+          "chain": "base",
+          "fdvAtDiscovery": 91140,
+          "priceAtDiscovery": "0.0000009113",
+          "discoveredAt": "2026-01-31T23:13:46.167Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@mattshumer_": {
+      "handle": "@mattshumer_",
+      "firstSeen": "2026-02-01T00:21:11.886Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "TASKS",
+          "chain": "base",
+          "fdvAtDiscovery": 189463,
+          "priceAtDiscovery": "0.000001894",
+          "discoveredAt": "2026-02-01T00:21:11.886Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@moltygram": {
+      "handle": "@moltygram",
+      "firstSeen": "2026-02-01T00:21:12.619Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "MOLTY",
+          "chain": "base",
+          "fdvAtDiscovery": 66349,
+          "priceAtDiscovery": "0.0000006634",
+          "discoveredAt": "2026-02-01T00:21:12.619Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
     }
   },
-  "lastUpdated": "2026-01-31T22:16:50.169Z"
+  "lastUpdated": "2026-02-01T00:21:12.619Z"
 }
