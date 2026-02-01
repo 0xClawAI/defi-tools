@@ -83,6 +83,33 @@ node liquidation-tracker/tracker.js scan  # Single scan
 node liquidation-tracker/tracker.js loop  # Continuous monitoring
 ```
 
+### Price Alerts (`price-alerts.js`)
+Watch tokens for price movements and get alerts when thresholds hit.
+
+```bash
+node price-alerts.js add ETH base 2000 4000      # Alert if price < $2000 or > $4000
+node price-alerts.js add MOLTBOOK base percent 10 # Alert on ±10% move
+node price-alerts.js list                         # Show all alerts
+node price-alerts.js check                        # Check all alerts
+node price-alerts.js remove <id>                  # Remove an alert
+```
+
+### Daily Digest (`daily-digest.js`)
+Summary report of trading activity and market status.
+
+```bash
+node daily-digest.js             # Full digest
+node daily-digest.js --telegram  # Telegram-formatted
+```
+
+### Bounty Hunter (`bounty-hunter/`)
+Watches AgentBountyBoard on Base for jobs and claims them.
+
+```bash
+node bounty-hunter/worker.mjs         # Check jobs
+node bounty-hunter/worker.mjs --watch # Watch mode (polls every 5s)
+```
+
 ### Alert Hub (`alert-hub/`)
 Unified alerting system - all monitors route through here for dedup and Telegram routing.
 
