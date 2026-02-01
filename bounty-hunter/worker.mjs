@@ -13,12 +13,14 @@ import { readFileSync } from "fs";
 //           CONFIGURATION
 // ═══════════════════════════════════════════
 
-const walletConfig = JSON.parse(readFileSync(process.env.HOME + "/.config/0xclaw/wallet.json", "utf-8"));
+// v2 wallet (v1 was compromised via EIP-7702 drain)
+const walletConfig = JSON.parse(readFileSync(process.env.HOME + "/.config/0xclaw/wallet-v2.json", "utf-8"));
 const PRIVATE_KEY = walletConfig.privateKey;
 const RPC_URL = "https://mainnet.base.org";
 const BOARD_ADDRESS = "0x1aEf2515D21fA590a525ED891cCF1aD0f499c4C9";
 const CLAWD_ADDRESS = "0x9f86dB9fc6f7c9408e8Fda3Ff8ce4e78ac7a6b07";
 const AGENT_ID = 22583n; // Our ERC-8004 agent ID
+const WALLET_ADDRESS = "0xA8C4597102696Bb287ab074D66F18FC5C1325c0c"; // v2 wallet
 
 // Aggressive threshold - claim early for guaranteed wins
 const PRICE_THRESHOLD = 50n; // Claim when price hits 50 CLAWD
@@ -57,7 +59,7 @@ async function executeJob(jobId, description) {
     completedAt: new Date().toISOString(),
     description: description,
     result: "Task completed by 0xClaw autonomous agent",
-    wallet: "0xffA12D92098eB2b72B3c30B62f8da02BA4158c1e"
+    wallet: WALLET_ADDRESS
   };
   const base64 = Buffer.from(JSON.stringify(proof)).toString("base64");
   return `data:application/json;base64,${base64}`;
