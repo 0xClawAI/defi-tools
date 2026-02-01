@@ -733,8 +733,101 @@
           "type": "twitter"
         }
       ]
+    },
+    "solana:8nuBeqkiHwv4HFfFM6iFdH6bdjtKF1XcZXkEr9nCpump": {
+      "firstSeen": "2026-02-01T04:55:10.219Z",
+      "boosts": 100,
+      "price": "0.01803",
+      "fdv": 18037011,
+      "socials": []
+    },
+    "solana:CHgB3mkmULz7wTTzn3wdyLpBW4LgZXF6UvDddHeWpump": {
+      "firstSeen": "2026-02-01T15:37:03.380Z",
+      "boosts": 200,
+      "description": "literally got an upper cut",
+      "price": "0.00001035",
+      "fdv": 10357,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017834748509614172",
+          "type": "twitter"
+        }
+      ]
+    },
+    "base:0xaf97b4241D2B0d084c6d40492572bfAbA6e14AE1": {
+      "firstSeen": "2026-02-01T15:37:03.433Z",
+      "boosts": 100,
+      "description": "Skills economy for ai agents on @base",
+      "price": "0.0000004157",
+      "fdv": 41571,
+      "socials": [
+        {
+          "url": "https://x.com/hiveclaw",
+          "type": "twitter"
+        },
+        {
+          "url": "https://discord.com/invite/Hd5wa4gHR8",
+          "type": "discord"
+        }
+      ]
+    },
+    "base:0x79bd5dF2b428Fb0a5DADf3F0Cbdb78101dC22b07": {
+      "firstSeen": "2026-02-01T15:37:03.673Z",
+      "boosts": 100,
+      "description": "the social network for ai agents",
+      "price": "0.0000008466",
+      "fdv": 84669,
+      "socials": [
+        {
+          "url": "https://x.com/KingCola88/status/2017690633289523215",
+          "type": "twitter"
+        }
+      ]
+    },
+    "base:0xAeee9062939c935eF5f7FdCaA305B87C2E248b07": {
+      "firstSeen": "2026-02-01T15:37:03.837Z",
+      "boosts": 100,
+      "description": "A Freelance Marketplace for AI Agents\n\nMoltverr is created by @rishabhjava the founder of SatsTermin",
+      "price": "0.000001805",
+      "fdv": 180526,
+      "socials": [
+        {
+          "url": "https://x.com/moltverr",
+          "type": "twitter"
+        }
+      ]
+    },
+    "bsc:0x1b075B21eebE88C242d5E0b73c805792775b9d2a": {
+      "firstSeen": "2026-02-01T15:37:04.238Z",
+      "boosts": 100,
+      "description": "Moltbook🦞🌐Reddit for autonomous AI agents only.",
+      "price": "0.0000000000006362",
+      "fdv": 265006,
+      "socials": [
+        {
+          "url": "https://x.com/heyibinance/status/2017545290493137114",
+          "type": "twitter"
+        },
+        {
+          "url": "https://t.me/Moltbook_coin",
+          "type": "telegram"
+        }
+      ]
+    },
+    "solana:DyprcxbNBgA41JNsDc3Ku395vVXSQC9xWV75mUrMqThW": {
+      "firstSeen": "2026-02-01T16:04:50.602Z",
+      "boosts": 500,
+      "description": "Epstein Coin",
+      "price": "0.00002766",
+      "fdv": 27664,
+      "socials": [
+        {
+          "url": "https://x.com/i/communities/2017978458236751957/",
+          "type": "twitter"
+        }
+      ]
     }
   },
-  "lastCheck": "2026-02-01T04:28:00.266Z",
+  "lastCheck": "2026-02-01T16:19:47.561Z",
   "alerts": []
 }

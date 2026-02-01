@@ -678,7 +678,119 @@
       ],
       "tier": "unscored",
       "notes": ""
+    },
+    "@hiveclaw": {
+      "handle": "@hiveclaw",
+      "firstSeen": "2026-02-01T16:19:50.824Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "BUZZ",
+          "chain": "base",
+          "fdvAtDiscovery": 41504,
+          "priceAtDiscovery": "0.0000004150",
+          "discoveredAt": "2026-02-01T16:19:50.825Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@KingCola88": {
+      "handle": "@KingCola88",
+      "firstSeen": "2026-02-01T16:19:50.929Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "Moltx",
+          "chain": "base",
+          "fdvAtDiscovery": 84774,
+          "priceAtDiscovery": "0.0000008477",
+          "discoveredAt": "2026-02-01T16:19:50.929Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@moltverr": {
+      "handle": "@moltverr",
+      "firstSeen": "2026-02-01T16:19:51.033Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "MOLTVERR",
+          "chain": "base",
+          "fdvAtDiscovery": 115194,
+          "priceAtDiscovery": "0.000001151",
+          "discoveredAt": "2026-02-01T16:19:51.033Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@heyibinance": {
+      "handle": "@heyibinance",
+      "firstSeen": "2026-02-01T16:19:51.477Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "Moltbook",
+          "chain": "bsc",
+          "fdvAtDiscovery": 265563,
+          "priceAtDiscovery": "0.0000000000006376",
+          "discoveredAt": "2026-02-01T16:19:51.477Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@MoltDogeBase": {
+      "handle": "@MoltDogeBase",
+      "firstSeen": "2026-02-01T16:19:51.907Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "MOLGE",
+          "chain": "base",
+          "fdvAtDiscovery": 132592,
+          "priceAtDiscovery": "0.000001325",
+          "discoveredAt": "2026-02-01T16:19:51.907Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@ElonCoinApp": {
+      "handle": "@ElonCoinApp",
+      "firstSeen": "2026-02-01T16:19:52.569Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "ELON",
+          "chain": "solana",
+          "fdvAtDiscovery": 2397247,
+          "priceAtDiscovery": "0.002397",
+          "discoveredAt": "2026-02-01T16:19:52.569Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
+    },
+    "@CopperfrogSOL": {
+      "handle": "@CopperfrogSOL",
+      "firstSeen": "2026-02-01T16:19:52.983Z",
+      "source": "dexscreener",
+      "tokens": [
+        {
+          "symbol": "COPPERFROG",
+          "chain": "solana",
+          "fdvAtDiscovery": 10821,
+          "priceAtDiscovery": "0.00001082",
+          "discoveredAt": "2026-02-01T16:19:52.983Z"
+        }
+      ],
+      "tier": "unscored",
+      "notes": ""
     }
   },
-  "lastUpdated": "2026-02-01T03:55:53.611Z"
+  "lastUpdated": "2026-02-01T16:19:53.078Z"
 }
