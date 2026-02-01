@@ -163,6 +163,29 @@ function listAlerts() {
   }
 }
 
+async function sendToAlertHub(triggered) {
+  // Try to use alert-hub for Telegram notifications
+  try {
+    const alerterPath = path.join(__dirname, 'alert-hub', 'alerter.js');
+    if (!fs.existsSync(alerterPath)) return;
+    
+    const { sendAlert } = require(alerterPath);
+    
+    for (const t of triggered) {
+      await sendAlert({
+        message: `${t.alert.symbol}: $${t.price.toFixed(6)} - ${t.reason}`,
+        severity: 'warning',
+        source: 'custom',
+        coin: t.alert.symbol,
+        type: 'price_alert',
+      });
+    }
+    console.log(`📤 Sent ${triggered.length} alert(s) to alert-hub`);
+  } catch (e) {
+    console.log(`⚠️ Could not send to alert-hub: ${e.message}`);
+  }
+}
+
 async function checkAlerts() {
   const data = loadAlerts();
   const triggered = [];
@@ -206,6 +229,7 @@ async function checkAlerts() {
   
   if (triggered.length > 0) {
     console.log(`\n🔔 ${triggered.length} alert(s) triggered!`);
+    await sendToAlertHub(triggered);
     return triggered;
   } else {
     console.log('\n✅ No alerts triggered.');

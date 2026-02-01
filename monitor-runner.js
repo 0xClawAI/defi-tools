@@ -34,11 +34,18 @@ const MONITORS = [
     skip_quick: false,
   },
   {
+    name: 'price-alerts',
+    script: 'price-alerts.js',
+    args: ['check'],
+    timeout: 60000,
+    skip_quick: false,
+  },
+  {
     name: 'status',
     script: 'status-board/index.js',
     args: ['--fast'],
     timeout: 60000,
-    skip_quick: false,
+    skip_quick: true,  // Skip status in quick mode
   },
 ];
 
