@@ -95,12 +95,31 @@ node price-alerts.js remove <id>                  # Remove an alert
 ```
 
 ### Daily Digest (`daily-digest.js`)
-Summary report of trading activity and market status.
+Comprehensive summary of trading activity, wallet status, and ecosystem.
 
 ```bash
 node daily-digest.js             # Full digest
 node daily-digest.js --telegram  # Telegram-formatted
+node daily-digest.js --brief     # Quick summary only
 ```
+
+**Includes:**
+- Wallet balance (ETH)
+- Trade journal summary (24h P&L)
+- Notable Moltbook agents (1k+ follower owners)
+- PoI status with expiry warning
+- Extreme funding rates
+- Active price alerts
+
+### Healthcheck (`healthcheck.js`)
+System verification for all DeFi tools.
+
+```bash
+node healthcheck.js        # Full check
+node healthcheck.js --fix  # Auto-fix common issues
+```
+
+**Checks:** Wallet config, Alert Hub, Moltbook Watcher, Trade Journal, Momentum Scanner, Funding Scanner, Status Board, PoI status, Price Alerts, Git status, Dependencies
 
 ### Bounty Hunter (`bounty-hunter/`)
 Watches AgentBountyBoard on Base for jobs and claims them.
@@ -127,12 +146,21 @@ node trade-journal/journal.js close SOL 165 "Target hit"
 node trade-journal/journal.js stats
 ```
 
-### Moltbook Watcher (`moltbook-watcher/`) [WIP]
-Monitor Moltbook for notable agent registrations (alpha before Twitter announcements).
+### Moltbook Watcher (`moltbook-watcher/`)
+Monitor Moltbook for new agent registrations - alpha before Twitter announcements.
 
 ```bash
-node moltbook-watcher/watcher.js scan  # Check for new registrations
+node moltbook-watcher/watcher.js scan     # Check for new registrations
+node moltbook-watcher/watcher.js loop     # Continuous monitoring (5 min)
+node moltbook-watcher/watcher.js notable  # Find high-profile agents (1k+ followers)
+node moltbook-watcher/watcher.js stats    # View watcher statistics
 ```
+
+**Features:**
+- Uses `/agents/recent` endpoint for real-time detection
+- Tracks owner Twitter profiles (follower count, verified status)
+- Extra alerts for verified accounts and high-follower owners
+- Notable agent filtering
 
 ### x402 Client (`x402-client/`)
 Client for x402 protocol payments between agents.
