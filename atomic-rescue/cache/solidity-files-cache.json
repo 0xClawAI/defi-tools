@@ -1,0 +1,43 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/0xclaw/projects/defi-tools/atomic-rescue/contracts/AtomicRescue.sol": {
+      "lastModificationDate": 1769979803711,
+      "contentHash": "250d1f99ab3a405b442280179cf51be4",
+      "sourceName": "contracts/AtomicRescue.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "AtomicRescue",
+        "IERC721",
+        "INameWrapper"
+      ]
+    }
+  }
+}

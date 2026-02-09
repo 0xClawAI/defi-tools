@@ -1,0 +1,101 @@
+{
+  "project": "DeFi Tools",
+  "status": "active",
+  "lastUpdated": "2026-02-09T10:30:00-08:00",
+  "progress": {
+    "total": 28,
+    "done": 22,
+    "inProgress": 0,
+    "testing": 0,
+    "failed": 0,
+    "blocked": 0,
+    "todo": 6
+  },
+  "milestones": [
+    {
+      "id": "M1",
+      "name": "Core Scanning Works",
+      "tasks": ["T-001", "T-002", "T-003", "T-004"],
+      "progress": { "total": 4, "done": 4, "inProgress": 0, "todo": 0 }
+    },
+    {
+      "id": "M2",
+      "name": "Monitoring & Alerts",
+      "tasks": ["T-005", "T-006", "T-007", "T-008"],
+      "progress": { "total": 4, "done": 4, "inProgress": 0, "todo": 0 }
+    },
+    {
+      "id": "M3",
+      "name": "Trading & Portfolio",
+      "tasks": ["T-009", "T-010", "T-011", "T-012", "T-013"],
+      "progress": { "total": 5, "done": 5, "inProgress": 0, "todo": 0 }
+    },
+    {
+      "id": "M4",
+      "name": "External Integrations",
+      "tasks": ["T-014", "T-015", "T-016", "T-017", "T-018", "T-019"],
+      "progress": { "total": 6, "done": 6, "inProgress": 0, "todo": 0 }
+    },
+    {
+      "id": "M5",
+      "name": "Infrastructure",
+      "tasks": ["T-020", "T-021", "T-022"],
+      "progress": { "total": 3, "done": 3, "inProgress": 0, "todo": 0 }
+    },
+    {
+      "id": "M6",
+      "name": "Code Quality",
+      "tasks": ["T-023", "T-024", "T-025"],
+      "progress": { "total": 3, "done": 0, "inProgress": 0, "todo": 3 }
+    },
+    {
+      "id": "M7",
+      "name": "Operational Hardening",
+      "tasks": ["T-026", "T-027", "T-028"],
+      "progress": { "total": 3, "done": 0, "inProgress": 0, "todo": 3 }
+    }
+  ],
+  "phases": [
+    { "name": "Core Scanning & Analysis", "status": "done", "tasks": 4, "done": 4 },
+    { "name": "Monitoring & Alerts", "status": "done", "tasks": 4, "done": 4 },
+    { "name": "Trading & Portfolio", "status": "done", "tasks": 5, "done": 5 },
+    { "name": "External Integrations", "status": "done", "tasks": 6, "done": 6 },
+    { "name": "Infrastructure", "status": "done", "tasks": 3, "done": 3 },
+    { "name": "Code Quality", "status": "todo", "tasks": 3, "done": 0 },
+    { "name": "Operational Hardening", "status": "todo", "tasks": 3, "done": 0 }
+  ],
+  "tasks": [
+    { "id": "T-001", "title": "Token Lookup", "type": "code", "phase": "Core Scanning & Analysis", "milestone": "M1", "status": "done", "depends": [] },
+    { "id": "T-002", "title": "Momentum Scanner", "type": "code", "phase": "Core Scanning & Analysis", "milestone": "M1", "status": "done", "depends": [] },
+    { "id": "T-003", "title": "Token Safety Analysis", "type": "code", "phase": "Core Scanning & Analysis", "milestone": "M1", "status": "done", "depends": [] },
+    { "id": "T-004", "title": "Fresh Token Scanner", "type": "code", "phase": "Core Scanning & Analysis", "milestone": "M1", "status": "done", "depends": [] },
+    { "id": "T-005", "title": "Alert Hub", "type": "code", "phase": "Monitoring & Alerts", "milestone": "M2", "status": "done", "depends": [] },
+    { "id": "T-006", "title": "Price Alerts", "type": "code", "phase": "Monitoring & Alerts", "milestone": "M2", "status": "done", "depends": [] },
+    { "id": "T-007", "title": "Monitor Runner", "type": "code", "phase": "Monitoring & Alerts", "milestone": "M2", "status": "done", "depends": ["T-001", "T-002", "T-004"] },
+    { "id": "T-008", "title": "Account Tracker", "type": "code", "phase": "Monitoring & Alerts", "milestone": "M2", "status": "done", "depends": [] },
+    { "id": "T-009", "title": "Paper Trader", "type": "code", "phase": "Trading & Portfolio", "milestone": "M3", "status": "done", "depends": [] },
+    { "id": "T-010", "title": "Trade Journal", "type": "code", "phase": "Trading & Portfolio", "milestone": "M3", "status": "done", "depends": [] },
+    { "id": "T-011", "title": "Position Sizing & Risk", "type": "code", "phase": "Trading & Portfolio", "milestone": "M3", "status": "done", "depends": [] },
+    { "id": "T-012", "title": "Base Swap Execution", "type": "code", "phase": "Trading & Portfolio", "milestone": "M3", "status": "done", "depends": [] },
+    { "id": "T-013", "title": "Portfolio Tracking", "type": "code", "phase": "Trading & Portfolio", "milestone": "M3", "status": "done", "depends": [] },
+    { "id": "T-014", "title": "Funding Scanner", "type": "code", "phase": "External Integrations", "milestone": "M4", "status": "done", "depends": [] },
+    { "id": "T-015", "title": "Liquidation Tracker", "type": "code", "phase": "External Integrations", "milestone": "M4", "status": "done", "depends": [] },
+    { "id": "T-016", "title": "Moltbook Watcher", "type": "code", "phase": "External Integrations", "milestone": "M4", "status": "done", "depends": [] },
+    { "id": "T-017", "title": "Bounty Hunter", "type": "code", "phase": "External Integrations", "milestone": "M4", "status": "done", "depends": [] },
+    { "id": "T-018", "title": "x402 Client", "type": "code", "phase": "External Integrations", "milestone": "M4", "status": "done", "depends": [] },
+    { "id": "T-019", "title": "Wallet Tracker", "type": "code", "phase": "External Integrations", "milestone": "M4", "status": "done", "depends": [] },
+    { "id": "T-020", "title": "Healthcheck", "type": "code", "phase": "Infrastructure", "milestone": "M5", "status": "done", "depends": [] },
+    { "id": "T-021", "title": "Daily Digest", "type": "code", "phase": "Infrastructure", "milestone": "M5", "status": "done", "depends": [] },
+    { "id": "T-022", "title": "CLI Interface", "type": "code", "phase": "Infrastructure", "milestone": "M5", "status": "done", "depends": [] },
+    { "id": "T-023", "title": "Add Test Suite", "type": "code", "phase": "Code Quality", "milestone": "M6", "status": "todo", "depends": [] },
+    { "id": "T-024", "title": "Shared Config Module", "type": "code", "phase": "Code Quality", "milestone": "M6", "status": "todo", "depends": [] },
+    { "id": "T-025", "title": "Consolidate Duplicate Scripts", "type": "code", "phase": "Code Quality", "milestone": "M6", "status": "todo", "depends": ["T-024"] },
+    { "id": "T-026", "title": "Log Rotation", "type": "code", "phase": "Operational Hardening", "milestone": "M7", "status": "todo", "depends": [] },
+    { "id": "T-027", "title": "Uptime & Error Metrics", "type": "code", "phase": "Operational Hardening", "milestone": "M7", "status": "todo", "depends": ["T-020"] },
+    { "id": "T-028", "title": "Smart Alert Throttling", "type": "code", "phase": "Operational Hardening", "milestone": "M7", "status": "todo", "depends": ["T-005"] }
+  ],
+  "workers": [],
+  "activity": [
+    { "timestamp": "2026-02-09T10:30:00-08:00", "message": "Migrated to orchestrator format. 22 existing tasks marked done, 6 remaining tasks defined." }
+  ]
+}
