@@ -33,3 +33,4 @@ Thumbs.db
 # Memory (personal context)
 memory/
 obi-filter/data/*.json
+x402-client/.env
