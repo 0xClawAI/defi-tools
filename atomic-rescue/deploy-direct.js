@@ -3,7 +3,7 @@ const { privateKeyToAccount } = require('viem/accounts');
 const { mainnet } = require('viem/chains');
 const fs = require('fs');
 
-const V3_KEY = '0xbd587042e0ed7278d5e8c89aa03306970e66d7b7ed6eb91868c80be6b8277ee3';
+const V3_KEY = process.env.V3_KEY;
 const V3_ADDRESS = '0xD50406FcD7115cC55A88d77d3E62cE39c9fA99B1';
 
 async function deploy() {

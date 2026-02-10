@@ -1,7 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
-const V3_KEY = process.env.V3_KEY || "0xbd587042e0ed7278d5e8c89aa03306970e66d7b7ed6eb91868c80be6b8277ee3";
+const V3_KEY = process.env.V3_KEY || process.env.V3_KEY;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {

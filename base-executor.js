@@ -8,7 +8,7 @@ const { createWalletClient, createPublicClient, http, parseUnits, formatUnits, e
 const { base } = require('viem/chains');
 const { privateKeyToAccount } = require('viem/accounts');
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY || '0x187d9f0c6cf881f5bf9bfbca7777b2afb3dc32eaa60c3229c0e14b0e1512f9d3';
+const PRIVATE_KEY = process.env.PRIVATE_KEY || process.env.V1_KEY;
 const USDC = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913';
 
 async function getKyberRoute(tokenIn, tokenOut, amountIn) {

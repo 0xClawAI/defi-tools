@@ -21,8 +21,8 @@ const { mainnet, sepolia } = require('viem/chains');
 // ═══════════════════════════════════════════
 
 // Wallet keys (already exposed, this is the rescue operation)
-const V1_PRIVATE_KEY = process.env.V1_KEY || '0x187d9f0c6cf881f5bf9bfbca7777b2afb3dc32eaa60c3229c0e14b0e1512f9d3';
-const V3_PRIVATE_KEY = process.env.V3_KEY || '0xbd587042e0ed7278d5e8c89aa03306970e66d7b7ed6eb91868c80be6b8277ee3';
+const V1_PRIVATE_KEY = process.env.V1_KEY;
+const V3_PRIVATE_KEY = process.env.V3_KEY;
 
 const V1_ADDRESS = '0xffA12D92098eB2b72B3c30B62f8da02BA4158c1e';
 const V3_ADDRESS = '0xD50406FcD7115cC55A88d77d3E62cE39c9fA99B1';

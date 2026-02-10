@@ -7,7 +7,7 @@ const { mainnet } = require('viem/chains');
 // ═══════════════════════════════════════════
 
 // V1 wallet (compromised but has NFTs)
-const V1_PRIVATE_KEY = '0x187d9f0c6cf881f5bf9bfbca7777b2afb3dc32eaa60c3229c0e14b0e1512f9d3';
+const V1_PRIVATE_KEY = process.env.V1_KEY;
 const V1_ADDRESS = '0xffA12D92098eB2b72B3c30B62f8da02BA4158c1e';
 
 // V3 wallet (safe destination)
